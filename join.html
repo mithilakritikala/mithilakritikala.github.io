@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,43 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-    <!-- Header -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
                     <img src="https://placehold.co/50x50/d9232d/ffffff?text=MK" alt="Mithila KritiKala Logo">
-                    <span>Mithila KritiKala</span>
+                    <span data-key="logoText">Mithila KritiKala</span>
                 </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="admission.html">Admission</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="index.html" data-key="navHome">Home</a></li>
+                    <li><a href="about.html" data-key="navAbout">About Us</a></li>
+                    <li><a href="courses.html" data-key="navCourses">Courses</a></li>
+                    <li><a href="admission.html" data-key="navAdmission">Admission</a></li>
+                    <li><a href="contact.html" data-key="navContact">Contact</a></li>
+                    <li><a href="join.html" data-key="navJoin">Join Us</a></li>
+                    <li class="mobile-donate-link"><a href="donate.html" data-key="navDonateMobile">Donate</a></li>
                 </ul>
-                <a href="donate.html" class="btn btn-secondary">Donate</a>
+
+                <div class="lang-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="language-toggle">
+                        <span class="slider round">
+                            <span class="lang-text-en">EN</span>
+                            <span class="lang-text-hi">HI</span>
+                        </span>
+                    </label>
+                </div>
+
+                <a href="donate.html" class="btn btn-secondary" data-key="navDonate">Donate</a>
             </nav>
             <div class="hamburger">
                 <div class="bar"></div>
@@ -38,25 +55,27 @@
     </header>
 
     <main>
-        <!-- Join Us Section -->
         <section class="fade-in-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Join Our Mission</h2>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto;">Become a volunteer and help us preserve traditional arts while empowering women in our community. Together, we can make a lasting impact.</p>
+                    <h2 data-key="joinTitle">Join Our Mission</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto;" data-key="joinSubtitle">Become a
+                        volunteer and help us preserve traditional arts while empowering women in our community.
+                        Together, we can make a lasting impact.</p>
                 </div>
 
-                <div class="about-mission"> <!-- Reusing layout -->
+                <div class="about-mission">
                     <div class="why-volunteer">
-                        <h3>Why Volunteer With Us?</h3>
-                        
+                        <h3 data-key="joinWhyVolunteer">Why Volunteer With Us?</h3>
+
                         <div class="volunteer-item">
                             <div class="volunteer-icon red">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
                             <div class="volunteer-text">
-                                <h4>Make a Difference</h4>
-                                <p>Help preserve Mithila art while empowering women and girls to become economically independent through skill development.</p>
+                                <h4 data-key="joinBenefit1Title">Make a Difference</h4>
+                                <p data-key="joinBenefit1Desc">Help preserve Mithila art while empowering women and
+                                    girls to become economically independent through skill development.</p>
                             </div>
                         </div>
 
@@ -65,8 +84,9 @@
                                 <i class="fas fa-users"></i>
                             </div>
                             <div class="volunteer-text">
-                                <h4>Build Community</h4>
-                                <p>Join a passionate community of volunteers working together to create positive change in rural Bihar through art education.</p>
+                                <h4 data-key="joinBenefit2Title">Build Community</h4>
+                                <p data-key="joinBenefit2Desc">Join a passionate community of volunteers working
+                                    together to create positive change in rural Bihar through art education.</p>
                             </div>
                         </div>
 
@@ -75,43 +95,55 @@
                                 <i class="fas fa-seedling"></i>
                             </div>
                             <div class="volunteer-text">
-                                <h4>Learn & Grow</h4>
-                                <p>Gain valuable experience in community development, art education, and cultural preservation while making lifelong connections.</p>
+                                <h4 data-key="joinBenefit3Title">Learn & Grow</h4>
+                                <p data-key="joinBenefit3Desc">Gain valuable experience in community development, art
+                                    education, and cultural preservation while making lifelong connections.</p>
                             </div>
                         </div>
 
-                        <h3 style="margin-top: 3rem;">Volunteer Opportunities</h3>
+                        <h3 style="margin-top: 3rem;" data-key="joinOpportunities">Volunteer Opportunities</h3>
                         <ul style="list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 10px;"><i class="fas fa-paint-brush" style="color: var(--primary-color); margin-right: 8px;"></i> Art instruction and mentoring</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-tasks" style="color: var(--primary-color); margin-right: 8px;"></i> Workshop organization and coordination</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-bullhorn" style="color: var(--primary-color); margin-right: 8px;"></i> Digital marketing and social media</li>
-                            <li style="margin-bottom: 10px;"><i class="fas fa-hand-holding-heart" style="color: var(--primary-color); margin-right: 8px;"></i> Fundraising and grant writing</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-paint-brush"
+                                    style="color: var(--primary-color); margin-right: 8px;"></i> <span
+                                    data-key="joinOpp1">Art instruction and mentoring</span></li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-tasks"
+                                    style="color: var(--primary-color); margin-right: 8px;"></i> <span
+                                    data-key="joinOpp2">Workshop organization and coordination</span></li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-bullhorn"
+                                    style="color: var(--primary-color); margin-right: 8px;"></i> <span
+                                    data-key="joinOpp3">Digital marketing and social media</span></li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-hand-holding-heart"
+                                    style="color: var(--primary-color); margin-right: 8px;"></i> <span
+                                    data-key="joinOpp4">Fundraising and grant writing</span></li>
                         </ul>
                     </div>
                     <div class="volunteer-form">
-                        <h3>Volunteer Application</h3>
+                        <h3 data-key="joinApplication">Volunteer Application</h3>
                         <form action="#" method="POST">
                             <div class="form-group">
-                                <label for="name">Full Name *</label>
+                                <label for="name" data-key="formFullName">Full Name *</label>
                                 <input type="text" id="name" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Address *</label>
+                                <label for="email" data-key="formEmail">Email Address *</label>
                                 <input type="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number *</label>
+                                <label for="phone" data-key="formPhone">Phone Number *</label>
                                 <input type="tel" id="phone" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="city">City *</label>
+                                <label for="city" data-key="formCity">City *</label>
                                 <input type="text" id="city" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="skills">Skills & Interests *</label>
-                                <textarea id="skills" class="form-control" rows="4" placeholder="Tell us about your skills, interests, and how you'd like to contribute..." required></textarea>
+                                <label for="skills" data-key="formSkills">Skills & Interests *</label>
+                                <textarea id="skills" class="form-control" rows="4"
+                                    placeholder="Tell us about your skills, interests, and how you'd like to contribute..."
+                                    required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                            <button type="submit" class="btn btn-primary" data-key="formSubmitBtn">Submit
+                                Application</button>
                         </form>
                     </div>
                 </div>
@@ -119,45 +151,49 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer fade-in-section">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Mithila KritiKala</h4>
-                    <p>Dedicated to preserving the beautiful art traditions of Mithila while empowering women and girls in Madhubani, Bihar through traditional art education and skill development.</p>
+                    <h4 data-key="footerTitle">Mithila KritiKala</h4>
+                    <p data-key="footerDesc">Dedicated to preserving the beautiful art traditions of Mithila while
+                        empowering women and girls in Madhubani, Bihar through traditional art education and skill
+                        development.</p>
                     <div class="footer-socials">
                         <div class="social-icon-wrapper">
-                            <a href="https://www.facebook.com/profile.php?id=61578616140715" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61578616140715" target="_blank"
+                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                             <span class="tooltip">Facebook</span>
                         </div>
                         <div class="social-icon-wrapper">
-                            <a href="https://www.instagram.com/mithilakritikala/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/mithilakritikala/" target="_blank"
+                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             <span class="tooltip">Instagram</span>
                         </div>
                         <div class="social-icon-wrapper">
-                            <a href="https://x.com/m_kritikala" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                            <a href="https://x.com/m_kritikala" target="_blank" aria-label="X"><i
+                                    class="fab fa-x-twitter"></i></a>
                             <span class="tooltip">X</span>
                         </div>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4 data-key="quickLinksTitle">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="join.html">Join Us</a></li>
-                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="index.html" data-key="footerHome">Home</a></li>
+                        <li><a href="about.html" data-key="footerAbout">About Us</a></li>
+                        <li><a href="courses.html" data-key="footerCourses">Courses</a></li>
+                        <li><a href="contact.html" data-key="footerContact">Contact</a></li>
+                        <li><a href="join.html" data-key="footerJoin">Join Us</a></li>
+                        <li><a href="donate.html" data-key="footerDonate">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Info</h4>
+                    <h4 data-key="contactInfoTitle">Contact Info</h4>
                     <ul class="footer-links footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Kataiya Road Benipatti, Madhubani, BIhar</span>
+                            <span data-key="footerAddress">Kataiya Road Benipatti, Madhubani, BIhar</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -173,11 +209,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Mithila KritiKala Foundation. All rights reserved.
+                <span data-key="footerRights">© 2025 Mithila KritiKala Foundation. All rights reserved.</span>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

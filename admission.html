@@ -9,25 +9,40 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
                     <img src="https://placehold.co/50x50/d9232d/ffffff?text=MK" alt="Mithila KritiKala Logo">
-                    <span>Mithila KritiKala</span>
+                    <span data-key="logoText">Mithila KritiKala</span>
                 </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="admission.html">Admission</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="index.html" data-key="navHome">Home</a></li>
+                    <li><a href="about.html" data-key="navAbout">About Us</a></li>
+                    <li><a href="courses.html" data-key="navCourses">Courses</a></li>
+                    <li><a href="admission.html" data-key="navAdmission">Admission</a></li>
+                    <li><a href="contact.html" data-key="navContact">Contact</a></li>
+                    <li><a href="join.html" data-key="navJoin">Join Us</a></li>
+                    <li class="mobile-donate-link"><a href="donate.html" data-key="navDonateMobile">Donate</a></li>
                 </ul>
-                <a href="donate.html" class="btn btn-secondary">Donate</a>
+                
+                <div class="lang-switch">
+    <label class="switch">
+        <input type="checkbox" id="language-toggle">
+        <span class="slider round">
+            <span class="lang-text-en">EN</span>
+            <span class="lang-text-hi">HI</span>
+        </span>
+    </label>
+</div>
+
+                <a href="donate.html" class="btn btn-secondary" data-key="navDonate">Donate</a>
             </nav>
             <div class="hamburger">
                 <div class="bar"></div>
@@ -38,113 +53,107 @@
     </header>
 
     <main>
-        <!-- Admission Form Section -->
         <section class="fade-in-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Admission Form</h2>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto;">Join our community of artists and start your journey in traditional Mithila arts.</p>
+                    <h2 data-key="admissionTitle">Admission Form</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto;" data-key="admissionSubtitle">Join our community of artists and start your journey in traditional Mithila arts.</p>
                 </div>
 
                 <form action="#" method="POST" class="admission-form">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="full-name">Full Name *</label>
+                            <label for="full-name" data-key="formFullName">Full Name *</label>
                             <input type="text" id="full-name" class="form-control" placeholder="Enter your full name" required>
                         </div>
                         <div class="form-group">
-                            <label for="age">Age *</label>
+                            <label for="age" data-key="formAge">Age *</label>
                             <input type="number" id="age" class="form-control" placeholder="Enter your age" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number *</label>
+                            <label for="phone" data-key="formPhone">Phone Number *</label>
                             <input type="tel" id="phone" class="form-control" placeholder="Enter 10-digit phone number" required>
                         </div>
                         <div class="form-group">
-                            <label for="course">Interested Course *</label>
+                            <label for="course" data-key="formCourse">Interested Course *</label>
                             <select id="course" class="form-control" required>
-                                <option value="">Select a course</option>
-                                <option value="mithila-painting">Mithila Painting</option>
-                                <option value="stitching-embroidery">Stitching & Embroidery</option>
+                                <option value="" data-key="formSelectCourse">Select a course</option>
+                                <option value="mithila-painting" data-key="formCourseMithila">Mithila Painting</option>
+                                <option value="stitching-embroidery" data-key="formCourseSewing">Stitching & Embroidery</option>
                             </select>
                         </div>
                         <div class="form-group full-width">
-                            <label for="address">Full Address *</label>
+                            <label for="address" data-key="formAddress">Full Address *</label>
                             <textarea id="address" class="form-control" rows="3" placeholder="Enter your complete address" required></textarea>
                         </div>
                         <div class="form-group full-width">
-                            <label for="experience">Previous Experience (Optional)</label>
+                            <label for="experience" data-key="formExperience">Previous Experience (Optional)</label>
                             <textarea id="experience" class="form-control" rows="3" placeholder="Tell us about any previous experience in art or crafts"></textarea>
                         </div>
                         
                         <div class="form-group full-width terms-group">
                             <input type="checkbox" id="terms" required>
-                            <label for="terms">I agree to the <a href="#" id="terms-link">terms and conditions</a> and confirm that all information provided is accurate. *</label>
+                            <label for="terms" data-key="formTerms">I agree to the <a href="#" id="terms-link">terms and conditions</a> and confirm that all information provided is accurate. *</label>
                         </div>
                         <div class="form-group full-width" style="text-align: center;">
-                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                            <button type="submit" class="btn btn-primary" data-key="formSubmitBtn">Submit Application</button>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- Next Batch Section -->
         <section class="next-batch-section fade-in-section" style="background-color: var(--bg-grey);">
             <div class="container info-grid">
                 <div class="info-card">
                     <div class="info-icon"><i class="fas fa-tasks"></i></div>
-                    <h3>Admission Process</h3>
+                    <h3 data-key="admissionProcessTitle">Admission Process</h3>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Apply online or meet us at our office.</li>
-                        <li><i class="fas fa-id-card"></i> Aadhar card is mandatory for admission.</li>
-                        <li><i class="fas fa-box-open"></i> Receive course materials upon selection.</li>
-                        <li><i class="fas fa-paint-brush"></i> Start your artistic journey!</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-key="admissionProcess1">Apply online or meet us at our office.</span></li>
+                        <li><i class="fas fa-id-card"></i> <span data-key="admissionProcess2">Aadhar card is mandatory for admission.</span></li>
+                        <li><i class="fas fa-box-open"></i> <span data-key="admissionProcess3">Receive course materials upon selection.</span></li>
+                        <li><i class="fas fa-paint-brush"></i> <span data-key="admissionProcess4">Start your artistic journey!</span></li>
                     </ul>
                 </div>
                 <div class="info-card">
                     <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <h3>Next Batch Starts</h3>
-                    <p class="batch-date">Date & Time will be updated soon.</p>
-                    <p>Stay tuned for announcements!</p>
+                    <h3 data-key="admissionBatchTitle">Next Batch Starts</h3>
+                    <p class="batch-date" data-key="admissionBatchDate">Date & Time will be updated soon.</p>
+                    <p data-key="admissionBatchInfo">Stay tuned for announcements!</p>
                 </div>
             </div>
         </section>
-
     </main>
     
-    <!-- Terms and Conditions Modal -->
     <div id="terms-modal" class="modal-overlay">
         <div class="modal">
             <div class="modal-header">
-                <h2>Terms and Conditions</h2>
-                <button class="close-button">&times;</button>
+                <h2 data-key="modalTermsTitle">Terms and Conditions</h2>
+                <button class="close-button">×</button>
             </div>
             <div class="modal-body">
-                <h4>1. Eligibility</h4>
-                <p>All courses are open to women and girls from our target communities. There is no minimum educational qualification required.</p>
-                <h4>2. Course Fee</h4>
-                <p>All our training programs are provided completely free of cost. However, a small, refundable security deposit may be required to ensure commitment.</p>
-                <h4>3. Attendance</h4>
-                <p>A minimum of 80% attendance is required to be eligible for the course completion certificate.</p>
-                <h4>4. Materials</h4>
-                <p>All necessary art supplies and materials will be provided by Mithila KritiKala Foundation.</p>
-                <h4>5. Code of Conduct</h4>
-                <p>Students are expected to maintain a respectful and collaborative environment. Any form of indiscipline may result in discontinuation from the course.</p>
-                <h4>6. Certification</h4>
-                <p>A certificate of completion will be awarded upon successful completion of the course, including any final projects or assessments.</p>
+                <h4 data-key="modalTerm1Title">1. Eligibility</h4>
+                <p data-key="modalTerm1Desc">All courses are open to women and girls from our target communities. There is no minimum educational qualification required.</p>
+                <h4 data-key="modalTerm2Title">2. Course Fee</h4>
+                <p data-key="modalTerm2Desc">All our training programs are provided completely free of cost. However, a small, refundable security deposit may be required to ensure commitment.</p>
+                <h4 data-key="modalTerm3Title">3. Attendance</h4>
+                <p data-key="modalTerm3Desc">A minimum of 80% attendance is required to be eligible for the course completion certificate.</p>
+                <h4 data-key="modalTerm4Title">4. Materials</h4>
+                <p data-key="modalTerm4Desc">All necessary art supplies and materials will be provided by Mithila KritiKala Foundation.</p>
+                <h4 data-key="modalTerm5Title">5. Code of Conduct</h4>
+                <p data-key="modalTerm5Desc">Students are expected to maintain a respectful and collaborative environment. Any form of indiscipline may result in discontinuation from the course.</p>
+                <h4 data-key="modalTerm6Title">6. Certification</h4>
+                <p data-key="modalTerm6Desc">A certificate of completion will be awarded upon successful completion of the course, including any final projects or assessments.</p>
             </div>
         </div>
     </div>
 
-
-    <!-- Footer -->
     <footer class="site-footer fade-in-section">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Mithila KritiKala</h4>
-                    <p>Dedicated to preserving the beautiful art traditions of Mithila while empowering women and girls in Madhubani, Bihar through traditional art education and skill development.</p>
+                    <h4 data-key="footerTitle">Mithila KritiKala</h4>
+                    <p data-key="footerDesc">Dedicated to preserving the beautiful art traditions of Mithila while empowering women and girls in Madhubani, Bihar through traditional art education and skill development.</p>
                     <div class="footer-socials">
                         <div class="social-icon-wrapper">
                             <a href="https://www.facebook.com/profile.php?id=61578616140715" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -161,22 +170,22 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4 data-key="quickLinksTitle">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="join.html">Join Us</a></li>
-                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="index.html" data-key="footerHome">Home</a></li>
+                        <li><a href="about.html" data-key="footerAbout">About Us</a></li>
+                        <li><a href="courses.html" data-key="footerCourses">Courses</a></li>
+                        <li><a href="contact.html" data-key="footerContact">Contact</a></li>
+                        <li><a href="join.html" data-key="footerJoin">Join Us</a></li>
+                        <li><a href="donate.html" data-key="footerDonate">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Info</h4>
+                    <h4 data-key="contactInfoTitle">Contact Info</h4>
                     <ul class="footer-links footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Kataiya Road Benipatti, Madhubani, BIhar</span>
+                            <span data-key="footerAddress">Kataiya Road Benipatti, Madhubani, BIhar</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -192,7 +201,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Mithila KritiKala Foundation. All rights reserved.
+                <span data-key="footerRights">© 2025 Mithila KritiKala Foundation. All rights reserved.</span>
             </div>
         </div>
     </footer>

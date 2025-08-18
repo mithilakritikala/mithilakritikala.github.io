@@ -1,250 +1,11 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate | Mithila KritiKala Foundation</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
-<body>
-
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="https://placehold.co/50x50/d9232d/ffffff?text=MK" alt="Mithila KritiKala Logo">
-                    <span data-key="logoText">Mithila KritiKala</span>
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="index.html" data-key="navHome">Home</a></li>
-                    <li><a href="about.html" data-key="navAbout">About Us</a></li>
-                    <li><a href="courses.html" data-key="navCourses">Courses</a></li>
-                    <li><a href="admission.html" data-key="navAdmission">Admission</a></li>
-                    <li><a href="contact.html" data-key="navContact">Contact</a></li>
-                    <li><a href="join.html" data-key="navJoin">Join Us</a></li>
-                    <li class="mobile-donate-link"><a href="donate.html" data-key="navDonateMobile">Donate</a></li>
-                </ul>
-
-                <div class="lang-switch">
-                    <label class="switch">
-                        <input type="checkbox" id="language-toggle">
-                        <span class="slider round">
-                            <span class="lang-text-en">EN</span>
-                            <span class="lang-text-hi">HI</span>
-                        </span>
-                    </label>
-                </div>
-
-                <a href="donate.html" class="btn btn-secondary" data-key="navDonate">Donate</a>
-            </nav>
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="fade-in-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-key="donateTitle">Support Our Mission</h2>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto;" data-key="donateSubtitle">Your
-                        generous donations help us preserve traditional arts and empower women in our community. Every
-                        contribution makes a difference.</p>
-                </div>
-
-                <div class="donate-grid">
-                    <div class="ways-to-donate">
-                        <h3 data-key="donateWays">Ways to Donate</h3>
-                        <div class="donation-box">
-                            <h4 data-key="donateChooseAmount">Choose Donation Amount</h4>
-                            <div class="amount-buttons">
-                                <button class="amount-btn">₹500</button>
-                                <button class="amount-btn">₹1,000</button>
-                                <button class="amount-btn">₹2,500</button>
-                                <button class="amount-btn">₹5,000</button>
-                                <button class="amount-btn">₹10,000</button>
-                                <button class="amount-btn custom" data-key="donateCustom">Custom</button>
-                            </div>
-                            <div class="custom-amount-wrapper" id="custom-amount-wrapper">
-                                <input type="number" id="custom-amount-input" class="form-control"
-                                    placeholder="Enter Amount">
-                            </div>
-                            <p class="selected-amount"><span data-key="donateSelected">Selected Amount:</span>
-                                <strong>₹0</strong></p>
-                        </div>
-
-                        <h3 style="margin-top: 2rem;" data-key="donatePaymentMethods">Payment Methods</h3>
-                        <div class="payment-methods">
-                            <div class="payment-method">
-                                <div class="payment-method-header">
-                                    <span><i class="fa-brands fa-google-pay"></i> <span data-key="donateUpi">UPI
-                                            Payment</span></span>
-                                    <a href="#" class="toggle-details" data-key="donateShowDetails">Show Details</a>
-                                </div>
-                                <div class="payment-method-details">
-                                    <p data-key="donateUpiDesc">Scan the QR code or use the UPI ID below.</p>
-                                    <img src="https://placehold.co/150x150/ffffff/000000?text=UPI+QR" alt="UPI QR Code"
-                                        style="margin: 1rem auto; display: block;">
-                                    <p><strong>UPI ID:</strong> mithilakritikala@upi</p>
-                                </div>
-                            </div>
-                            <div class="payment-method">
-                                <div class="payment-method-header">
-                                    <span><i class="fas fa-university"></i> <span data-key="donateBank">Bank
-                                            Transfer</span></span>
-                                    <a href="#" class="toggle-details" data-key="donateShowDetails">Show Details</a>
-                                </div>
-                                <div class="payment-method-details">
-                                    <p><strong>Account Name:</strong> Mithila KritiKala Foundation</p>
-                                    <p><strong>Account Number:</strong> 123456789012</p>
-                                    <p><strong>Bank:</strong> State Bank of India</p>
-                                    <p><strong>IFSC Code:</strong> SBIN0001234</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" style="width: 100%; margin-top: 2rem;"
-                            data-key="donateNowBtn">Donate Now</button>
-                    </div>
-
-                    <div class="your-impact">
-                        <h3 data-key="donateImpact">Your Impact</h3>
-                        <div class="impact-item">
-                            <div class="impact-icon yellow"><i class="fas fa-paint-brush"></i></div>
-                            <div class="impact-text">
-                                <h4 data-key="donateImpact1Title">₹500 Donation</h4>
-                                <p data-key="donateImpact1Desc">Provides art materials for one student for a month.</p>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon red"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="impact-text">
-                                <h4 data-key="donateImpact2Title">₹2,500 Donation</h4>
-                                <p data-key="donateImpact2Desc">Sponsors one student's complete course fee.</p>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon yellow"><i class="fas fa-tools"></i></div>
-                            <div class="impact-text">
-                                <h4 data-key="donateImpact3Title">₹10,000 Donation</h4>
-                                <p data-key="donateImpact3Desc">Helps purchase new equipment and tools for the workshop.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="tax-benefits">
-                            <div class="impact-icon red"><i class="fas fa-receipt"></i></div>
-                            <div class="impact-text">
-                                <h4 data-key="donateTax">Tax Benefits</h4>
-                                <p data-key="donateTaxDesc">Donations to Mithila KritiKala Foundation are eligible for
-                                    tax deduction under Section 80G of the Income Tax Act. You will receive a tax
-                                    receipt for your donation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer fade-in-section">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 data-key="footerTitle">Mithila KritiKala</h4>
-                    <p data-key="footerDesc">Dedicated to preserving the beautiful art traditions of Mithila while
-                        empowering women and girls in Madhubani, Bihar through traditional art education and skill
-                        development.</p>
-                    <div class="footer-socials">
-                        <div class="social-icon-wrapper">
-                            <a href="https://www.facebook.com/profile.php?id=61578616140715" target="_blank"
-                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <span class="tooltip">Facebook</span>
-                        </div>
-                        <div class="social-icon-wrapper">
-                            <a href="https://www.instagram.com/mithilakritikala/" target="_blank"
-                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <span class="tooltip">Instagram</span>
-                        </div>
-                        <div class="social-icon-wrapper">
-                            <a href="https://x.com/m_kritikala" target="_blank" aria-label="X"><i
-                                    class="fab fa-x-twitter"></i></a>
-                            <span class="tooltip">X</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4 data-key="quickLinksTitle">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html" data-key="footerHome">Home</a></li>
-                        <li><a href="about.html" data-key="footerAbout">About Us</a></li>
-                        <li><a href="courses.html" data-key="footerCourses">Courses</a></li>
-                        <li><a href="contact.html" data-key="footerContact">Contact</a></li>
-                        <li><a href="join.html" data-key="footerJoin">Join Us</a></li>
-                        <li><a href="donate.html" data-key="footerDonate">Donate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 data-key="contactInfoTitle">Contact Info</h4>
-                    <ul class="footer-links footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-key="footerAddress">Kataiya Road Benipatti, Madhubani, BIhar</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+917903120432</span>
-                        </li>
-                        <li>
-                            <a href="mailto:mithilakritikala@gmail.com">
-                                <i class="fas fa-envelope"></i>
-                                <span>mithilakritikala@gmail.com</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span data-key="footerRights">© 2025 Mithila KritiKala . All rights reserved.</span>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-
-</html> -->
-
-<!-- temporaary page  -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-802CRQH9J9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-802CRQH9J9');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate | Mithila KritiKala Foundation</title>
+    <title>Donate | Mithila KritiKala</title>
+    <link rel="icon" type="image/png" href="photos/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -295,19 +56,23 @@
     </header>
 
     <main>
-        <div style="display: flex; justify-content: center; align-items: center; min-height: 60vh; padding: 40px 20px; background-color: #f8f9fa;">
-            <div style="background-color: #ffffff; padding: 50px; border-radius: 12px; text-align: center; max-width: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                
+        <div
+            style="display: flex; justify-content: center; align-items: center; min-height: 60vh; padding: 40px 20px; background-color: #f8f9fa;">
+            <div
+                style="background-color: #ffffff; padding: 50px; border-radius: 12px; text-align: center; max-width: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+
                 <i class="fas fa-cogs" style="font-size: 3rem; color: #d9232d; margin-bottom: 20px;"></i>
-                
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; margin-bottom: 1rem;">
+
+                <h2
+                    style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; margin-bottom: 1rem;">
                     Work in Progress
                 </h2>
-                
+
                 <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #555; line-height: 1.7;">
-                    We are currently setting up our bank account and payment gateway to accept online donations. This page will be functional very soon. Thank you for your patience and support!
+                    We are currently setting up our bank account and payment gateway to accept online donations. This
+                    page will be functional very soon. Thank you for your patience and support!
                 </p>
-        
+
             </div>
         </div>
     </main>
@@ -379,4 +144,3 @@
 </body>
 
 </html>
-

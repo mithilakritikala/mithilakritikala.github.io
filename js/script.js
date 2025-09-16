@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navHome: "Home",
             navAbout: "About Us",
             navCourses: "Courses",
+            navGallery: "Gallery",
             navAdmission: "Admission",
             navContact: "Contact",
             navJoin: "Join Us",
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerHome: "Home",
             footerAbout: "About Us",
             footerCourses: "Courses",
+            footerGallery: "Gallery",
             footerContact: "Contact",
             footerJoin: "Join Us",
             footerDonate: "Donate",
@@ -38,7 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
             vision2Desc: "Providing economic opportunities and skill development to women and girls in rural Bihar through art education.",
             vision3Title: "Build Community",
             vision3Desc: "Creating a supportive community where traditional arts flourish and women support each other's growth.",
-            
+            announcement1: "Admission for Mithila Painting has started and will close on 7th Oct.",
+            announcement2: "Admission for Cutting & Stitching closed on 15th Sep.",
+            viewMoreBtn: "View More",
+            coursesPreviewTitle: "Our Courses",
+            coursePreviewPaintingTitle: "Mithila Painting",
+            coursePreviewPaintingDesc: "Learn the ancient art of Mithila with traditional techniques and natural colors.",
+            coursePreviewPaintingMsg: "Admission Started",
+            coursePreviewStitchingTitle: "Cutting & Stitching",
+            coursePreviewStitchingDesc: "Master cutting and stitching to create beautiful garments and textiles.",
+            coursePreviewStitchingMsg: "Admissions Closed",
+            viewCourseDetailsBtn: "View Course Details",
+            galleryPreviewTitle: "A Glimpse of Our Work",
+            viewFullGalleryBtn: "View Full Gallery",
+
+            // Gallery Page (gallery.html)
+            galleryTitle: "Our Gallery",
+            gallerySubtitle: "A collection of moments from our classes, workshops, and the beautiful art created by our talented students.",
+
             // About Page (about.html)
             aboutTitle: "About Us",
             aboutSubtitle: "Dedicated to preserving and promoting the beautiful art traditions of Mithila while empowering women in our community.",
@@ -67,21 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
             course1Classes: "Classes: Mon to Friday",
             course1Cert: "Certificate Provided",
             course1Learn1: "Traditional motifs & patterns",
-            course1Learn2: "Natural color preparation",
             course1Learn3: "Canvas and wall painting",
             instructorLabel: "Instructor:",
             courseFeeFree: "Free",
-            course2Title: "Stitching & Embroidery",
-            course2Desc: "Master traditional stitching techniques and embroidery patterns that add beautiful details to clothing and home textiles.",
+            course2Title: "Cutting & Stitching",
+            course2Desc: "Master traditional cutting and stitching techniques to create beautiful details for clothing and home textiles.",
             course2Duration: "Duration: 3 months",
             course2Classes: "Classes: Mon to Friday",
             course2Cert: "Certificate Provided",
             course2Learn1: "Basic and advanced stitches",
             course2Learn2: "Garment construction",
             course2Learn3: "Quality finishing techniques",
+            applyNowBtn: "Apply Now",
+            admissionClosed: "Admission Closed",
             benefitsTitle: "Course Benefits & Support",
-            benefit1Title: "All Materials Provided",
-            benefit1Desc: "Canvas, brushes, colors, fabrics, and all necessary materials are provided for free.",
+            benefitCertTitle: "Certification Provided",
+            benefitCertDesc: "Receive an official certificate upon successful completion of the course, recognizing your new skills.",
             benefit2Title: "Post-Course Support",
             benefit2Desc: "Marketing assistance and order connections to help sell your artwork and creations.",
             benefit3Title: "Flexible Learning",
@@ -91,24 +111,35 @@ document.addEventListener('DOMContentLoaded', () => {
             admissionTitle: "Admission Form",
             admissionSubtitle: "Join our community of artists and start your journey in traditional Mithila arts.",
             formFullName: "Full Name *",
+            formFathersName: "Father's Name *",
+            formMothersName: "Mother's Name *",
+            formAadhaar: "Aadhaar Card No. *",
             formAge: "Age *",
+            formGender: "Gender *",
+            formMale: "Male",
+            formFemale: "Female",
+            formOther: "Other",
             formPhone: "Phone Number *",
             formCourse: "Interested Course *",
             formSelectCourse: "Select a course",
             formCourseMithila: "Mithila Painting",
-            formCourseSewing: "Stitching & Embroidery",
+            formCourseSewing: "Cutting & Stitching",
             formAddress: "Full Address *",
+            formDistrict: "District *",
+            formState: "State *",
             formExperience: "Previous Experience (Optional)",
             formTerms: "I agree to the terms and conditions and confirm that all information provided is accurate. *",
             formSubmitBtn: "Submit Application",
             admissionProcessTitle: "Admission Process",
-            admissionProcess1: "Apply online or meet us at our office.",
-            admissionProcess2: "Aadhar card is mandatory for admission.",
-            admissionProcess3: "Receive course materials upon selection.",
+            admissionProcess1: "Apply online by filling out the form or visit our office.",
+            admissionProcess2: "A photocopy of Aadhaar card and one passport-size photo are mandatory.",
+            admissionProcess3: "Seats are limited and are offered on a first-come, first-served basis.",
             admissionProcess4: "Start your artistic journey!",
-            admissionBatchTitle: "Next Batch Starts",
-            admissionBatchDate: "Date & Time will be updated soon.",
-            admissionBatchInfo: "Stay tuned for announcements!",
+            admissionBatchTitle: "Batch Information",
+            admissionBatchCurrent: "Upcoming Batch",
+            admissionBatchUpcoming: "Current Batch",
+            batch1Details: "Mithila Painting (Starts on 1st Oct 2025)",
+            batch2Details: "Cutting & Stitching (Started on 1st Sep 2025)",
             modalTermsTitle: "Terms and Conditions",
             modalTerm1Title: "1. Eligibility",
             modalTerm1Desc: "All courses are open to women and girls from our target communities. There is no minimum educational qualification required.",
@@ -122,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modalTerm5Desc: "Students are expected to maintain a respectful and collaborative environment. Any form of indiscipline may result in discontinuation from the course.",
             modalTerm6Title: "6. Certification",
             modalTerm6Desc: "A certificate of completion will be awarded upon successful completion of the course, including any final projects or assessments.",
-            
+
             // Contact Page (contact.html)
             contactTitle: "Contact Us",
             contactSubtitle: "Get in touch with us to learn more about our courses or to support our mission.",
@@ -140,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage: "Message *",
             formSendBtn: "Send Message",
             contactFindUs: "Find Us",
-            
+
             // Join Us Page (join.html)
             joinTitle: "Join Our Mission",
             joinSubtitle: "Become a volunteer and help us preserve traditional arts while empowering women in our community. Together, we can make a lasting impact.",
@@ -159,29 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
             joinApplication: "Volunteer Application",
             formCity: "City *",
             formSkills: "Skills & Interests *",
-            
-            // Donate Page (donate.html)
-            donateTitle: "Support Our Mission",
-            donateSubtitle: "Your generous donations help us preserve traditional arts and empower women in our community. Every contribution makes a difference.",
-            donateWays: "Ways to Donate",
-            donateChooseAmount: "Choose Donation Amount",
-            donateCustom: "Custom",
-            donateSelected: "Selected Amount:",
-            donatePaymentMethods: "Payment Methods",
-            donateUpi: "UPI Payment",
-            donateShowDetails: "Show Details",
-            donateUpiDesc: "Scan the QR code or use the UPI ID below.",
-            donateBank: "Bank Transfer",
-            donateNowBtn: "Donate Now",
-            donateImpact: "Your Impact",
-            donateImpact1Title: "₹500 Donation",
-            donateImpact1Desc: "Provides art materials for one student for a month.",
-            donateImpact2Title: "₹2,500 Donation",
-            donateImpact2Desc: "Sponsors one student's complete course fee.",
-            donateImpact3Title: "₹10,000 Donation",
-            donateImpact3Desc: "Helps purchase new equipment and tools for the workshop.",
-            donateTax: "Tax Benefits",
-            donateTaxDesc: "Donations to Mithila KritiKala Foundation are eligible for tax deduction under Section 80G of the Income Tax Act. You will receive a tax receipt for your donation."
 
         },
         hi: {
@@ -190,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navHome: "होम",
             navAbout: "हमारे बारे में",
             navCourses: "कोर्स",
+            navGallery: "गैलरी",
             navAdmission: "एडमिशन",
             navContact: "संपर्क",
             navJoin: "हमसे जुड़ें",
@@ -202,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerHome: "होम",
             footerAbout: "हमारे बारे में",
             footerCourses: "कोर्स",
+            footerGallery: "गैलरी",
             footerContact: "संपर्क",
             footerJoin: "हमसे जुड़ें",
             footerDonate: "दान करें",
@@ -219,6 +229,23 @@ document.addEventListener('DOMContentLoaded', () => {
             vision2Desc: "कला शिक्षा के माध्यम से ग्रामीण बिहार में महिलाओं और लड़कियों को आर्थिक अवसर और कौशल विकास प्रदान करना।",
             vision3Title: "समुदाय का निर्माण",
             vision3Desc: "एक सहायक समुदाय बनाना जहां पारंपरिक कलाएं फलती-फूलती हैं और महिलाएं एक-दूसरे के विकास का समर्थन करती हैं।",
+            announcement1: "मिथिला पेंटिंग के लिए एडमिशन शुरू हो गया है और 7 अक्टूबर को बंद हो जाएगा।",
+            announcement2: "कटिंग और सिलाई के लिए एडमिशन 15 सितंबर को बंद हो गया।",
+            viewMoreBtn: "और देखें",
+            coursesPreviewTitle: "हमारे कोर्स",
+            coursePreviewPaintingTitle: "मिथिला पेंटिंग",
+            coursePreviewPaintingDesc: "पारंपरिक तकनीकों और प्राकृतिक रंगों के साथ मिथिला की प्राचीन कला सीखें।",
+            coursePreviewPaintingMsg: "एडमिशन शुरू",
+            coursePreviewStitchingTitle: "कटिंग और सिलाई",
+            coursePreviewStitchingDesc: "सुंदर वस्त्र और परिधान बनाने के लिए पारंपरिक कटिंग और सिलाई में महारत हासिल करें।",
+            coursePreviewStitchingMsg: "एडमिशन बंद",
+            viewCourseDetailsBtn: "कोर्स विवरण देखें",
+            galleryPreviewTitle: "हमारे काम की एक झलक",
+            viewFullGalleryBtn: "पूरी गैलरी देखें",
+
+            // Gallery Page (gallery.html)
+            galleryTitle: "हमारी गैलरी",
+            gallerySubtitle: "हमारी कक्षाओं, कार्यशालाओं और हमारे प्रतिभाशाली छात्रों द्वारा बनाई गई सुंदर कला के क्षणों का एक संग्रह।",
 
             // About Page (about.html)
             aboutTitle: "हमारे बारे में",
@@ -248,48 +275,60 @@ document.addEventListener('DOMContentLoaded', () => {
             course1Classes: "कक्षाएं: सोम से शुक्र",
             course1Cert: "प्रमाणपत्र प्रदान किया गया",
             course1Learn1: "पारंपरिक रूपांकन और पैटर्न",
-            course1Learn2: "प्राकृतिक रंग तैयार करना",
             course1Learn3: "कैनवास और दीवार पेंटिंग",
             instructorLabel: "प्रशिक्षक:",
             courseFeeFree: "निःशुल्क",
-            course2Title: "सिलाई और कढ़ाई",
-            course2Desc: "पारंपरिक सिलाई तकनीक और कढ़ाई पैटर्न में महारत हासिल करें जो कपड़ों और घरेलू वस्त्रों में सुंदर विवरण जोड़ते हैं।",
+            course2Title: "कटिंग और सिलाई",
+            course2Desc: "कपड़ों और घरेलू वस्त्रों के लिए सुंदर विवरण बनाने के लिए पारंपरिक कटिंग और सिलाई तकनीकों में महारत हासिल करें।",
             course2Duration: "अवधि: 3 महीने",
             course2Classes: "कक्षाएं: सोम से शुक्र",
             course2Cert: "प्रमाणपत्र प्रदान किया गया",
             course2Learn1: "बुनियादी और उन्नत टांके",
             course2Learn2: "परिधान निर्माण",
             course2Learn3: "गुणवत्तापूर्ण फिनिशिंग तकनीक",
+            applyNowBtn: "अभी आवेदन करें",
+            admissionClosed: "एडमिशन बंद",
             benefitsTitle: "कोर्स के लाभ और सहायता",
-            benefit1Title: "सभी सामग्री प्रदान की गई",
-            benefit1Desc: "कैनवास, ब्रश, रंग, कपड़े और सभी आवश्यक सामग्री मुफ्त प्रदान की जाती है।",
+            benefitCertTitle: "प्रमाणपत्र प्रदान किया जाएगा",
+            benefitCertDesc: "पाठ्यक्रम के सफल समापन पर एक आधिकारिक प्रमाण पत्र प्राप्त करें, जो आपके नए कौशल को मान्यता देगा।",
             benefit2Title: "कोर्स के बाद सहायता",
             benefit2Desc: "आपकी कलाकृति और कृतियों को बेचने में मदद के लिए विपणन सहायता और ऑर्डर कनेक्शन।",
             benefit3Title: "लचीली शिक्षा",
             benefit3Desc: "विभिन्न कार्यक्रमों को समायोजित करने के लिए सुबह और शाम के बैच उपलब्ध हैं।",
-            
+
             // Admission Page (admission.html)
             admissionTitle: "एडमिशन फॉर्म",
             admissionSubtitle: "हमारे कलाकारों के समुदाय में शामिल हों और पारंपरिक मिथिला कला में अपनी यात्रा शुरू करें।",
             formFullName: "पूरा नाम *",
+            formFathersName: "पिता का नाम *",
+            formMothersName: "माता का नाम *",
+            formAadhaar: "आधार कार्ड नंबर *",
             formAge: "आयु *",
+            formGender: "लिंग *",
+            formMale: "पुरुष",
+            formFemale: "महिला",
+            formOther: "अन्य",
             formPhone: "फ़ोन नंबर *",
             formCourse: "इच्छुक कोर्स *",
             formSelectCourse: "एक कोर्स चुनें",
             formCourseMithila: "मिथिला पेंटिंग",
-            formCourseSewing: "सिलाई और कढ़ाई",
+            formCourseSewing: "कटिंग और सिलाई",
             formAddress: "पूरा पता *",
+            formDistrict: "जिला *",
+            formState: "राज्य *",
             formExperience: "पिछला अनुभव (वैकल्पिक)",
             formTerms: "मैं नियमों और शर्तों से सहमत हूं और पुष्टि करता हूं कि प्रदान की गई सभी जानकारी सटीक है। *",
             formSubmitBtn: "आवेदन जमा करें",
             admissionProcessTitle: "एडमिशन प्रक्रिया",
-            admissionProcess1: "ऑनलाइन आवेदन करें या हमारे कार्यालय में मिलें।",
-            admissionProcess2: "एडमिशन के लिए आधार कार्ड अनिवार्य है।",
-            admissionProcess3: "चयन होने पर पाठ्यक्रम सामग्री प्राप्त करें।",
+            admissionProcess1: "फॉर्म भरकर ऑनलाइन आवेदन करें या हमारे कार्यालय में आएं।",
+            admissionProcess2: "आधार कार्ड की फोटोकॉपी और एक पासपोर्ट साइज फोटो अनिवार्य है।",
+            admissionProcess3: "सीटें सीमित हैं और पहले आओ, पहले पाओ के आधार पर दी जाती हैं।",
             admissionProcess4: "अपनी कलात्मक यात्रा शुरू करें!",
-            admissionBatchTitle: "अगला बैच शुरू",
-            admissionBatchDate: "तारीख और समय जल्द ही अपडेट किया जाएगा।",
-            admissionBatchInfo: "घोषणाओं के लिए बने रहें!",
+            admissionBatchTitle: "बैच की जानकारी",
+            admissionBatchCurrent: "आगामी बैच",
+            admissionBatchUpcoming: "वर्तमान बैच",
+            batch1Details: "मिथिला पेंटिंग (1 अक्टूबर 2025 से शुरू)",
+            batch2Details: "कटिंग और सिलाई (1 सितंबर 2025 से शुरू)",
             modalTermsTitle: "नियम एवं शर्तें",
             modalTerm1Title: "1. पात्रता",
             modalTerm1Desc: "सभी पाठ्यक्रम हमारे लक्षित समुदायों की महिलाओं और लड़कियों के लिए खुले हैं। कोई न्यूनतम शैक्षणिक योग्यता की आवश्यकता नहीं है।",
@@ -341,33 +380,10 @@ document.addEventListener('DOMContentLoaded', () => {
             formCity: "शहर *",
             formSkills: "कौशल और रुचियां *",
 
-            // Donate Page (donate.html)
-            donateTitle: "हमारे मिशन का समर्थन करें",
-            donateSubtitle: "आपका उदार दान हमें पारंपरिक कलाओं को संरक्षित करने और हमारे समुदाय में महिलाओं को सशक्त बनाने में मदद करता है। हर योगदान से फर्क पड़ता है।",
-            donateWays: "दान करने के तरीके",
-            donateChooseAmount: "दान राशि चुनें",
-            donateCustom: "अन्य राशि",
-            donateSelected: "चयनित राशि:",
-            donatePaymentMethods: "भुगतान के तरीके",
-            donateUpi: "यूपीआई भुगतान",
-            donateShowDetails: "विवरण देखें",
-            donateUpiDesc: "क्यूआर कोड को स्कैन करें या नीचे दी गई यूपीआई आईडी का उपयोग करें।",
-            donateBank: "बैंक ट्रांसफर",
-            donateNowBtn: "अभी दान करें",
-            donateImpact: "आपका प्रभाव",
-            donateImpact1Title: "₹500 का दान",
-            donateImpact1Desc: "एक छात्र के लिए एक महीने की कला सामग्री प्रदान करता है।",
-            donateImpact2Title: "₹2,500 का दान",
-            donateImpact2Desc: "एक छात्र की पूरी कोर्स फीस प्रायोजित करता है।",
-            donateImpact3Title: "₹10,000 का दान",
-            donateImpact3Desc: "कार्यशाला के लिए नए उपकरण और औजार खरीदने में मदद करता है।",
-            donateTax: "कर लाभ",
-            donateTaxDesc: "मिथिला कृतिकला फाउंडेशन को दिए गए दान आयकर अधिनियम की धारा 80जी के तहत कर कटौती के लिए पात्र हैं। आपको अपने दान के लिए कर रसीद प्राप्त होगी।"
         }
     };
 
     const languageToggle = document.getElementById('language-toggle');
-
     const setLanguage = (language) => {
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.getAttribute('data-key');
@@ -390,9 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (languageToggle) {
         languageToggle.checked = savedLanguage === 'hi';
     }
-    setLanguage(savedLanguage);
-    
-    // === BAAKI KA CODE NEECHE HAI ===
+
+    // setLanguage(savedLanguage);
 
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -402,7 +417,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             event.stopPropagation();
         });
-
         document.addEventListener('click', (event) => {
             const isClickInsideNav = navLinks.contains(event.target);
             const isClickOnHamburger = hamburger.contains(event.target);
@@ -423,18 +437,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const sections = document.querySelectorAll('.fade-in-section, .vision-section');
-
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.15
     };
-
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                entry.target.classList.add('in-view'); 
+                entry.target.classList.add('visible', 'in-view');
                 observer.unobserve(entry.target);
             }
         });
@@ -453,70 +464,24 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             modalOverlay.classList.add('visible');
         });
-
         closeButton.addEventListener('click', () => {
             modalOverlay.classList.remove('visible');
         });
-
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
                 modalOverlay.classList.remove('visible');
             }
         });
     }
-    
-    const paymentToggles = document.querySelectorAll('.toggle-details');
-    paymentToggles.forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const detailsPanel = toggle.parentElement.nextElementSibling;
-            const isVisible = detailsPanel.style.display === 'block';
-            
-            detailsPanel.style.display = isVisible ? 'none' : 'block';
-            toggle.textContent = isVisible ? 'Show Details' : 'Hide Details';
-        });
-    });
-
-    const amountContainer = document.querySelector('.amount-buttons');
-    const selectedAmountDisplay = document.querySelector('.selected-amount strong');
-    const customAmountInput = document.getElementById('custom-amount-input');
-    const customAmountWrapper = document.getElementById('custom-amount-wrapper');
-
-    if (amountContainer && selectedAmountDisplay && customAmountInput && customAmountWrapper) {
-        const amountButtons = amountContainer.querySelectorAll('.amount-btn');
-
-        amountButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                amountButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                if (button.classList.contains('custom')) {
-                    customAmountWrapper.style.display = 'block';
-                    customAmountInput.focus();
-                    selectedAmountDisplay.textContent = `₹${customAmountInput.value || 0}`;
-                } else {
-                    customAmountWrapper.style.display = 'none';
-                    const amount = button.textContent.replace('₹', '');
-                    selectedAmountDisplay.textContent = `₹${amount}`;
-                }
-            });
-        });
-
-        customAmountInput.addEventListener('input', () => {
-            const amount = customAmountInput.value || 0;
-            selectedAmountDisplay.textContent = `₹${amount}`;
-        });
-    }
 });
 
-// PRELOADER KO HATANE KA CODE
 window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  if (preloader) {
-    preloader.style.opacity = '0';
-    preloader.style.visibility = 'hidden';
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 500);
-  }
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
 });

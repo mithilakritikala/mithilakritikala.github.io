@@ -29,6 +29,7 @@
                     <li><a href="index.html" data-key="navHome">Home</a></li>
                     <li><a href="about.html" data-key="navAbout">About Us</a></li>
                     <li><a href="courses.html" data-key="navCourses">Courses</a></li>
+                    <li><a href="gallery.html" data-key="navGallery">Gallery</a></li>
                     <li><a href="admission.html" data-key="navAdmission">Admission</a></li>
                     <li><a href="contact.html" data-key="navContact">Contact</a></li>
                     <li><a href="join.html" data-key="navJoin">Join Us</a></li>
@@ -127,11 +128,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="email" data-key="formEmail">Email Address *</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="name@example.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone" data-key="formPhone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                                <input type="tel" id="phone" name="phone" class="form-control" pattern="[6-9][0-9]{9}"
+                                    title="Please enter a valid 10-digit Indian mobile number." placeholder="9876543210"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="city" data-key="formCity">City *</label>
@@ -176,6 +180,11 @@
                                     class="fab fa-x-twitter"></i></a>
                             <span class="tooltip">X</span>
                         </div>
+                        <div class="social-icon-wrapper">
+                            <a href="https://www.linkedin.com/company/mithila-kritikala/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <span class="tooltip">LinkedIn</span>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -184,6 +193,7 @@
                         <li><a href="index.html" data-key="footerHome">Home</a></li>
                         <li><a href="about.html" data-key="footerAbout">About Us</a></li>
                         <li><a href="courses.html" data-key="footerCourses">Courses</a></li>
+                        <li><a href="gallery.html" data-key="footerGallery">Gallery</a></li>
                         <li><a href="contact.html" data-key="footerContact">Contact</a></li>
                         <li><a href="join.html" data-key="footerJoin">Join Us</a></li>
                         <li><a href="donate.html" data-key="footerDonate">Donate</a></li>

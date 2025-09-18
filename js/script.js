@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     };
-
+    
     const languageToggle = document.getElementById('language-toggle');
     const setLanguage = (language) => {
         document.querySelectorAll('[data-key]').forEach(element => {
@@ -406,9 +406,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (languageToggle) {
         languageToggle.checked = savedLanguage === 'hi';
     }
-
-    // setLanguage(savedLanguage);
-
+    
+    // **FIXED:** Language is now set on page load
+    setLanguage(savedLanguage);
+    
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -435,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
-
+    
     const sections = document.querySelectorAll('.fade-in-section, .vision-section');
     const observerOptions = {
         root: null,
@@ -454,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-
+    
     const modalOverlay = document.getElementById('terms-modal');
     const termsLink = document.getElementById('terms-link');
     const closeButton = document.querySelector('.close-button');
@@ -473,13 +474,103 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // === NEW: GALLERY MODAL CODE START ===
+    const galleryImages = document.querySelectorAll('.gallery-image-wrapper');
+    const modal = document.getElementById('gallery-modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+
+    if (modal && galleryImages.length > 0) {
+        galleryImages.forEach(imageWrapper => {
+            imageWrapper.addEventListener('click', () => {
+                const imgSrc = imageWrapper.querySelector('img').src;
+                modalImage.src = imgSrc;
+                modal.classList.add('visible');
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('visible');
+        };
+
+        if(closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+    // === NEW: GALLERY MODAL CODE END ===
+
+    // === NEW: DONATE PAGE SCRIPT START ===
+    if (document.querySelector('.donation-main')) {
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        const selectedAmountDisplay = document.querySelector('.selected-amount strong');
+        const customAmountWrapper = document.getElementById('custom-amount-wrapper');
+        const customAmountInput = document.getElementById('custom-amount-input');
+
+        if (amountButtons.length > 0 && selectedAmountDisplay) {
+            amountButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    amountButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    if (button.classList.contains('custom')) {
+                        customAmountWrapper.style.display = 'block';
+                        customAmountInput.focus();
+                        selectedAmountDisplay.innerText = `₹${customAmountInput.value || 0}`;
+                    } else {
+                        customAmountWrapper.style.display = 'none';
+                        customAmountInput.value = '';
+                        const amount = button.innerText.replace('₹', '').replace(',', '');
+                        selectedAmountDisplay.innerText = `₹${amount}`;
+                    }
+                });
+            });
+        }
+
+        if (customAmountInput) {
+            customAmountInput.addEventListener('input', () => {
+                const amount = customAmountInput.value || 0;
+                if(selectedAmountDisplay) {
+                    selectedAmountDisplay.innerText = `₹${amount}`;
+                }
+            });
+        }
+        
+        // UPI Accordion
+        const paymentMethodHeader = document.querySelector('.payment-method-header');
+        const paymentMethodDetails = document.getElementById('upi-details');
+        
+        if(paymentMethodHeader && paymentMethodDetails) {
+            paymentMethodHeader.addEventListener('click', () => {
+                paymentMethodHeader.classList.toggle('active');
+                const icon = paymentMethodHeader.querySelector('.fas');
+                
+                if (paymentMethodDetails.style.display === "block") {
+                    paymentMethodDetails.style.display = "none";
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    paymentMethodDetails.style.display = "block";
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        }
+    }
+    // === NEW: DONATE PAGE SCRIPT END ===
+
 });
 
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.style.opacity = '0';
-        preloader.style.visibility = 'hidden';
         setTimeout(() => {
             preloader.style.display = 'none';
         }, 500);

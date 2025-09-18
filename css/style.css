@@ -51,7 +51,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.5s ease;
     visibility: visible;
 }
 
@@ -156,25 +156,25 @@ section {
     font-family: var(--font-primary);
     text-align: center;
     transition: all 0.3s ease;
-    border: none;
+    border: 2px solid transparent;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary {
     background-image: linear-gradient(45deg, #a11a21 0%, #d9232d 100%);
     color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
     background-image: linear-gradient(45deg, #d9232d 0%, #a11a21 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-a.btn-primary:hover {
     color: white;
 }
 
@@ -185,21 +185,17 @@ a.btn-primary:hover {
 
 .btn-secondary:hover {
     background-color: #f9a01b;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 2px solid var(--primary-color);
+    border-color: var(--primary-color);
     color: var(--primary-color);
-    font-weight: 700;
 }
 
 .btn-outline:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(217, 35, 45, 0.2);
 }
 
@@ -428,8 +424,24 @@ main {
 
 /* --- Home Page Styles --- */
 .hero {
-    background-color: var(--bg-grey);
-    padding: 80px 0;
+    padding: 100px 0;
+    position: relative;
+    color: white;
+    background: url('../photos/Work In action.jpg') no-repeat center center/cover;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
@@ -442,11 +454,13 @@ main {
 .hero-text h1 {
     font-size: 3.5rem;
     line-height: 1.2;
+    color: white;
 }
 
 .hero-text p {
     font-size: 1.1rem;
     margin: 1.5rem 0 2rem;
+    color: #f1f1f1;
 }
 
 .hero-image img {
@@ -576,7 +590,7 @@ main {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 30px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     position: relative;
@@ -587,6 +601,7 @@ main {
 .course-card-new:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transform: translateY(-8px);
+    border-color: var(--primary-color);
 }
 
 .course-image img {
@@ -752,7 +767,7 @@ main {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin: 1rem 0;
+    margin: 1rem 0 0;
 }
 
 /* --- Contact Page Styles --- */
@@ -854,7 +869,6 @@ main {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     height: 250px;
-    /* Sabhi photos ke liye ek fixed height */
 }
 
 .gallery-image-wrapper img {
@@ -895,7 +909,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -910,7 +924,8 @@ main {
     visibility: visible;
 }
 
-.modal {
+/* Admission Terms Modal */
+.modal-overlay .modal {
     background: white;
     padding: 2rem;
     border-radius: 12px;
@@ -921,7 +936,6 @@ main {
     transform: scale(0.9);
     transition: transform 0.3s ease;
 }
-
 .modal-overlay.visible .modal {
     transform: scale(1);
 }
@@ -939,25 +953,47 @@ main {
     text-align: left;
 }
 
-.close-button {
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    cursor: pointer;
-    color: var(--text-light);
-}
-
 .modal-body h4 {
     margin-top: 1.5rem;
     font-family: var(--font-primary);
     font-weight: 600;
 }
 
+/* Gallery Image Modal */
+.modal-overlay .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+.modal-overlay .modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+.modal-overlay .close-button {
+    position: absolute;
+    top: -15px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+}
+.modal-overlay .close-button:hover {
+    transform: scale(1.1);
+}
+
 /* --- Footer --- */
 .site-footer {
     background-color: var(--dark-blue);
     color: #f1f1f1;
-    padding: 40px 0 20px;
+    padding: 60px 0 20px;
+    position: relative;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(90deg, var(--secondary-color), var(--primary-color)) 1;
 }
 
 .footer-grid {
@@ -981,16 +1017,10 @@ main {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-    transition: width 0.3s ease;
-}
-
-.footer-col:hover h4::after {
-    width: 100%;
+    background: var(--primary-color);
 }
 
 .footer-col p {
@@ -1005,15 +1035,14 @@ main {
 
 .social-icon-wrapper {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .social-icon-wrapper .tooltip {
     position: absolute;
-    top: 120%;
-    background-color: #333;
+    bottom: 125%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
@@ -1021,13 +1050,13 @@ main {
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
 }
 
 .social-icon-wrapper:hover .tooltip {
     opacity: 1;
     visibility: visible;
-    top: 130%;
+    bottom: 140%;
 }
 
 .footer-socials a {
@@ -1044,7 +1073,7 @@ main {
 }
 
 .footer-socials a:hover {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     transform: translateY(-3px);
 }
 
@@ -1255,9 +1284,20 @@ main {
     .course-card-new,
     .info-grid,
     .contact-grid,
-    .donate-grid,
     .vision-section .grid {
         grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        background-attachment: fixed;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-image {
+        display: none;
     }
 
     .hero-text h1 {
@@ -1277,9 +1317,9 @@ main {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
+    
     .gallery-main-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1312,25 +1352,222 @@ main {
         font-size: 2.2rem;
     }
 
-    .amount-buttons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .announcement-banner a.announcement-link {
         font-size: 0.95rem;
     }
 
-    .gallery-grid {
+    .gallery-grid, .gallery-main-grid {
         grid-template-columns: 1fr;
     }
-
-    .gallery-main-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 180px;
-    }
-
+    
     .gallery-image-wrapper.wide,
     .gallery-image-wrapper.big {
-        grid-column: span 2;
+        grid-column: span 1;
+    }
+}
+
+/* --- Donate Page Styles --- */
+.donate-hero {
+    background: linear-gradient(rgba(33, 47, 60, 0.7), rgba(33, 47, 60, 0.7)), url('../photos/gallery3.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.donate-hero h1 {
+    color: white;
+    font-size: 3.5rem;
+}
+
+.donation-main {
+    padding: 80px 0;
+}
+
+.donation-panel {
+    max-width: 900px; /* Increased width for two columns */
+    margin: 0 auto;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+/* === NEW: Styles for Donate Page Layout === */
+.donation-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .donation-layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* === END of new styles === */
+
+
+.donation-col-left h3, .donation-col-right h3 {
+    text-align: left;
+    font-family: var(--font-primary);
+    font-weight: 600;
+}
+
+.bank-details-box {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    background-color: #f8f9fa;
+}
+
+.bank-details-box p {
+    margin-bottom: 1rem;
+}
+.bank-details-box p:last-child {
+    margin-bottom: 0;
+}
+
+.donation-box {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.amount-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.amount-btn {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.amount-btn:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-color);
+}
+
+.amount-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.custom-amount-wrapper {
+    display: none; /* Hidden by default */
+    margin-bottom: 1.5rem;
+}
+
+.selected-amount {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--text-dark);
+}
+
+.payment-methods {
+    margin-top: 1rem;
+}
+
+.payment-method {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.payment-method-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    font-weight: 600;
+    cursor: pointer;
+}
+.payment-method-header:hover {
+    background-color: #e9ecef;
+}
+
+.payment-method-header span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-method-header .fas {
+    transition: transform 0.3s ease;
+}
+
+.payment-method-header.active .fas {
+    transform: rotate(180deg);
+}
+
+.payment-method-details {
+    padding: 1.5rem;
+    background: #fff;
+    display: none; /* Hidden by default */
+}
+
+.payment-method-details p {
+    margin-bottom: 0.75rem;
+}
+
+/* --- Impact Section --- */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.impact-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.impact-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+.impact-icon.yellow { background-color: var(--secondary-color); }
+.impact-icon.red { background-color: var(--primary-color); }
+
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 576px) {
+    .amount-buttons {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

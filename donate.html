@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate | Mithila KritiKala</title>
+    <title>Donate | Mithila KritiKala Foundation</title>
     <link rel="icon" type="image/png" href="photos/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
-
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    <div id="preloader"><div class="loader"></div></div>
 
     <header class="site-header">
         <div class="container header-container">
@@ -55,27 +50,89 @@
             </div>
         </div>
     </header>
-
     <main>
-        <div
-            style="display: flex; justify-content: center; align-items: center; min-height: 60vh; padding: 40px 20px; background-color: #f8f9fa;">
-            <div
-                style="background-color: #ffffff; padding: 50px; border-radius: 12px; text-align: center; max-width: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-
-                <i class="fas fa-cogs" style="font-size: 3rem; color: #d9232d; margin-bottom: 20px;"></i>
-
-                <h2
-                    style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #333; margin-bottom: 1rem;">
-                    Work in Progress
-                </h2>
-
-                <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #555; line-height: 1.7;">
-                    We are currently setting up our bank account and payment gateway to accept online donations. This
-                    page will be functional very soon. Thank you for your patience and support!
-                </p>
-
+        <section class="donate-hero fade-in-section">
+            <div class="container">
+                <h1 data-key="donateTitle">Empower a Woman, Uplift a Community</h1>
+                <p data-key="donateSubtitle">Your contribution directly provides training and materials to women in Madhubani, helping them build a sustainable livelihood through their art.</p>
             </div>
-        </div>
+        </section>
+
+        <section class="donation-main">
+            <div class="container">
+                <div class="donation-panel fade-in-section">
+                    <div class="donation-layout-grid">
+                        <div class="donation-col-left">
+                            <h3 data-key="donateBank">Direct Bank Transfer</h3>
+                            <div class="bank-details-box">
+                                <p><strong>Account Name:</strong><br> Mithila KritiKala</p>
+                                <p><strong>Account Number:</strong><br> 5862502061</p>
+                                <p><strong>Bank:</strong><br> Central Bank Of India</p>
+                                <p><strong>IFSC Code:</strong><br> CBIN0284984</p>
+                            </div>
+                        </div>
+
+                        <div class="donation-col-right">
+                            <h3 data-key="donateWays">Choose an Amount</h3>
+                            <div class="donation-box">
+                                <div class="amount-buttons">
+                                    <button class="amount-btn">₹500</button>
+                                    <button class="amount-btn">₹1,000</button>
+                                    <button class="amount-btn">₹2,500</button>
+                                    <button class="amount-btn">₹5,000</button>
+                                    <button class="amount-btn">₹10,000</button>
+                                    <button class="amount-btn custom" data-key="donateCustom">Custom</button>
+                                </div>
+                                <div class="custom-amount-wrapper" id="custom-amount-wrapper">
+                                    <input type="number" id="custom-amount-input" class="form-control" placeholder="Enter Amount (INR)">
+                                </div>
+                                <p class="selected-amount"><span data-key="donateSelected">Selected Amount:</span> <strong>₹0</strong></p>
+                            </div>
+                            
+                            <h3 style="margin-top: 2rem;" data-key="donateUpi">UPI Payment</h3>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <div class="payment-method-header" data-target="upi-details">
+                                        <span><i class="fa-brands fa-google-pay"></i> <span data-key="donateUpiClick">Scan QR or use UPI ID (Click to Open)</span></span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div id="upi-details" class="payment-method-details">
+                                        <p data-key="donateUpiDesc">Scan the QR code or use the UPI ID below.</p>
+                                        <img src="photos/qr.png" alt="UPI QR Code" style="margin: 1rem auto; display: block; max-width: 150px; border-radius: 8px;">
+                                        <p style="text-align: center;"><strong>UPI ID:</strong> 7903120432@ybl</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-section" style="background-color: var(--bg-grey);">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-key="donateImpact">Your Impact</h2>
+                </div>
+                <div class="impact-grid">
+                    <div class="impact-card fade-in-section">
+                        <div class="impact-icon yellow"><i class="fas fa-paint-brush"></i></div>
+                        <h4 data-key="donateImpact1Title">₹500 Donation</h4>
+                        <p data-key="donateImpact1Desc">Provides art materials for one student for a month.</p>
+                    </div>
+                    <div class="impact-card fade-in-section">
+                        <div class="impact-icon red"><i class="fas fa-graduation-cap"></i></div>
+                        <h4 data-key="donateImpact2Title">₹2,500 Donation</h4>
+                        <p data-key="donateImpact2Desc">Sponsors one student's complete course materials.</p>
+                    </div>
+                    <div class="impact-card fade-in-section">
+                        <div class="impact-icon yellow"><i class="fas fa-tools"></i></div>
+                        <h4 data-key="donateImpact3Title">₹10,000 Donation</h4>
+                        <p data-key="donateImpact3Desc">Helps purchase new equipment and tools for the workshop.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer fade-in-section">
@@ -146,8 +203,6 @@
             </div>
         </div>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
-
 </html>

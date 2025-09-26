@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div id="preloader">
         <div class="loader"></div>
     </div>
@@ -19,10 +18,8 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html">
-                    <img src="photos/logo.png" alt="Mithila KritiKala Logo">
-                    <span data-key="logoText">Mithila KritiKala</span>
-                </a>
+                <a href="index.html"><img src="photos/logo.png" alt="Mithila KritiKala Logo"> <span
+                        data-key="logoText">Mithila KritiKala</span></a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
@@ -35,17 +32,13 @@
                     <li><a href="join.html" data-key="navJoin">Join Us</a></li>
                     <li class="mobile-donate-link"><a href="donate.html" data-key="navDonateMobile">Donate</a></li>
                 </ul>
-
                 <div class="lang-switch">
                     <label class="switch">
                         <input type="checkbox" id="language-toggle">
-                        <span class="slider round">
-                            <span class="lang-text-en">EN</span>
-                            <span class="lang-text-hi">HI</span>
-                        </span>
+                        <span class="slider round"><span class="lang-text-en">EN</span><span
+                                class="lang-text-hi">HI</span></span>
                     </label>
                 </div>
-
                 <a href="donate.html" class="btn btn-secondary" data-key="navDonate">Donate</a>
             </nav>
             <div class="hamburger">
@@ -67,28 +60,20 @@
 
                 <form action="https://formspree.io/f/mgvzzqqe" method="POST" class="admission-form">
                     <div class="form-grid">
-                        <div class="form-group">
-                            <label for="full-name" data-key="formFullName">Full Name *</label>
-                            <input type="text" id="full-name" name="full-name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="fathers-name" data-key="formFathersName">Father's Name *</label>
-                            <input type="text" id="fathers-name" name="fathers-name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mothers-name" data-key="formMothersName">Mother's Name *</label>
-                            <input type="text" id="mothers-name" name="mothers-name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="aadhaar" data-key="formAadhaar">Aadhaar Card No. *</label>
-                            <input type="text" id="aadhaar" name="aadhaar" class="form-control" pattern="\d{12}"
-                                title="Please enter a 12-digit Aadhaar number without spaces."
-                                placeholder="123456789012" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="age" data-key="formAge">Age *</label>
-                            <input type="number" id="age" name="age" class="form-control" required>
-                        </div>
+                        <div class="form-group"><label for="full-name" data-key="formFullName">Full Name *</label><input
+                                type="text" id="full-name" name="full-name" class="form-control" required></div>
+                        <div class="form-group"><label for="fathers-name" data-key="formFathersName">Father's Name
+                                *</label><input type="text" id="fathers-name" name="fathers-name" class="form-control"
+                                required></div>
+                        <div class="form-group"><label for="mothers-name" data-key="formMothersName">Mother's Name
+                                *</label><input type="text" id="mothers-name" name="mothers-name" class="form-control"
+                                required></div>
+                        <div class="form-group"><label for="aadhaar" data-key="formAadhaar">Aadhaar Card No.
+                                *</label><input type="text" id="aadhaar" name="aadhaar" class="form-control"
+                                pattern="\d{12}" title="Please enter a 12-digit Aadhaar number without spaces."
+                                placeholder="123456789012" required></div>
+                        <div class="form-group"><label for="age" data-key="formAge">Age *</label><input type="number"
+                                id="age" name="age" class="form-control" required></div>
                         <div class="form-group">
                             <label data-key="formGender">Gender *</label>
                             <div style="display: flex; gap: 20px; margin-top: 10px;">
@@ -100,24 +85,17 @@
                                         data-key="formOther">Other</span></label>
                             </div>
                         </div>
-                        <div class="form-group full-width">
-                            <label for="address" data-key="formAddress">Full Address *</label>
-                            <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="district" data-key="formDistrict">District *</label>
-                            <input type="text" id="district" name="district" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="state" data-key="formState">State *</label>
-                            <input type="text" id="state" name="state" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" data-key="formPhone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" pattern="[6-9][0-9]{9}"
+                        <div class="form-group full-width"><label for="address" data-key="formAddress">Full Address
+                                *</label><textarea id="address" name="address" class="form-control" rows="3"
+                                required></textarea></div>
+                        <div class="form-group"><label for="district" data-key="formDistrict">District *</label><input
+                                type="text" id="district" name="district" class="form-control" required></div>
+                        <div class="form-group"><label for="state" data-key="formState">State *</label><input
+                                type="text" id="state" name="state" class="form-control" required></div>
+                        <div class="form-group"><label for="phone" data-key="formPhone">Phone Number *</label><input
+                                type="tel" id="phone" name="phone" class="form-control" pattern="[6-9][0-9]{9}"
                                 title="Please enter a valid 10-digit Indian mobile number." placeholder="9876543210"
-                                required>
-                        </div>
+                                required></div>
                         <div class="form-group">
                             <label for="course" data-key="formCourse">Interested Course *</label>
                             <select id="course" name="course" class="form-control" required>
@@ -127,20 +105,16 @@
                                 </option>
                             </select>
                         </div>
-                        <div class="form-group full-width">
-                            <label for="experience" data-key="formExperience">Previous Experience (Optional)</label>
-                            <textarea id="experience" name="experience" class="form-control" rows="3"></textarea>
-                        </div>
-
+                        <div class="form-group full-width"><label for="experience" data-key="formExperience">Previous
+                                Experience (Optional)</label><textarea id="experience" name="experience"
+                                class="form-control" rows="3"></textarea></div>
                         <div class="form-group full-width terms-group">
                             <input type="checkbox" id="terms" name="terms_agreed" required>
                             <label for="terms" data-key="formTerms">I agree to the <a href="#" id="terms-link">terms and
                                     conditions</a> and confirm that all information provided is accurate. *</label>
                         </div>
-                        <div class="form-group full-width" style="text-align: center;">
-                            <button type="submit" class="btn btn-primary" data-key="formSubmitBtn">Submit
-                                Application</button>
-                        </div>
+                        <div class="form-group full-width" style="text-align: center;"><button type="submit"
+                                class="btn btn-primary" data-key="formSubmitBtn">Submit Application</button></div>
                     </div>
                 </form>
             </div>
@@ -207,71 +181,51 @@
         </div>
     </div>
 
-    <footer class="site-footer fade-in-section">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 data-key="footerTitle">Mithila KritiKala</h4>
-                    <p data-key="footerDesc">Dedicated to preserving the beautiful art traditions of Mithila while
-                        empowering women and girls in Madhubani, Bihar through traditional art education and skill
-                        development.</p>
-                    <div class="footer-socials">
-                        <div class="social-icon-wrapper">
-                            <a href="https://www.facebook.com/profile.php?id=61578616140715" target="_blank"
-                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <span class="tooltip">Facebook</span>
-                        </div>
-                        <div class="social-icon-wrapper">
-                            <a href="https://www.instagram.com/mithilakritikala/" target="_blank"
-                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <span class="tooltip">Instagram</span>
-                        </div>
-                        <div class="social-icon-wrapper">
-                            <a href="https://x.com/m_kritikala" target="_blank" aria-label="X"><i
-                                    class="fab fa-x-twitter"></i></a>
-                            <span class="tooltip">X</span>
-                        </div>
-                        <div class="social-icon-wrapper">
-                            <a href="https://www.linkedin.com/company/mithila-kritikala/" target="_blank"
-                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <span class="tooltip">LinkedIn</span>
-                        </div>
+                    <h3 class="footer-logo-title">Mithila Kritikala</h3>
+                    <p class="footer-desc">Empowering women through the art of Mithila painting and sewing, preserving
+                        cultural heritage.</p>
+                    <div class="footer-contact-info">
+                        <h4 class="footer-title">Contact Us</h4>
+                        <p><i class="fas fa-envelope"></i> <a
+                                href="mailto:mithilakritikala@gmail.com">mithilakritikala@gmail.com</a></p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+917903120432">+91 7903120432</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kataiya Road Benipatti, Madhubani, Bihar</p>
                     </div>
                 </div>
+
                 <div class="footer-col">
-                    <h4 data-key="quickLinksTitle">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html" data-key="footerHome">Home</a></li>
-                        <li><a href="about.html" data-key="footerAbout">About Us</a></li>
-                        <li><a href="courses.html" data-key="footerCourses">Courses</a></li>
-                        <li><a href="gallery.html" data-key="footerGallery">Gallery</a></li>
-                        <li><a href="contact.html" data-key="footerContact">Contact</a></li>
-                        <li><a href="join.html" data-key="footerJoin">Join Us</a></li>
-                        <li><a href="donate.html" data-key="footerDonate">Donate</a></li>
-                    </ul>
+                    <h4 class="footer-title">Make a Difference</h4>
+                    <p>Your small contribution will make a big difference in the lives of rural women. Support our
+                        mission to empower them.</p>
+                    <a href="donate.html" class="btn btn-primary footer-donate-btn">Donate Now</a>
                 </div>
+
                 <div class="footer-col">
-                    <h4 data-key="contactInfoTitle">Contact Info</h4>
-                    <ul class="footer-links footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-key="footerAddress">Kataiya Road Benipatti, Madhubani, BIhar</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+917903120432</span>
-                        </li>
-                        <li>
-                            <a href="mailto:mithilakritikala@gmail.com">
-                                <i class="fas fa-envelope"></i>
-                                <span>mithilakritikala@gmail.com</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <h4 class="footer-title">Connect with us</h4>
+                    <p>Follow us on social media for updates!</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61578616140715" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/mithilakritikala/" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/m_kritikala" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/mithila-kritikala/" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span data-key="footerRights">© 2025 Mithila KritiKala . All rights reserved.</span>
+
+            <div class="footer-secondary-bottom">
+                <div class="footer-policy-links">
+                    <a href="policies/privacy-policy.html">Privacy Policy</a>
+                    <a href="policies/refund-policy.html">Refund Policy</a>
+                    <a href="policies/payment-terms.html">Payment Terms</a>
+                </div>
+                <p class="copyright-text">&copy; 2025 Mithila Kritikala. All rights reserved.</p>
             </div>
         </div>
     </footer>

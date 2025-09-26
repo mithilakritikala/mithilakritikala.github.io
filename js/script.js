@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // === LANGUAGE TRANSLATION CODE START ===
+    // === LANGUAGE TRANSLATION LOGIC ===
 
     const translations = {
         en: {
@@ -15,24 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
             navJoin: "Join Us",
             navDonate: "Donate",
             navDonateMobile: "Donate",
-            footerTitle: "Mithila KritiKala",
-            footerDesc: "Dedicated to preserving the beautiful art traditions of Mithila while empowering women and girls in Madhubani, Bihar through traditional art education and skill development.",
-            quickLinksTitle: "Quick Links",
-            contactInfoTitle: "Contact Info",
-            footerHome: "Home",
-            footerAbout: "About Us",
-            footerCourses: "Courses",
-            footerGallery: "Gallery",
-            footerContact: "Contact",
-            footerJoin: "Join Us",
-            footerDonate: "Donate",
-            footerAddress: "Kataiya Road Benipatti, Madhubani, BIhar",
-            footerRights: "© 2025 Mithila KritiKala Foundation. All rights reserved.",
-
+            
             // Home Page (index.html)
             heroTitle: "Art, Skill, & Empowerment for a Brighter Future",
             heroDescription: "We are dedicated to preserving the ancient art of Mithila and empowering rural women with skills for a sustainable livelihood.",
             exploreCoursesBtn: "Explore Courses",
+            announcement1: "Admission for Mithila Painting has started and will close on 7th Oct.",
+            announcement2: "Admission for Cutting & Stitching closed on 15th Sep.",
             visionTitle: "Our Vision",
             vision1Title: "Preserve Tradition",
             vision1Desc: "Keeping the ancient art of Mithila painting alive for future generations through dedicated teaching and practice.",
@@ -40,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             vision2Desc: "Providing economic opportunities and skill development to women and girls in rural Bihar through art education.",
             vision3Title: "Build Community",
             vision3Desc: "Creating a supportive community where traditional arts flourish and women support each other's growth.",
-            announcement1: "Admission for Mithila Painting has started and will close on 7th Oct.",
-            announcement2: "Admission for Cutting & Stitching closed on 15th Sep.",
             viewMoreBtn: "View More",
+            galleryPreviewTitle: "A Glimpse of Our Work",
+            viewFullGalleryBtn: "View Full Gallery",
             coursesPreviewTitle: "Our Courses",
             coursePreviewPaintingTitle: "Mithila Painting",
             coursePreviewPaintingDesc: "Learn the ancient art of Mithila with traditional techniques and natural colors.",
@@ -51,29 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
             coursePreviewStitchingDesc: "Master cutting and stitching to create beautiful garments and textiles.",
             coursePreviewStitchingMsg: "Admissions Closed",
             viewCourseDetailsBtn: "View Course Details",
-            galleryPreviewTitle: "A Glimpse of Our Work",
-            viewFullGalleryBtn: "View Full Gallery",
-
-            // Gallery Page (gallery.html)
-            galleryTitle: "Our Gallery",
-            gallerySubtitle: "A collection of moments from our classes, workshops, and the beautiful art created by our talented students.",
+            getInvolvedTitle: "Get Involved",
+            getInvolvedSubtitle: "Join us in our mission to preserve traditional art and empower women. Your support can change lives.",
+            involvedCard1Title: "Make a Donation",
+            involvedCard1Desc: "Your donations help us provide free training, art supplies, and materials to women and girls in Madhubani, giving them a path to financial independence.",
+            involvedCard2Title: "Volunteer",
+            involvedCard2Desc: "We are always looking for passionate individuals to help with teaching, workshops, and digital marketing. Join our team and share your skills for a great cause.",
+            involvedCard2Btn: "Become a Volunteer",
+            involvedCard3Title: "Share our Story",
+            involvedCard3Desc: "Help us reach more people by sharing our mission. Follow us on social media and spread the word about the incredible work our artists are doing.",
 
             // About Page (about.html)
-            aboutTitle: "About Us",
-            aboutSubtitle: "Dedicated to preserving and promoting the beautiful art traditions of Mithila while empowering women in our community.",
-            missionTitle: "Our Mission",
-            missionDesc1: "Mithila KritiKala Foundation is committed to preserving the ancient art traditions of Mithila while providing sustainable livelihood opportunities for women and girls in Madhubani, Bihar.",
-            missionDesc2: "We believe that traditional arts are not just cultural treasures but also powerful tools for economic empowerment and community development.",
-            missionPoint1: "Preserve traditional Mithila art techniques",
-            missionPoint2: "Empower women through skill development",
-            missionPoint3: "Create sustainable income opportunities",
-            missionPoint4: "Build strong community networks",
-            founderTitle: "Our Founder",
-            founderRole: "Founder & Managing Trustee",
-            founderDesc: "With a deep passion for Mithila's cultural heritage and a vision for women's empowerment, Vishal Kumar Thakur founded this organization to create a platform for sustainable change and artistic preservation.",
-            trusteesTitle: "Our Trustees",
-            trustee1Role: "Trustee",
-            trustee2Role: "Trustee & Training Head",
+            aboutTitle: "Our Story",
+            storySubtitle: "Preserving Art, Empowering Lives",
+            storyDesc1: "Mithila KritiKala Foundation was born from a simple idea: to use the power of traditional art to create a sustainable future for women in Madhubani, Bihar. We saw the incredible, centuries-old heritage of Mithila painting and the immense talent of local women, but also a lack of opportunity for them to turn their skills into a livelihood.",
+            storyDesc2: "Our mission is two-fold: to preserve the beautiful and intricate art of Mithila for future generations, and to provide rural women with the skills and platform they need to become financially independent. We believe that by empowering a woman, we empower her entire family and community.",
+            storyQuote: "\"Art is not just a creation, it's a language that connects generations and empowers the soul.\"",
+            teamTitle: "Meet Our Team",
 
             // Courses Page (courses.html)
             coursesTitle: "Our Courses",
@@ -87,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
             course1Cert: "Certificate Provided",
             course1Learn1: "Traditional motifs & patterns",
             course1Learn3: "Canvas and wall painting",
-            instructorLabel: "Instructor:",
             courseFeeFree: "Free",
             course2Title: "Cutting & Stitching",
             course2Desc: "Master traditional cutting and stitching techniques to create beautiful details for clothing and home textiles.",
@@ -106,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             benefit2Desc: "Marketing assistance and order connections to help sell your artwork and creations.",
             benefit3Title: "Flexible Learning",
             benefit3Desc: "Morning and evening batches available to accommodate different schedules.",
-
+            
             // Admission Page (admission.html)
             admissionTitle: "Admission Form",
             admissionSubtitle: "Join our community of artists and start your journey in traditional Mithila arts.",
@@ -154,6 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
             modalTerm6Title: "6. Certification",
             modalTerm6Desc: "A certificate of completion will be awarded upon successful completion of the course, including any final projects or assessments.",
 
+            // Gallery Page (gallery.html)
+            galleryTitle: "Our Gallery",
+            gallerySubtitle: "A collection of moments from our classes, workshops, and the beautiful art created by our talented students.",
+
             // Contact Page (contact.html)
             contactTitle: "Contact Us",
             contactSubtitle: "Get in touch with us to learn more about our courses or to support our mission.",
@@ -191,6 +177,20 @@ document.addEventListener('DOMContentLoaded', () => {
             formCity: "City *",
             formSkills: "Skills & Interests *",
 
+            // Donate Page (donate.html)
+            donateTitle: "Empower a Woman, Uplift a Community",
+            donateSubtitle: "Your contribution directly provides training and materials to women in Madhubani.",
+            bankTransferTitle: "For Direct Bank Transfer",
+            onlineDonationTitle: "Donate to Mithila KritiKala",
+            onlineDonationDesc: "Support our mission to preserve traditional art and empower women for a self-reliant future.",
+            impactTitle: "Your Impact",
+            impactCard1Title: "₹500 Donation",
+            impactCard1Desc: "Provides art materials for one student for a month.",
+            impactCard2Title: "₹2,500 Donation",
+            impactCard2Desc: "Sponsors one student's complete course materials.",
+            impactCard3Title: "₹10,000 Donation",
+            impactCard3Desc: "Helps purchase new equipment and tools for the workshop."
+
         },
         hi: {
             // Navbar & Footer (Common)
@@ -204,24 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
             navJoin: "हमसे जुड़ें",
             navDonate: "दान करें",
             navDonateMobile: "दान करें",
-            footerTitle: "मिथिला कृतिकला",
-            footerDesc: "पारंपरिक कला शिक्षा और कौशल विकास के माध्यम से मधुबनी, बिहार में महिलाओं और लड़कियों को सशक्त बनाते हुए मिथिला की सुंदर कला परंपराओं को संरक्षित करने के लिए समर्पित।",
-            quickLinksTitle: "क्विक लिंक्स",
-            contactInfoTitle: "संपर्क जानकारी",
-            footerHome: "होम",
-            footerAbout: "हमारे बारे में",
-            footerCourses: "कोर्स",
-            footerGallery: "गैलरी",
-            footerContact: "संपर्क",
-            footerJoin: "हमसे जुड़ें",
-            footerDonate: "दान करें",
-            footerAddress: "कटैया रोड बेनीपट्टी, मधुबनी, बिहार",
-            footerRights: "© 2025 मिथिला कृतिकला फाउंडेशन। सर्वाधिकार सुरक्षित।",
 
             // Home Page (index.html)
             heroTitle: "कला, कौशल और सशक्तिकरण, एक उज्जवल भविष्य के लिए",
             heroDescription: "हम मिथिला की प्राचीन कला को संरक्षित करने और ग्रामीण महिलाओं को एक स्थायी आजीविका के लिए कौशल के साथ सशक्त बनाने के लिए समर्पित हैं।",
             exploreCoursesBtn: "कोर्स देखें",
+            announcement1: "मिथिला पेंटिंग के लिए एडमिशन शुरू हो गया है और 7 अक्टूबर को बंद हो जाएगा।",
+            announcement2: "कटिंग और सिलाई के लिए एडमिशन 15 सितंबर को बंद हो गया।",
             visionTitle: "हमारा दृष्टिकोण",
             vision1Title: "परंपरा का संरक्षण",
             vision1Desc: "समर्पित शिक्षण और अभ्यास के माध्यम से आने वाली पीढ़ियों के लिए मिथिला चित्रकला की प्राचीन कला को जीवित रखना।",
@@ -229,9 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
             vision2Desc: "कला शिक्षा के माध्यम से ग्रामीण बिहार में महिलाओं और लड़कियों को आर्थिक अवसर और कौशल विकास प्रदान करना।",
             vision3Title: "समुदाय का निर्माण",
             vision3Desc: "एक सहायक समुदाय बनाना जहां पारंपरिक कलाएं फलती-फूलती हैं और महिलाएं एक-दूसरे के विकास का समर्थन करती हैं।",
-            announcement1: "मिथिला पेंटिंग के लिए एडमिशन शुरू हो गया है और 7 अक्टूबर को बंद हो जाएगा।",
-            announcement2: "कटिंग और सिलाई के लिए एडमिशन 15 सितंबर को बंद हो गया।",
             viewMoreBtn: "और देखें",
+            galleryPreviewTitle: "हमारे काम की एक झलक",
+            viewFullGalleryBtn: "पूरी गैलरी देखें",
             coursesPreviewTitle: "हमारे कोर्स",
             coursePreviewPaintingTitle: "मिथिला पेंटिंग",
             coursePreviewPaintingDesc: "पारंपरिक तकनीकों और प्राकृतिक रंगों के साथ मिथिला की प्राचीन कला सीखें।",
@@ -240,29 +229,23 @@ document.addEventListener('DOMContentLoaded', () => {
             coursePreviewStitchingDesc: "सुंदर वस्त्र और परिधान बनाने के लिए पारंपरिक कटिंग और सिलाई में महारत हासिल करें।",
             coursePreviewStitchingMsg: "एडमिशन बंद",
             viewCourseDetailsBtn: "कोर्स विवरण देखें",
-            galleryPreviewTitle: "हमारे काम की एक झलक",
-            viewFullGalleryBtn: "पूरी गैलरी देखें",
-
-            // Gallery Page (gallery.html)
-            galleryTitle: "हमारी गैलरी",
-            gallerySubtitle: "हमारी कक्षाओं, कार्यशालाओं और हमारे प्रतिभाशाली छात्रों द्वारा बनाई गई सुंदर कला के क्षणों का एक संग्रह।",
+            getInvolvedTitle: "शामिल हों",
+            getInvolvedSubtitle: "पारंपरिक कला को संरक्षित करने और महिलाओं को सशक्त बनाने के हमारे मिशन में शामिल हों। आपका समर्थन जीवन बदल सकता है।",
+            involvedCard1Title: "दान करें",
+            involvedCard1Desc: "आपका दान हमें मधुबनी में महिलाओं और लड़कियों को मुफ्त प्रशिक्षण, कला सामग्री और उपकरण प्रदान करने में मदद करता है, जिससे उन्हें वित्तीय स्वतंत्रता का मार्ग मिलता है।",
+            involvedCard2Title: "स्वयंसेवक बनें",
+            involvedCard2Desc: "हम हमेशा शिक्षण, कार्यशालाओं और डिजिटल मार्केटिंग में मदद करने के लिए उत्साही व्यक्तियों की तलाश में रहते हैं। हमारी टीम में शामिल हों और एक महान उद्देश्य के लिए अपने कौशल साझा करें।",
+            involvedCard2Btn: "स्वयंसेवक बनें",
+            involvedCard3Title: "हमारी कहानी साझा करें",
+            involvedCard3Desc: "हमारे मिशन को साझा करके अधिक लोगों तक पहुंचने में हमारी मदद करें। हमें सोशल मीडिया पर फॉलो करें और हमारे कलाकारों द्वारा किए जा रहे अविश्वसनीय काम के बारे में प्रचार करें।",
 
             // About Page (about.html)
-            aboutTitle: "हमारे बारे में",
-            aboutSubtitle: "हमारे समुदाय में महिलाओं को सशक्त बनाते हुए मिथिला की सुंदर कला परंपराओं को संरक्षित और बढ़ावा देने के लिए समर्पित।",
-            missionTitle: "हमारा मिशन",
-            missionDesc1: "मिथिला कृतिकला फाउंडेशन मधुबनी, बिहार में महिलाओं और लड़कियों के लिए स्थायी आजीविका के अवसर प्रदान करते हुए मिथिला की प्राचीन कला परंपराओं को संरक्षित करने के लिए प्रतिबद्ध है।",
-            missionDesc2: "हमारा मानना ​​है कि पारंपरिक कलाएं न केवल सांस्कृतिक खजाने हैं, बल्कि आर्थिक सशक्तिकरण और सामुदायिक विकास के लिए शक्तिशाली उपकरण भी हैं।",
-            missionPoint1: "पारंपरिक मिथिला कला तकनीकों का संरक्षण",
-            missionPoint2: "कौशल विकास के माध्यम से महिलाओं का सशक्तिकरण",
-            missionPoint3: "स्थायी आय के अवसरों का निर्माण",
-            missionPoint4: "मजबूत सामुदायिक नेटवर्क बनाना",
-            founderTitle: "हमारे संस्थापक",
-            founderRole: "संस्थापक और प्रबंध ट्रस्टी",
-            founderDesc: "मिथिला की सांस्कृतिक विरासत के प्रति गहरे जुनून और महिला सशक्तिकरण के दृष्टिकोण के साथ, विशाल कुमार ठाकुर ने स्थायी परिवर्तन और कलात्मक संरक्षण के लिए एक मंच बनाने के लिए इस संगठन की स्थापना की।",
-            trusteesTitle: "हमारे ट्रस्टी",
-            trustee1Role: "ट्रस्टी",
-            trustee2Role: "ट्रस्टी और प्रशिक्षण प्रमुख",
+            aboutTitle: "हमारी कहानी",
+            storySubtitle: "कला का संरक्षण, जीवन का सशक्तिकरण",
+            storyDesc1: "मिथिला कृतिकला फाउंडेशन का जन्म एक सरल विचार से हुआ: मधुबनी, बिहार में महिलाओं के लिए एक स्थायी भविष्य बनाने के लिए पारंपरिक कला की शक्ति का उपयोग करना। हमने मिथिला पेंटिंग की अविश्वसनीय, सदियों पुरानी विरासत और स्थानीय महिलाओं की immense प्रतिभा को देखा, लेकिन साथ ही उनके लिए अपने कौशल को आजीविका में बदलने के अवसर की कमी भी देखी।",
+            storyDesc2: "हमारा मिशन दोहरा है: भविष्य की पीढ़ियों के लिए मिथिला की सुंदर और जटिल कला को संरक्षित करना, और ग्रामीण महिलाओं को उन कौशलों और मंच प्रदान करना जिनकी उन्हें आर्थिक रूप से स्वतंत्र बनने के लिए आवश्यकता है। हमारा मानना ​​है कि एक महिला को सशक्त बनाकर, हम उसके पूरे परिवार और समुदाय को सशक्त बनाते हैं।",
+            storyQuote: "\"कला केवल एक रचना नहीं है, यह एक ऐसी भाषा है जो पीढ़ियों को जोड़ती है और आत्मा को सशक्त बनाती है।\"",
+            teamTitle: "हमारी टीम से मिलें",
 
             // Courses Page (courses.html)
             coursesTitle: "हमारे कोर्स",
@@ -276,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
             course1Cert: "प्रमाणपत्र प्रदान किया गया",
             course1Learn1: "पारंपरिक रूपांकन और पैटर्न",
             course1Learn3: "कैनवास और दीवार पेंटिंग",
-            instructorLabel: "प्रशिक्षक:",
             courseFeeFree: "निःशुल्क",
             course2Title: "कटिंग और सिलाई",
             course2Desc: "कपड़ों और घरेलू वस्त्रों के लिए सुंदर विवरण बनाने के लिए पारंपरिक कटिंग और सिलाई तकनीकों में महारत हासिल करें।",
@@ -343,6 +325,10 @@ document.addEventListener('DOMContentLoaded', () => {
             modalTerm6Title: "6. प्रमाणीकरण",
             modalTerm6Desc: "पाठ्यक्रम के सफल समापन पर, किसी भी अंतिम परियोजनाओं या मूल्यांकन सहित, एक पूर्णता प्रमाण पत्र प्रदान किया जाएगा।",
 
+            // Gallery Page (gallery.html)
+            galleryTitle: "हमारी गैलरी",
+            gallerySubtitle: "हमारी कक्षाओं, कार्यशालाओं और हमारे प्रतिभाशाली छात्रों द्वारा बनाई गई सुंदर कला के क्षणों का एक संग्रह।",
+
             // Contact Page (contact.html)
             contactTitle: "हमसे संपर्क करें",
             contactSubtitle: "हमारे पाठ्यक्रमों के बारे में अधिक जानने या हमारे मिशन का समर्थन करने के लिए हमसे संपर्क करें।",
@@ -379,7 +365,20 @@ document.addEventListener('DOMContentLoaded', () => {
             joinApplication: "स्वयंसेवी आवेदन",
             formCity: "शहर *",
             formSkills: "कौशल और रुचियां *",
-
+            
+            // Donate Page (donate.html)
+            donateTitle: "एक महिला को सशक्त बनाएं, एक समुदाय को उठाएं",
+            donateSubtitle: "आपका योगदान सीधे मधुबनी में महिलाओं को प्रशिक्षण और सामग्री प्रदान करता है।",
+            bankTransferTitle: "डायरेक्ट बैंक ट्रांसफर के लिए",
+            onlineDonationTitle: "मिथिला कृतिकला को दान करें",
+            onlineDonationDesc: "पारंपरिक कला को संरक्षित करने और आत्मनिर्भर भविष्य के लिए महिलाओं को सशक्त बनाने के हमारे मिशन का समर्थन करें।",
+            impactTitle: "आपका प्रभाव",
+            impactCard1Title: "₹५०० का दान",
+            impactCard1Desc: "एक छात्रा के लिए एक महीने की कला सामग्री प्रदान करता है।",
+            impactCard2Title: "₹२,५०० का दान",
+            impactCard2Desc: "एक छात्रा की पूरी कोर्स सामग्री को प्रायोजित करता है।",
+            impactCard3Title: "₹१०,००० का दान",
+            impactCard3Desc: "कार्यशाला के लिए नए उपकरण और औजार खरीदने में मदद करता है।"
         }
     };
     
@@ -400,24 +399,25 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('language', language);
             setLanguage(language);
         });
-    }
 
-    const savedLanguage = localStorage.getItem('language') || 'en';
-    if (languageToggle) {
+        // Load saved language or default to English
+        const savedLanguage = localStorage.getItem('language') || 'en';
         languageToggle.checked = savedLanguage === 'hi';
+        setLanguage(savedLanguage);
     }
     
-    // **FIXED:** Language is now set on page load
-    setLanguage(savedLanguage);
-    
+    // === Hamburger Menu for Mobile ===
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
+        // Toggle menu on hamburger click
         hamburger.addEventListener('click', (event) => {
             navLinks.classList.toggle('active');
-            event.stopPropagation();
+            event.stopPropagation(); // Prevents the document click listener from firing immediately
         });
+
+        // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             const isClickInsideNav = navLinks.contains(event.target);
             const isClickOnHamburger = hamburger.contains(event.target);
@@ -427,6 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === Active Navigation Link Highlighting ===
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     const navAnchors = document.querySelectorAll('.nav-links a');
 
@@ -437,16 +438,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    const sections = document.querySelectorAll('.fade-in-section, .vision-section');
+    // === Scroll Animation Observer ===
+    const sections = document.querySelectorAll('.fade-in-section');
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.15
     };
+
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible', 'in-view');
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
@@ -456,123 +459,67 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
     
-    const modalOverlay = document.getElementById('terms-modal');
+    // === Terms & Conditions Modal (Admission Page) ===
+    const termsModal = document.getElementById('terms-modal');
     const termsLink = document.getElementById('terms-link');
-    const closeButton = document.querySelector('.close-button');
+    const termsCloseButton = termsModal ? termsModal.querySelector('.close-button') : null;
 
-    if (termsLink && modalOverlay && closeButton) {
-        termsLink.addEventListener('click', (e) => {
+    if (termsLink && termsModal && termsCloseButton) {
+        const openTermsModal = (e) => {
             e.preventDefault();
-            modalOverlay.classList.add('visible');
-        });
-        closeButton.addEventListener('click', () => {
-            modalOverlay.classList.remove('visible');
-        });
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('visible');
+            termsModal.classList.add('visible');
+        };
+        const closeTermsModal = () => {
+            termsModal.classList.remove('visible');
+        };
+
+        termsLink.addEventListener('click', openTermsModal);
+        termsCloseButton.addEventListener('click', closeTermsModal);
+        termsModal.addEventListener('click', (e) => {
+            if (e.target === termsModal) {
+                closeTermsModal();
             }
         });
     }
 
-    // === NEW: GALLERY MODAL CODE START ===
+    // === Gallery Modal (Gallery Page) ===
     const galleryImages = document.querySelectorAll('.gallery-image-wrapper');
-    const modal = document.getElementById('gallery-modal');
+    const galleryModal = document.getElementById('gallery-modal');
     const modalImage = document.getElementById('modal-image');
-    const closeModalBtn = document.getElementById('modal-close-btn');
+    const galleryCloseBtn = document.getElementById('modal-close-btn');
 
-    if (modal && galleryImages.length > 0) {
+    if (galleryModal && galleryImages.length > 0) {
         galleryImages.forEach(imageWrapper => {
             imageWrapper.addEventListener('click', () => {
                 const imgSrc = imageWrapper.querySelector('img').src;
                 modalImage.src = imgSrc;
-                modal.classList.add('visible');
+                galleryModal.classList.add('visible');
             });
         });
 
-        const closeModal = () => {
-            modal.classList.remove('visible');
+        const closeGalleryModal = () => {
+            galleryModal.classList.remove('visible');
         };
 
-        if(closeModalBtn) {
-            closeModalBtn.addEventListener('click', closeModal);
+        if(galleryCloseBtn) {
+            galleryCloseBtn.addEventListener('click', closeGalleryModal);
         }
         
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeGalleryModal();
             }
         });
     }
-    // === NEW: GALLERY MODAL CODE END ===
-
-    // === NEW: DONATE PAGE SCRIPT START ===
-    if (document.querySelector('.donation-main')) {
-        const amountButtons = document.querySelectorAll('.amount-btn');
-        const selectedAmountDisplay = document.querySelector('.selected-amount strong');
-        const customAmountWrapper = document.getElementById('custom-amount-wrapper');
-        const customAmountInput = document.getElementById('custom-amount-input');
-
-        if (amountButtons.length > 0 && selectedAmountDisplay) {
-            amountButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    amountButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    if (button.classList.contains('custom')) {
-                        customAmountWrapper.style.display = 'block';
-                        customAmountInput.focus();
-                        selectedAmountDisplay.innerText = `₹${customAmountInput.value || 0}`;
-                    } else {
-                        customAmountWrapper.style.display = 'none';
-                        customAmountInput.value = '';
-                        const amount = button.innerText.replace('₹', '').replace(',', '');
-                        selectedAmountDisplay.innerText = `₹${amount}`;
-                    }
-                });
-            });
-        }
-
-        if (customAmountInput) {
-            customAmountInput.addEventListener('input', () => {
-                const amount = customAmountInput.value || 0;
-                if(selectedAmountDisplay) {
-                    selectedAmountDisplay.innerText = `₹${amount}`;
-                }
-            });
-        }
-        
-        // UPI Accordion
-        const paymentMethodHeader = document.querySelector('.payment-method-header');
-        const paymentMethodDetails = document.getElementById('upi-details');
-        
-        if(paymentMethodHeader && paymentMethodDetails) {
-            paymentMethodHeader.addEventListener('click', () => {
-                paymentMethodHeader.classList.toggle('active');
-                const icon = paymentMethodHeader.querySelector('.fas');
-                
-                if (paymentMethodDetails.style.display === "block") {
-                    paymentMethodDetails.style.display = "none";
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                } else {
-                    paymentMethodDetails.style.display = "block";
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                }
-            });
-        }
-    }
-    // === NEW: DONATE PAGE SCRIPT END ===
-
 });
 
+// === Preloader Hiding Logic ===
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.style.opacity = '0';
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 500);
+        }, 500); // Wait for fade out transition
     }
 });

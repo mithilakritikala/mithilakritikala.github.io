@@ -1,6 +1,25 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from 'react';
 
 const ContactPage = () => {
+    const [submitted, setSubmitted] = useState(false);
+    const [form, setForm] = useState({
+        name: '', email: '', phone: '', subject: '', message: ''
+    });
+
+    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const subject = encodeURIComponent(form.subject || 'Website Inquiry');
+        const body = encodeURIComponent(
+            `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
+        );
+        window.location.href = `mailto:mithilakritikala@gmail.com?subject=${subject}&body=${body}`;
+        setSubmitted(true);
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+    };
+
     return (
         <div className="pt-24 min-h-screen bg-white pb-20">
             <div className="container mx-auto px-4 max-w-6xl">
@@ -12,11 +31,10 @@ const ContactPage = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
                     {/* Contact Information */}
                     <div className="bg-[var(--color-cream)] p-8 md:p-12 rounded-2xl shadow-sm h-full">
                         <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-8">Get In Touch</h2>
-
                         <div className="space-y-8">
                             <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
                                 <div className="bg-[var(--color-maroon)]/10 p-3 rounded-full text-[var(--color-maroon)]">
@@ -72,6 +90,104 @@ const ContactPage = () => {
                             className="w-full h-full"
                         ></iframe>
                     </div>
+                </div>
+
+                {/* Contact Form */}
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12 max-w-3xl mx-auto">
+                    <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-8 text-center">Send Us a Message</h2>
+
+                    {submitted ? (
+                        <div className="text-center py-10">
+                            <div className="text-5xl mb-4">✅</div>
+                            <h3 className="text-xl font-bold text-[var(--color-maroon)] mb-2">Message Sent!</h3>
+                            <p className="text-gray-600">Thank you! We will get back to you within 24 hours.</p>
+                            <button
+                                className="mt-6 text-[var(--color-maroon)] underline text-sm"
+                                onClick={() => setSubmitted(false)}
+                            >
+                                Send another message
+                            </button>
+                        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        required
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        placeholder="Your full name"
+                                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-maroon)] transition-colors"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        placeholder="your@email.com"
+                                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-maroon)] transition-colors"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={form.phone}
+                                        onChange={handleChange}
+                                        placeholder="+91 XXXXX XXXXX"
+                                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-maroon)] transition-colors"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                    <select
+                                        name="subject"
+                                        value={form.subject}
+                                        onChange={handleChange}
+                                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-maroon)] transition-colors bg-white"
+                                    >
+                                        <option value="">Select a subject</option>
+                                        <option>General Inquiry</option>
+                                        <option>Course Admission</option>
+                                        <option>Volunteer</option>
+                                        <option>Donation</option>
+                                        <option>Partnership</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                                <textarea
+                                    name="message"
+                                    required
+                                    rows={5}
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    placeholder="Write your message here..."
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-maroon)] transition-colors resize-none"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full bg-[var(--color-maroon)] text-white font-bold py-4 rounded-lg hover:bg-[#6b1414] transition-colors text-base"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
         </div>

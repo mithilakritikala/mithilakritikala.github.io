@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -18,7 +25,7 @@ const Navbar = () => {
     ];
 
     return (
-        <header className="fixed w-full top-0 z-50 bg-[var(--color-cream)] shadow-md transition-all duration-300">
+        <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[var(--color-cream)] shadow-md' : 'bg-[var(--color-cream)] shadow-md'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
@@ -37,8 +44,7 @@ const Navbar = () => {
                                     <NavLink
                                         to={link.path}
                                         className={({ isActive }) =>
-                                            `text-[15px] font-medium transition-colors hover:text-[var(--color-maroon)] ${isActive ? 'text-[var(--color-maroon)] font-bold' : 'text-[var(--color-dark)]'
-                                            }`
+                                            `text-[15px] font-medium transition-colors hover:text-[var(--color-maroon)] ${isActive ? 'text-[var(--color-maroon)] font-bold' : 'text-[var(--color-dark)]'}`
                                         }
                                     >
                                         {link.name}
@@ -46,7 +52,6 @@ const Navbar = () => {
                                 </li>
                             ))}
                         </ul>
-
                         <div className="flex items-center gap-4 ml-4">
                             <Link to="/donate" className="bg-[var(--color-maroon)] text-[var(--color-cream)] hover:bg-[#6b1414] px-6 py-2 rounded font-medium transition-colors">
                                 Donate
@@ -67,8 +72,7 @@ const Navbar = () => {
 
             {/* Mobile Nav */}
             <div
-                className={`xl:hidden absolute top-20 left-0 w-full bg-[var(--color-cream)] shadow-lg border-t border-gray-200 transition-all duration-300 ${isOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'
-                    }`}
+                className={`xl:hidden absolute top-20 left-0 w-full bg-[var(--color-cream)] shadow-lg border-t border-gray-200 transition-all duration-300 ${isOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'}`}
             >
                 <ul className="flex flex-col px-4">
                     {navLinks.map((link) => (
@@ -76,8 +80,7 @@ const Navbar = () => {
                             <NavLink
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `block py-3 px-2 text-base font-medium transition-colors hover:bg-gray-50 hover:text-[var(--color-maroon)] ${isActive ? 'text-[var(--color-maroon)] font-bold' : 'text-[var(--color-dark)]'
-                                    }`
+                                    `block py-3 px-2 text-base font-medium transition-colors hover:bg-gray-50 hover:text-[var(--color-maroon)] ${isActive ? 'text-[var(--color-maroon)] font-bold' : 'text-[var(--color-dark)]'}`
                                 }
                                 onClick={() => setIsOpen(false)}
                             >

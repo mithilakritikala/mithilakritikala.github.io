@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
+    const socialLinks = [
+        { href: "https://www.facebook.com/profile.php?id=61578616140715", icon: <Facebook size={20} />, label: "Facebook" },
+        { href: "https://www.instagram.com/mithilakritikala/", icon: <Instagram size={20} />, label: "Instagram" },
+        { href: "https://x.com/m_kritikala", icon: <Twitter size={20} />, label: "X (Twitter)" },
+        { href: "https://www.linkedin.com/company/mithila-kritikala/", icon: <Linkedin size={20} />, label: "LinkedIn" },
+    ];
+
     return (
         <footer className="bg-[var(--color-maroon)] text-[var(--color-cream)] pt-16 pb-6 mt-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,16 +51,19 @@ const Footer = () => {
                     <div className="md:pl-8">
                         <h4 className="text-xl font-serif font-semibold mb-4 text-[var(--color-gold)]">Connect with us</h4>
                         <p className="mb-6 opacity-90">Follow us on social media for updates and inspiring stories of our artists!</p>
-                        <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] transition-colors" aria-label="Facebook">
-                                <Facebook size={20} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] transition-colors" aria-label="Instagram">
-                                <Instagram size={20} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] transition-colors" aria-label="YouTube">
-                                <Youtube size={20} />
-                            </a>
+                        <div className="flex gap-4 flex-wrap">
+                            {socialLinks.map(({ href, icon, label }) => (
+                                <a
+                                    key={label}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] transition-colors"
+                                    aria-label={label}
+                                >
+                                    {icon}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>

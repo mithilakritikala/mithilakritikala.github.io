@@ -21,7 +21,7 @@ const slides = [
         id: 2,
         image: "/photos/gallery3.jpg",
         badge: "Our Impact",
-        title: "150+ Women Empowered & Counting",
+        title: "20+ Women Trained & Growing",
         subtitle: "Since July 2025, we have been transforming lives through art education and vocational training in Madhubani, Bihar.",
         buttons: (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -97,22 +97,26 @@ const HeroCarousel = () => {
                             transitionDuration: index === current ? '6000ms' : '0ms',
                         }}
                     />
-                    {/* Gradient overlay — bottom-heavy, no top blur */}
+                    {/* Gradient overlay */}
                     <div
                         className="absolute inset-0"
                         style={{
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.10) 100%)'
+                            background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.55) 100%)'
                         }}
                     />
 
-                    {/* Text content — floating directly on image */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
-                        {slide.badge && (
-                            <div className="inline-flex items-center gap-2 bg-[#C9922A]/30 border border-[#C9922A] text-[#C9922A] text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 font-semibold">
-                                <Sparkles size={12} />
+                    {/* Badge at top-left */}
+                    {slide.badge && (
+                        <div className="absolute top-6 left-6 md:top-10 md:left-10 z-20">
+                            <div className="inline-flex items-center gap-2 bg-[#C9922A]/90 backdrop-blur-sm border border-[#C9922A] text-white text-xs tracking-widest uppercase px-4 py-2 rounded-full font-bold shadow-lg">
+                                <Sparkles size={14} className="text-white" />
                                 {slide.badge}
                             </div>
-                        )}
+                        </div>
+                    )}
+
+                    {/* Text content — floating directly on image */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
                         <h1
                             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 leading-tight max-w-4xl"
                             style={{

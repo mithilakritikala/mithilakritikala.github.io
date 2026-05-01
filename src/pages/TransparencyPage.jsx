@@ -69,7 +69,7 @@ const TransparencyPage = () => {
                         </div>
                         <div>
                             <h3 className="font-bold text-lg text-[var(--color-dark)]">Trust Registration</h3>
-                            <p className="text-sm text-gray-500 mb-2">Reg. Number: {/* TODO: Replace */} [Placeholder] | Bihar</p>
+                            <p className="text-sm text-gray-500 mb-2">Registration process completed in Madhubani, Bihar. Certificate available on request.</p>
                             <p className="text-sm text-gray-600">Legally registered public charitable trust.</p>
                         </div>
                     </div>
@@ -187,7 +187,7 @@ const TransparencyPage = () => {
                                     <Users size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800">Trustee Name 1 {/* TODO */}</h4>
+                                    <h4 className="font-bold text-gray-800">Vishal Kumar Thakur</h4>
                                     <p className="text-sm text-gray-500">President / Managing Trustee</p>
                                 </div>
                             </div>
@@ -196,8 +196,8 @@ const TransparencyPage = () => {
                                     <Users size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800">Trustee Name 2 {/* TODO */}</h4>
-                                    <p className="text-sm text-gray-500">Secretary</p>
+                                    <h4 className="font-bold text-gray-800">Rakesh Kumar Thakur</h4>
+                                    <p className="text-sm text-gray-500">Trustee / Secretary</p>
                                 </div>
                             </div>
                         </div>
@@ -209,19 +209,10 @@ const TransparencyPage = () => {
                             <FileText className="text-[var(--color-maroon)]" />
                             Annual Reports
                         </h2>
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                            <div className="p-4 border-b border-gray-100 flex justify-between items-center hover:bg-gray-50 transition-colors">
-                                <span className="font-medium text-gray-700">Annual Report 2023-24</span>
-                                <a href="#" className="flex items-center gap-1 text-sm text-[var(--color-maroon)] hover:underline">
-                                    <Download size={16} /> Download
-                                </a>
-                            </div>
-                            <div className="p-4 flex justify-between items-center hover:bg-gray-50 transition-colors">
-                                <span className="font-medium text-gray-700">Annual Report 2022-23</span>
-                                <a href="#" className="flex items-center gap-1 text-sm text-[var(--color-maroon)] hover:underline">
-                                    <Download size={16} /> Download
-                                </a>
-                            </div>
+                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                Annual Report 2025-26 will be published after financial year completion.
+                            </p>
                         </div>
                     </div>
                 </div>

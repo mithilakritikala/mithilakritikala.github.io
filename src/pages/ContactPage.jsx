@@ -15,7 +15,7 @@ const ContactPage = () => {
         const body = encodeURIComponent(
             `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
         );
-        window.location.href = `mailto:mithilakritikala@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:contact@mithilakritikala.com?subject=${subject}&body=${body}`;
         setSubmitted(true);
         setForm({ name: '', email: '', phone: '', subject: '', message: '' });
     };
@@ -42,8 +42,8 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                                    <a href="mailto:mithilakritikala@gmail.com" className="text-gray-600 hover:text-[var(--color-maroon)] transition-colors">
-                                        mithilakritikala@gmail.com
+                                    <a href="mailto:contact@mithilakritikala.com" className="text-gray-600 hover:text-[var(--color-maroon)] transition-colors">
+                                        contact@mithilakritikala.com
                                     </a>
                                 </div>
                             </div>

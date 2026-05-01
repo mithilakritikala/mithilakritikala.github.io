@@ -36,16 +36,15 @@ const Courses = () => {
                                 </div>
                                 <p className="text-gray-600 mb-6 leading-relaxed">Learn the ancient art of Mithila with traditional techniques and natural colors. This course covers everything from basic patterns to complex traditional compositions. By the end of the program, students can create commercial-grade artwork.</p>
 
-                                <ul className="space-y-2 mb-4 text-sm text-gray-600">
+                                <ul className="space-y-2 mb-10 text-sm text-gray-600">
                                     <li className="flex gap-2"><span>⏱</span> <strong>Duration:</strong> 4 Months</li>
                                     <li className="flex gap-2"><span>👩‍🏫</span> <strong>Instructor:</strong> Babita Devi</li>
                                     <li className="flex gap-2"><span>💰</span> <strong>Admission Fee:</strong> ₹500 (one-time registration)</li>
                                     <li className="flex gap-2 ml-6 text-xs text-gray-400 italic"><span></span>A nominal fee to ensure commitment to the course</li>
-                                    <li className="flex gap-2"><span>📅</span> <strong>Current Batch:</strong> Nov 2025 – Feb 2026</li>
+                                    <li className="flex gap-2"><span>✅</span> <strong>1st Batch:</strong> Nov 2025 – Feb 2026 ✓ Completed</li>
+                                    <li className="flex gap-2"><span>✅</span> <strong>2nd Batch:</strong> Feb – Apr 2026 ✓ Completed</li>
+                                    <li className="flex gap-2"><span>📅</span> <strong>3rd Batch:</strong> Starting May 4, 2026 → Admissions Open</li>
                                 </ul>
-                                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-sm text-amber-800">
-                                    🔔 Next batch dates will be announced soon. Register your interest!
-                                </div>
                             </div>
                             <Link to="/admission" className="block w-full text-center bg-[var(--color-maroon)] text-[var(--color-cream)] hover:bg-[#6b1414] py-3 rounded font-bold transition-colors">
                                 Apply Now
@@ -66,17 +65,15 @@ const Courses = () => {
                                 </div>
                                 <p className="text-gray-600 mb-6 leading-relaxed">Master cutting and stitching to create beautiful garments and textiles. This practical course provides women with immediate skills to start their own tailoring business or find employment in the textile industry.</p>
 
-                                <ul className="space-y-2 mb-4 text-sm text-gray-600">
+                                <ul className="space-y-2 mb-10 text-sm text-gray-600">
                                     <li className="flex gap-2"><span>⏱</span> <strong>Duration:</strong> 4 Months per batch</li>
                                     <li className="flex gap-2"><span>👩‍🏫</span> <strong>Instructor:</strong> Experienced Tailors</li>
                                     <li className="flex gap-2"><span>💰</span> <strong>Admission Fee:</strong> ₹500 (one-time registration)</li>
                                     <li className="flex gap-2 ml-6 text-xs text-gray-400 italic"><span></span>A nominal fee to ensure commitment to the course</li>
-                                    <li className="flex gap-2"><span>✅</span> <strong>1st Batch:</strong> Sep – Dec 2025 (Completed ✓)</li>
-                                    <li className="flex gap-2"><span>🔄</span> <strong>2nd Batch:</strong> Feb – May 2026 (In Progress)</li>
+                                    <li className="flex gap-2"><span>✅</span> <strong>1st Batch:</strong> Sep – Dec 2025 ✓ Completed</li>
+                                    <li className="flex gap-2"><span>🔄</span> <strong>2nd Batch:</strong> Feb – May 2026 → In Progress</li>
+                                    <li className="flex gap-2"><span>📅</span> <strong>3rd Batch:</strong> Dates will be announced soon</li>
                                 </ul>
-                                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-sm text-amber-800">
-                                    🔔 3rd batch dates will be announced soon!
-                                </div>
                             </div>
                             <Link to="/admission" className="block w-full text-center bg-[var(--color-maroon)]/80 text-[var(--color-cream)] hover:bg-[var(--color-maroon)] py-3 rounded font-bold transition-colors">
                                 Register Interest

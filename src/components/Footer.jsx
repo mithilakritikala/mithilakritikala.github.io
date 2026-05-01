@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     const socialLinks = [
         { href: "https://www.facebook.com/profile.php?id=61578616140715", icon: <Facebook size={20} />, label: "Facebook" },
         { href: "https://www.instagram.com/mithilakritikala/", icon: <Instagram size={20} />, label: "Instagram" },
-        { href: "https://x.com/m_kritikala", icon: <Twitter size={20} />, label: "X (Twitter)" },
+        { 
+            href: "https://x.com/m_kritikala", 
+            icon: (
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            ), 
+            label: "X (Twitter)" 
+        },
         { href: "https://www.linkedin.com/company/mithila-kritikala/", icon: <Linkedin size={20} />, label: "LinkedIn" },
     ];
 
@@ -23,7 +31,7 @@ const Footer = () => {
                             <h4 className="text-lg font-serif font-semibold mt-4 mb-2">Contact Us</h4>
                             <p className="flex items-center gap-3">
                                 <Mail size={18} className="text-[var(--color-gold)]" />
-                                <a href="mailto:mithilakritikala@gmail.com" className="hover:text-[var(--color-gold)] transition-colors">mithilakritikala@gmail.com</a>
+                                <a href="mailto:contact@mithilakritikala.com" className="hover:text-[var(--color-gold)] transition-colors">contact@mithilakritikala.com</a>
                             </p>
                             <p className="flex items-center gap-3">
                                 <Phone size={18} className="text-[var(--color-gold)]" />
@@ -73,7 +81,7 @@ const Footer = () => {
                     <p className="text-xs text-[var(--color-cream)]/70 mb-2">
                         Registered NGO | 12A: AAKTM3093ME20251 | 80G: AAKTM3093MF20251 | NGO Darpan: BR/2025/0781443 | PAN: AAKTM3093M
                         {' '}-{' '}
-                        <Link to="/transparency" className="text-[var(--color-gold)] hover:underline whitespace-nowrap">
+                        <Link to="/transparency" onClick={() => window.scrollTo(0, 0)} className="text-[var(--color-gold)] hover:underline whitespace-nowrap">
                             View Certificates →
                         </Link>
                     </p>

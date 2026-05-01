@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+
 import Footer from './components/Footer';
 
 // Pages
@@ -12,10 +14,22 @@ import Courses from './pages/Courses';
 import Gallery from './pages/Gallery';
 import Admission from './pages/Admission';
 import JoinUs from './pages/JoinUs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
+import PaymentTerms from './pages/PaymentTerms';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>
@@ -28,6 +42,9 @@ function App() {
           <Route path="/join" element={<JoinUs />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/transparency" element={<TransparencyPage />} />
+          <Route path="/policies/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/policies/refund-policy" element={<RefundPolicy />} />
+          <Route path="/policies/payment-terms" element={<PaymentTerms />} />
         </Routes>
       </main>
       <Footer />

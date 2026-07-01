@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Palette, Users, Heart, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, ShieldCheck, Landmark, FileCheck2 } from 'lucide-react';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import Hero from '../components/Hero';
 import ImpactCounter from '../components/ImpactCounter';
@@ -13,25 +13,11 @@ const courseStatus = {
     cuttingStitching: { status: "closed", label: "Admissions Closed" }
 };
 
-const visionItems = [
-    {
-        index: '01',
-        icon: Palette,
-        title: 'Preserve Tradition',
-        text: 'Keeping the ancient art of Mithila painting alive for future generations through dedicated teaching and practice.',
-    },
-    {
-        index: '02',
-        icon: Users,
-        title: 'Empower Women',
-        text: 'Providing economic opportunities and skill development to women and girls in rural Bihar through art education.',
-    },
-    {
-        index: '03',
-        icon: Heart,
-        title: 'Build Community',
-        text: "Creating a supportive community where traditional arts flourish and women support each other's growth.",
-    },
+const trustBadges = [
+    { icon: ShieldCheck, label: '12A Registered' },
+    { icon: ShieldCheck, label: '80G Certified' },
+    { icon: Landmark, label: 'NGO Darpan Listed' },
+    { icon: FileCheck2, label: 'PAN Verified' },
 ];
 
 const galleryPreview = [
@@ -65,70 +51,36 @@ const Home = () => {
 
             <ImpactCounter />
 
-            {/* Vision Section — an editorial numbered list rather than three equal cards */}
-            <section className="py-24 bg-white">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <Reveal>
-                        <SectionHeading eyebrow="Why We Exist" title="Our Vision" />
-                    </Reveal>
-
-                    <div className="divide-y divide-[var(--color-ink)]/10">
-                        {visionItems.map((item, idx) => (
-                            <Reveal key={item.title} delay={idx * 120} className="flex items-start gap-6 md:gap-10 py-10">
-                                <span
-                                    className="text-4xl md:text-6xl text-[var(--color-gold)]/30 font-semibold leading-none shrink-0"
-                                    style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic' }}
-                                >
-                                    {item.index}
-                                </span>
-                                <div>
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <item.icon size={22} className="text-[var(--color-maroon)]" />
-                                        <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-ink)]" style={{ fontFamily: 'var(--font-display)' }}>
-                                            {item.title}
-                                        </h3>
-                                    </div>
-                                    <p className="text-[var(--color-ink)]/70 leading-relaxed max-w-xl">{item.text}</p>
-                                </div>
-                            </Reveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Gallery Preview Section — asymmetric brick layout instead of a uniform 4-up grid */}
-            <section className="py-24 bg-white">
+            {/* Trust strip — registration proof sits right next to the impact
+                numbers, since credibility is what turns "impressive stats"
+                into "stats I believe." */}
+            <div className="bg-[var(--color-paper)] py-5 border-b border-[var(--color-ink)]/10">
                 <div className="container mx-auto px-4">
-                    <Reveal>
-                        <SectionHeading eyebrow="From the Studio" title="A Glimpse of Our Work" />
-                    </Reveal>
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-                        {galleryPreview.map((photo, idx) => (
-                            <Reveal key={photo.src} delay={idx * 100} className={`group relative overflow-hidden rounded-sm ${photo.size}`}>
-                                <img
-                                    src={photo.src}
-                                    alt={photo.label}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
-                                    <span className="text-white font-medium" style={{ fontFamily: 'var(--font-display)' }}>{photo.label}</span>
-                                </div>
-                            </Reveal>
+                    <Reveal className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+                        {trustBadges.map(({ icon: Icon, label }) => (
+                            <span key={label} className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-ink)]/70">
+                                <Icon size={16} className="text-[var(--color-maroon)]" />
+                                {label}
+                            </span>
                         ))}
-                    </div>
-                    <Reveal className="text-center mt-12">
-                        <Link to="/gallery" className="inline-flex items-center gap-2 border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] px-8 py-3 rounded-sm font-semibold transition-colors">
-                            View Full Gallery
+                        <Link to="/transparency" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-maroon)] hover:underline">
+                            View Certificates &rarr;
                         </Link>
                     </Reveal>
                 </div>
-            </section>
+            </div>
 
-            {/* Courses Section */}
-            <section className="py-24 bg-[var(--color-paper)]">
+            {/* Courses Section — moved directly after the proof points (impact
+                + registration) so a first-time visitor sees concretely what
+                the NGO runs within the first two scrolls, instead of after
+                the more abstract Vision/Gallery sections. */}
+            <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
                     <Reveal>
-                        <SectionHeading eyebrow="Learn a Craft" title="Our Courses" />
+                        <SectionHeading eyebrow="What We Do" title="Our Courses" />
+                        <p className="text-center text-[var(--color-ink)]/70 max-w-2xl mx-auto -mt-10 mb-16">
+                            Preserving tradition and empowering women, one course at a time.
+                        </p>
                     </Reveal>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                         {[
@@ -162,6 +114,34 @@ const Home = () => {
                             </Reveal>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Gallery Preview Section — asymmetric brick layout instead of a uniform 4-up grid */}
+            <section className="py-24 bg-[var(--color-paper)]">
+                <div className="container mx-auto px-4">
+                    <Reveal>
+                        <SectionHeading eyebrow="From the Studio" title="A Glimpse of Our Work" />
+                    </Reveal>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                        {galleryPreview.map((photo, idx) => (
+                            <Reveal key={photo.src} delay={idx * 100} className={`group relative overflow-hidden rounded-sm ${photo.size}`}>
+                                <img
+                                    src={photo.src}
+                                    alt={photo.label}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                    <span className="text-white font-medium" style={{ fontFamily: 'var(--font-display)' }}>{photo.label}</span>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                    <Reveal className="text-center mt-12">
+                        <Link to="/gallery" className="inline-flex items-center gap-2 border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] px-8 py-3 rounded-sm font-semibold transition-colors">
+                            View Full Gallery
+                        </Link>
+                    </Reveal>
                 </div>
             </section>
 

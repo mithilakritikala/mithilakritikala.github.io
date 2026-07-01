@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Palette, Scissors, Share2, Camera, HeartHandshake } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import Reveal from '../components/Reveal';
 
 const JoinUs = () => {
     const [formData, setFormData] = useState({
@@ -25,28 +27,25 @@ const JoinUs = () => {
     };
 
     return (
-        <div className="pt-24 min-h-[70vh] bg-gray-50 pb-20 flex flex-col items-center">
+        <div className="pt-24 min-h-[70vh] bg-[var(--color-paper)] pb-20 flex flex-col items-center">
             <div className="container mx-auto px-4 max-w-5xl">
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-maroon)] mb-4">Join Us / Volunteer</h1>
-                    <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4 mb-6"></div>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Share your skills for a great cause. We are always looking for passionate individuals to help empower women through art and vocational training.
-                    </p>
-                </div>
+                <PageHeader
+                    title="Join Us / Volunteer"
+                    subtitle="Share your skills for a great cause. We are always looking for passionate individuals to help empower women through art and vocational training."
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Section 1: Volunteer Roles */}
-                    <div>
-                        <h2 className="text-2xl font-bold text-[var(--color-dark)] mb-6">We need help in these areas:</h2>
+                    <Reveal>
+                        <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-6">We need help in these areas:</h2>
                         <div className="space-y-6">
                             <div className="flex gap-4">
                                 <div className="w-12 h-12 rounded-full bg-[var(--color-maroon)]/10 flex items-center justify-center flex-shrink-0">
                                     <Palette className="text-[var(--color-maroon)]" size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-[var(--color-dark)]">Art Teacher</h3>
-                                    <p className="text-gray-600">Teach Mithila painting techniques to enrolled women.</p>
+                                    <h3 className="font-bold text-lg text-[var(--color-ink)]">Art Teacher</h3>
+                                    <p className="text-[var(--color-ink)]/70">Teach Mithila painting techniques to enrolled women.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
@@ -54,8 +53,8 @@ const JoinUs = () => {
                                     <Scissors className="text-[var(--color-maroon)]" size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-[var(--color-dark)]">Stitching Trainer</h3>
-                                    <p className="text-gray-600">Assist in cutting & stitching sessions.</p>
+                                    <h3 className="font-bold text-lg text-[var(--color-ink)]">Stitching Trainer</h3>
+                                    <p className="text-[var(--color-ink)]/70">Assist in cutting & stitching sessions.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
@@ -63,8 +62,8 @@ const JoinUs = () => {
                                     <Share2 className="text-[var(--color-maroon)]" size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-[var(--color-dark)]">Digital Marketing</h3>
-                                    <p className="text-gray-600">Help manage Instagram, Facebook, and content creation.</p>
+                                    <h3 className="font-bold text-lg text-[var(--color-ink)]">Digital Marketing</h3>
+                                    <p className="text-[var(--color-ink)]/70">Help manage Instagram, Facebook, and content creation.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
@@ -72,8 +71,8 @@ const JoinUs = () => {
                                     <Camera className="text-[var(--color-maroon)]" size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-[var(--color-dark)]">Photographer/Videographer</h3>
-                                    <p className="text-gray-600">Document classes and student progress.</p>
+                                    <h3 className="font-bold text-lg text-[var(--color-ink)]">Photographer/Videographer</h3>
+                                    <p className="text-[var(--color-ink)]/70">Document classes and student progress.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
@@ -81,16 +80,16 @@ const JoinUs = () => {
                                     <HeartHandshake className="text-[var(--color-maroon)]" size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-[var(--color-dark)]">Fundraising & Outreach</h3>
-                                    <p className="text-gray-600">Help connect donors and spread awareness.</p>
+                                    <h3 className="font-bold text-lg text-[var(--color-ink)]">Fundraising & Outreach</h3>
+                                    <p className="text-[var(--color-ink)]/70">Help connect donors and spread awareness.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Reveal>
 
                     {/* Section 2: Volunteer Form */}
-                    <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                        <h2 className="text-2xl font-bold text-[var(--color-dark)] mb-6">Apply to Volunteer</h2>
+                    <Reveal delay={150} className="bg-white p-8 rounded-sm shadow-lg">
+                        <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-6">Apply to Volunteer</h2>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
@@ -165,7 +164,7 @@ const JoinUs = () => {
                                 Send Application
                             </button>
                         </form>
-                    </div>
+                    </Reveal>
                 </div>
             </div>
         </div>

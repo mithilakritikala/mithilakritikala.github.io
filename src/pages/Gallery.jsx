@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import Reveal from '../components/Reveal';
 
 const allImages = [
     { src: "/photos/Work In action.jpg", category: "events", objectPosition: "center top" },
@@ -33,48 +35,49 @@ const Gallery = () => {
     return (
         <div className="pt-24 min-h-screen bg-[var(--color-cream)] pb-20">
             <div className="container mx-auto px-4 max-w-6xl">
-                <div className="text-center mb-10">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-maroon)] mb-4">Our Gallery</h1>
-                    <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4 mb-6"></div>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        A collection of moments from our classes, workshops, and the beautiful art created by our talented students.
-                    </p>
-                </div>
+                <PageHeader
+                    eyebrow="From the Studio"
+                    title="Our Gallery"
+                    subtitle="A collection of moments from our classes, workshops, and the beautiful art created by our talented students."
+                />
 
                 {/* Category Filter */}
-                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                <Reveal className="flex flex-wrap justify-center gap-3 mb-10">
                     {categories.map(cat => (
                         <button
                             key={cat.key}
                             onClick={() => setActiveCategory(cat.key)}
                             className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-200 border ${activeCategory === cat.key
                                     ? 'bg-[var(--color-maroon)] text-white border-[var(--color-maroon)]'
-                                    : 'bg-white text-gray-600 border-gray-200 hover:border-[var(--color-maroon)] hover:text-[var(--color-maroon)]'
+                                    : 'bg-white text-[var(--color-ink)]/70 border-[var(--color-ink)]/10 hover:border-[var(--color-maroon)] hover:text-[var(--color-maroon)]'
                                 }`}
                         >
                             {cat.label}
                         </button>
                     ))}
-                </div>
+                </Reveal>
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filtered.map((img, index) => (
-                        <div
+                        <Reveal
                             key={img.src}
-                            className="aspect-square bg-gray-200 rounded-lg overflow-hidden group relative shadow-sm cursor-pointer"
-                            onClick={() => openLightbox(index)}
+                            delay={(index % 4) * 80}
+                            className="aspect-square bg-gray-200 rounded-sm overflow-hidden group relative shadow-sm cursor-pointer"
+                            as="div"
                         >
-                            <img
-                                src={img.src}
-                                alt={`Gallery image ${index + 1}`}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                style={{ objectPosition: img.objectPosition }}
-                            />
-                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <ZoomIn size={32} className="text-white" />
+                            <div onClick={() => openLightbox(index)} className="w-full h-full">
+                                <img
+                                    src={img.src}
+                                    alt={`Gallery image ${index + 1}`}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    style={{ objectPosition: img.objectPosition }}
+                                />
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <ZoomIn size={32} className="text-white" />
+                                </div>
                             </div>
-                        </div>
+                        </Reveal>
                     ))}
                 </div>
             </div>

@@ -1,48 +1,45 @@
 import { ShieldCheck, FileText, Download, Clock, Landmark, Users } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import Reveal from '../components/Reveal';
 
 const TransparencyPage = () => {
     return (
-        <div className="pt-24 min-h-screen bg-gray-50 pb-20">
+        <div className="pt-24 min-h-screen bg-[var(--color-paper)] pb-20">
             <div className="container mx-auto px-4 max-w-6xl">
 
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-maroon)] mb-4">
-                        Verified, Transparent & Accountable
-                    </h1>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        We believe in complete transparency. Our operations are fully compliant with the legal and financial regulations of the Government of India.
-                    </p>
-                </div>
+                <PageHeader
+                    title="Verified, Transparent & Accountable"
+                    subtitle="We believe in complete transparency. Our operations are fully compliant with the legal and financial regulations of the Government of India."
+                />
 
                 {/* Registration Cards Grid */}
-                <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-6 flex items-center gap-2">
+                <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-6 flex items-center gap-2">
                     <ShieldCheck className="text-[var(--color-maroon)]" />
                     Legal Registrations
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     {/* 12A Registration */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex items-start gap-4">
+                    <div className="bg-white p-6 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-start gap-4">
                         <div className="bg-green-100 p-3 rounded-full text-green-600 shrink-0">
                             <ShieldCheck size={24} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-lg text-[var(--color-dark)]">12A Registration</h3>
+                            <h3 className="font-bold text-lg text-[var(--color-ink)]">12A Registration</h3>
                             <p className="text-sm text-gray-500 mb-2">Registration No: AAKTM3093ME20251</p>
-                            <div className="text-sm bg-gray-50 p-2 rounded text-gray-700 border border-gray-100">
+                            <div className="text-sm bg-gray-50 p-2 rounded text-gray-700 border border-[var(--color-ink)]/10">
                                 <span className="font-medium">Note:</span> Exempts NGO income from tax.
                             </div>
                         </div>
                     </div>
 
                     {/* 80G Registration */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex items-start gap-4">
+                    <div className="bg-white p-6 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-start gap-4">
                         <div className="bg-green-100 p-3 rounded-full text-green-600 shrink-0">
                             <ShieldCheck size={24} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-lg text-[var(--color-dark)]">80G Registration</h3>
+                            <h3 className="font-bold text-lg text-[var(--color-ink)]">80G Registration</h3>
                             <p className="text-sm text-gray-500 mb-2">Registration No: AAKTM3093MF20251</p>
                             <div className="text-sm bg-blue-50 p-2 rounded text-blue-800 border border-blue-100">
                                 <span className="font-medium">Tax Benefit:</span> Your donation qualifies for 50% tax deduction under Section 80G of the Income Tax Act.
@@ -51,43 +48,43 @@ const TransparencyPage = () => {
                     </div>
 
                     {/* NGO Darpan */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex items-start gap-4">
+                    <div className="bg-white p-6 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-start gap-4">
                         <div className="bg-green-100 p-3 rounded-full text-green-600 shrink-0">
                             <Landmark size={24} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-lg text-[var(--color-dark)]">NGO Darpan ID</h3>
+                            <h3 className="font-bold text-lg text-[var(--color-ink)]">NGO Darpan ID</h3>
                             <p className="text-sm text-gray-500 mb-2">Unique ID: BR/2025/0781443</p>
                             <p className="text-sm text-gray-600">Registered with NITI Aayog, Govt. of India.</p>
                         </div>
                     </div>
 
                     {/* Trust Registration */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex items-start gap-4">
+                    <div className="bg-white p-6 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-start gap-4">
                         <div className="bg-green-100 p-3 rounded-full text-green-600 shrink-0">
                             <FileText size={24} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-lg text-[var(--color-dark)]">Trust Registration</h3>
+                            <h3 className="font-bold text-lg text-[var(--color-ink)]">Trust Registration</h3>
                             <p className="text-sm text-gray-500 mb-2">Registration process completed in Madhubani, Bihar. Certificate available on request.</p>
                             <p className="text-sm text-gray-600">Legally registered public charitable trust.</p>
                         </div>
                     </div>
 
                     {/* PAN Card */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex items-start gap-4">
+                    <div className="bg-white p-6 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-start gap-4">
                         <div className="bg-green-100 p-3 rounded-full text-green-600 shrink-0">
                             <FileText size={24} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-lg text-[var(--color-dark)]">Permanent Account Number (PAN)</h3>
+                            <h3 className="font-bold text-lg text-[var(--color-ink)]">Permanent Account Number (PAN)</h3>
                             <p className="text-sm text-gray-500 mb-2">PAN: AAKTM3093M</p>
                             <p className="text-sm text-gray-600">Issued by Income Tax Department, Govt of India.</p>
                         </div>
                     </div>
 
                     {/* CSR Registration */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-amber-200 bg-amber-50/30 flex items-start gap-4">
+                    <div className="bg-white p-6 rounded-sm shadow-sm border border-amber-200 bg-amber-50/30 flex items-start gap-4">
                         <div className="bg-amber-100 p-3 rounded-full text-amber-600 shrink-0 animate-pulse">
                             <Clock size={24} />
                         </div>
@@ -104,25 +101,25 @@ const TransparencyPage = () => {
                 </div>
 
                 {/* Certificate Downloads */}
-                <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-6">Certificate Downloads</h2>
+                <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-6">Certificate Downloads</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
-                    <a href="#" className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between hover:border-[var(--color-maroon)] hover:shadow-md transition-all group">
+                    <a href="#" className="bg-white border border-gray-200 p-4 rounded-sm flex items-center justify-between hover:border-[var(--color-maroon)] hover:shadow-md transition-all group">
                         <span className="font-medium text-gray-700 group-hover:text-[var(--color-maroon)]">12A Certificate</span>
                         <Download size={20} className="text-gray-400 group-hover:text-[var(--color-maroon)]" />
                     </a>
-                    <a href="#" className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between hover:border-[var(--color-maroon)] hover:shadow-md transition-all group">
+                    <a href="#" className="bg-white border border-gray-200 p-4 rounded-sm flex items-center justify-between hover:border-[var(--color-maroon)] hover:shadow-md transition-all group">
                         <span className="font-medium text-gray-700 group-hover:text-[var(--color-maroon)]">80G Certificate</span>
                         <Download size={20} className="text-gray-400 group-hover:text-[var(--color-maroon)]" />
                     </a>
-                    <a href="#" className="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between hover:border-[var(--color-maroon)] hover:shadow-md transition-all group">
+                    <a href="#" className="bg-white border border-gray-200 p-4 rounded-sm flex items-center justify-between hover:border-[var(--color-maroon)] hover:shadow-md transition-all group">
                         <span className="font-medium text-gray-700 group-hover:text-[var(--color-maroon)]">NGO Darpan Doc</span>
                         <Download size={20} className="text-gray-400 group-hover:text-[var(--color-maroon)]" />
                     </a>
                 </div>
 
                 {/* How We Use Funds */}
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-16">
-                    <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-4">How We Use Funds</h2>
+                <Reveal className="bg-white rounded-sm shadow-sm border border-[var(--color-ink)]/10 p-8 mb-16">
+                    <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-4">How We Use Funds</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -171,18 +168,18 @@ const TransparencyPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Reveal>
 
                 {/* Trustees & Annual Reports Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <Reveal className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Trustees */}
                     <div>
-                        <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-6 flex items-center gap-2">
+                        <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-6 flex items-center gap-2">
                             <Users className="text-[var(--color-maroon)]" />
                             Our Trustees
                         </h2>
                         <div className="space-y-4">
-                            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center gap-4">
+                            <div className="bg-white p-4 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-center gap-4">
                                 <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 shrink-0">
                                     <Users size={20} />
                                 </div>
@@ -191,7 +188,7 @@ const TransparencyPage = () => {
                                     <p className="text-sm text-gray-500">President / Managing Trustee</p>
                                 </div>
                             </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center gap-4">
+                            <div className="bg-white p-4 rounded-sm shadow-sm border border-[var(--color-ink)]/10 flex items-center gap-4">
                                 <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 shrink-0">
                                     <Users size={20} />
                                 </div>
@@ -205,17 +202,17 @@ const TransparencyPage = () => {
 
                     {/* Annual Reports */}
                     <div>
-                        <h2 className="text-2xl font-serif font-bold text-[var(--color-dark)] mb-6 flex items-center gap-2">
+                        <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-6 flex items-center gap-2">
                             <FileText className="text-[var(--color-maroon)]" />
                             Annual Reports
                         </h2>
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                        <div className="bg-white rounded-sm shadow-sm border border-[var(--color-ink)]/10 p-6">
                             <p className="text-gray-600 text-sm leading-relaxed">
                                 Annual Report 2025-26 will be published after financial year completion.
                             </p>
                         </div>
                     </div>
-                </div>
+                </Reveal>
 
             </div>
         </div>

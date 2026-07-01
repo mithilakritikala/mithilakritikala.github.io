@@ -5,19 +5,23 @@
   --color-cream: #FDF6EC;
   --color-gold: #C9922A;
   --color-dark: #1C1C1C;
-  --font-serif: "Noto Serif", serif;
-  --font-sans: "DM Sans", sans-serif;
-  --animate-marquee: marquee 20s linear infinite;
 
-  /* Home-page design system — an "editorial folk-craft" language built
-     from the Mithila painting palette (madder red, turmeric, ink) rather
-     than a generic template palette. Scoped to Home/Hero components so
-     the rest of the site is untouched until this direction is approved. */
+  /* "Editorial folk-craft" design system — promoted from a Home-only
+     experiment to the site-wide standard. font-serif/font-sans (and every
+     existing className="font-serif"/"font-sans" across the codebase) now
+     resolve to Fraunces/Work Sans everywhere, so every page inherits the
+     new type system with zero per-page markup changes. font-display/
+     font-body are kept as aliases since the Home components already
+     reference them directly. */
+  --font-serif: "Fraunces", serif;
+  --font-sans: "Work Sans", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+
   --color-paper: #F3E6C9;
   --color-ink: #2A1810;
   --color-terracotta: #B5551A;
-  --font-display: "Fraunces", serif;
-  --font-body: "Work Sans", sans-serif;
+  --animate-marquee: marquee 20s linear infinite;
 
   @keyframes marquee {
     0% {

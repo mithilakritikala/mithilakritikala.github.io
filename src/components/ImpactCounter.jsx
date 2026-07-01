@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { KachniDivider } from './MithilaMotif';
 
 // eslint-disable-next-line react/prop-types
 const Counter = ({ end, duration, suffix = "", prefix = "", label, icon }) => {
@@ -32,10 +33,13 @@ const Counter = ({ end, duration, suffix = "", prefix = "", label, icon }) => {
             <div className="w-14 h-14 rounded-full bg-white/10 border border-[var(--color-gold)]/40 flex items-center justify-center text-2xl mb-4">
                 {icon}
             </div>
-            <div className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-gold)] mb-2">
+            <div
+                className="text-4xl md:text-5xl font-bold text-[var(--color-gold)] mb-2"
+                style={{ fontFamily: 'var(--font-display)' }}
+            >
                 {prefix}{count}{suffix}
             </div>
-            <div className="text-sm md:text-base uppercase tracking-wide text-[var(--color-cream)]/90 font-medium">{label}</div>
+            <div className="text-sm md:text-base uppercase tracking-wide text-[var(--color-cream)]/90 font-medium" style={{ fontFamily: 'var(--font-body)' }}>{label}</div>
         </div>
     );
 };
@@ -46,17 +50,20 @@ const StaticStat = ({ icon, value, label }) => (
         <div className="w-14 h-14 rounded-full bg-white/10 border border-[var(--color-gold)]/40 flex items-center justify-center text-2xl mb-4">
             {icon}
         </div>
-        <div className="text-2xl md:text-3xl font-serif font-bold text-[var(--color-gold)] mb-2 leading-tight">{value}</div>
-        <div className="text-sm md:text-base uppercase tracking-wide text-[var(--color-cream)]/90 font-medium">{label}</div>
+        <div className="text-2xl md:text-3xl font-bold text-[var(--color-gold)] mb-2 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>{value}</div>
+        <div className="text-sm md:text-base uppercase tracking-wide text-[var(--color-cream)]/90 font-medium" style={{ fontFamily: 'var(--font-body)' }}>{label}</div>
     </div>
 );
 
 const ImpactCounter = () => {
     return (
         <section
-            className="py-16 border-t-2 border-[var(--color-gold)]"
+            className="pt-10 pb-16 border-t-2 border-[var(--color-gold)]"
             style={{ background: 'linear-gradient(180deg, var(--color-maroon) 0%, #5C1010 100%)' }}
         >
+            <div className="flex justify-center mb-6">
+                <KachniDivider className="w-48 h-3" color="rgba(201,146,42,0.5)" />
+            </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:divide-x md:divide-[var(--color-gold)]/20">
                     <Counter end={20} suffix="+" label="Women Trained" icon="🎨" duration={1500} />

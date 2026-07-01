@@ -1,132 +1,193 @@
 import { Link } from 'react-router-dom';
 import { Palette, Users, Heart, Facebook, Instagram, Linkedin } from 'lucide-react';
 import AnnouncementBanner from '../components/AnnouncementBanner';
-import HeroCarousel from '../components/HeroCarousel';
+import Hero from '../components/Hero';
 import ImpactCounter from '../components/ImpactCounter';
 import Testimonials from '../components/Testimonials';
 import PressSection from '../components/PressSection';
+import Reveal from '../components/Reveal';
+import { FishMotif, SunburstMotif, KachniDivider } from '../components/MithilaMotif';
 
 const courseStatus = {
     mithilaPainting: { status: "open", label: "Admissions Open" },
     cuttingStitching: { status: "closed", label: "Admissions Closed" }
 };
 
+const visionItems = [
+    {
+        index: '01',
+        icon: Palette,
+        title: 'Preserve Tradition',
+        text: 'Keeping the ancient art of Mithila painting alive for future generations through dedicated teaching and practice.',
+    },
+    {
+        index: '02',
+        icon: Users,
+        title: 'Empower Women',
+        text: 'Providing economic opportunities and skill development to women and girls in rural Bihar through art education.',
+    },
+    {
+        index: '03',
+        icon: Heart,
+        title: 'Build Community',
+        text: "Creating a supportive community where traditional arts flourish and women support each other's growth.",
+    },
+];
+
+const galleryPreview = [
+    { src: '/photos/Work In action.jpg', label: 'Students Learning', size: 'lg:col-span-7 h-[280px] md:h-[420px]' },
+    { src: '/photos/gallery3.jpg', label: 'Art Class', size: 'lg:col-span-5 h-[280px] md:h-[420px]' },
+    { src: '/photos/gallery2.jpg', label: 'Trustee with Students', size: 'lg:col-span-5 h-[220px] md:h-[260px]' },
+    { src: '/photos/gallery7.jpg', label: 'Trustee', size: 'lg:col-span-7 h-[220px] md:h-[260px]' },
+];
+
+// eslint-disable-next-line react/prop-types
+const SectionHeading = ({ eyebrow, title }) => (
+    <div className="text-center mb-16">
+        {eyebrow && (
+            <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[var(--color-terracotta)] mb-3" style={{ fontFamily: 'var(--font-body)' }}>
+                {eyebrow}
+            </p>
+        )}
+        <h2 className="text-3xl md:text-5xl text-[var(--color-maroon)] font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
+            {title}
+        </h2>
+        <KachniDivider className="w-40 h-3 mx-auto mt-5" />
+    </div>
+);
+
 const Home = () => {
     return (
-        <div className="pt-20">
+        <div className="pt-20" style={{ fontFamily: 'var(--font-body)' }}>
             <AnnouncementBanner />
 
-            {/* Hero Carousel */}
-            <HeroCarousel />
+            <Hero />
 
             <ImpactCounter />
 
-            {/* Vision Section */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-maroon)] font-bold">Our Vision</h2>
-                        <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4"></div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="text-center bg-[#FDF6EC] p-8 rounded-xl shadow-sm border-t-4 border-[var(--color-gold)]">
-                            <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 text-[var(--color-maroon)] shadow-sm">
-                                <Palette size={28} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Preserve Tradition</h3>
-                            <p className="text-gray-600">Keeping the ancient art of Mithila painting alive for future generations through dedicated teaching and practice.</p>
-                        </div>
-                        <div className="text-center bg-[#FDF6EC] p-8 rounded-xl shadow-sm border-t-4 border-[var(--color-gold)]">
-                            <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 text-[var(--color-maroon)] shadow-sm">
-                                <Users size={28} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Empower Women</h3>
-                            <p className="text-gray-600">Providing economic opportunities and skill development to women and girls in rural Bihar through art education.</p>
-                        </div>
-                        <div className="text-center bg-[#FDF6EC] p-8 rounded-xl shadow-sm border-t-4 border-[var(--color-gold)]">
-                            <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 text-[var(--color-maroon)] shadow-sm">
-                                <Heart size={28} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Build Community</h3>
-                            <p className="text-gray-600">Creating a supportive community where traditional arts flourish and women support each other&apos;s growth.</p>
-                        </div>
+            {/* Vision Section — an editorial numbered list rather than three equal cards */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <Reveal>
+                        <SectionHeading eyebrow="Why We Exist" title="Our Vision" />
+                    </Reveal>
+
+                    <div className="divide-y divide-[var(--color-ink)]/10">
+                        {visionItems.map((item, idx) => (
+                            <Reveal key={item.title} delay={idx * 120} className="flex items-start gap-6 md:gap-10 py-10">
+                                <span
+                                    className="text-4xl md:text-6xl text-[var(--color-gold)]/30 font-semibold leading-none shrink-0"
+                                    style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic' }}
+                                >
+                                    {item.index}
+                                </span>
+                                <div>
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <item.icon size={22} className="text-[var(--color-maroon)]" />
+                                        <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-ink)]" style={{ fontFamily: 'var(--font-display)' }}>
+                                            {item.title}
+                                        </h3>
+                                    </div>
+                                    <p className="text-[var(--color-ink)]/70 leading-relaxed max-w-xl">{item.text}</p>
+                                </div>
+                            </Reveal>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* About the Founder Strip */}
-            <section className="py-20 bg-white border-t border-gray-100">
-                <div className="container mx-auto px-4 max-w-5xl">
+            <section className="py-24 bg-[var(--color-paper)] relative overflow-hidden">
+                <SunburstMotif className="w-[420px] h-[420px] text-[var(--color-terracotta)]/10 absolute -right-24 -top-24 pointer-events-none" />
+                <div className="container mx-auto px-4 max-w-5xl relative">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div className="flex justify-center md:justify-end">
-                            <img src="/photos/founder.jpg" alt="Vishal Kumar Thakur" className="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-[var(--color-cream)]" />
-                        </div>
-                        <div className="text-center md:text-left">
-                            <h2 className="text-3xl font-serif text-[var(--color-dark)] font-bold mb-2">Vishal Kumar Thakur</h2>
-                            <p className="text-[var(--color-maroon)] font-medium mb-6">Founder & Managing Trustee</p>
-                            <p className="text-gray-600 leading-relaxed italic border-l-4 border-[var(--color-gold)] pl-4 md:pl-6">
+                        <Reveal className="flex justify-center md:justify-end">
+                            <div className="relative w-64 h-64">
+                                <svg className="motif-draw absolute -inset-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="48" fill="none" stroke="var(--color-gold)" strokeWidth="1.4" pathLength="1" />
+                                </svg>
+                                <img src="/photos/founder.jpg" alt="Vishal Kumar Thakur" className="w-64 h-64 object-cover rounded-full shadow-lg relative" />
+                            </div>
+                        </Reveal>
+                        <Reveal delay={150} className="text-center md:text-left">
+                            <h2 className="text-3xl text-[var(--color-ink)] font-semibold mb-2" style={{ fontFamily: 'var(--font-display)' }}>Vishal Kumar Thakur</h2>
+                            <p className="text-[var(--color-maroon)] font-medium mb-6">Founder &amp; Managing Trustee</p>
+                            <p
+                                className="text-[var(--color-ink)]/80 leading-relaxed italic border-l-4 border-[var(--color-gold)] pl-4 md:pl-6 text-lg"
+                                style={{ fontFamily: 'var(--font-display)' }}
+                            >
                                 &quot;Our vision is to preserve the ancestral art form of our region while simultaneously creating sustainable livelihood opportunities for local women. The dedication of our community has transformed the lives of dozens of families across Madhubani.&quot;
                             </p>
-                        </div>
+                        </Reveal>
                     </div>
                 </div>
             </section>
 
-            {/* Gallery Preview Section */}
-            <section className="py-20 bg-[var(--color-cream)]">
+            {/* Gallery Preview Section — asymmetric brick layout instead of a uniform 4-up grid */}
+            <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-maroon)] font-bold">A Glimpse of Our Work</h2>
-                        <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4"></div>
+                    <Reveal>
+                        <SectionHeading eyebrow="From the Studio" title="A Glimpse of Our Work" />
+                    </Reveal>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                        {galleryPreview.map((photo, idx) => (
+                            <Reveal key={photo.src} delay={idx * 100} className={`group relative overflow-hidden rounded-sm ${photo.size}`}>
+                                <img
+                                    src={photo.src}
+                                    alt={photo.label}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                    <span className="text-white font-medium" style={{ fontFamily: 'var(--font-display)' }}>{photo.label}</span>
+                                </div>
+                            </Reveal>
+                        ))}
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="/photos/Work In action.jpg" alt="Students learning" className="w-full h-64 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow" />
-                        <img src="/photos/gallery3.jpg" alt="Art class" className="w-full h-64 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow" />
-                        <img src="/photos/gallery2.jpg" alt="Trustee with students" className="w-full h-64 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow" />
-                        <img src="/photos/gallery7.jpg" alt="Trustee" className="w-full h-64 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow" />
-                    </div>
-                    <div className="text-center mt-12">
-                        <Link to="/gallery" className="inline-block border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] px-8 py-3 rounded font-bold transition-colors">
+                    <Reveal className="text-center mt-12">
+                        <Link to="/gallery" className="inline-flex items-center gap-2 border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] px-8 py-3 rounded-sm font-semibold transition-colors">
                             View Full Gallery
                         </Link>
-                    </div>
+                    </Reveal>
                 </div>
             </section>
 
             {/* Courses Section */}
-            <section className="py-20 bg-white">
+            <section className="py-24 bg-[var(--color-paper)]">
                 <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-maroon)] font-bold">Our Courses</h2>
-                        <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4"></div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                        <div className={`bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300 ${courseStatus.mithilaPainting.status === 'closed' ? 'opacity-60 grayscale-[0.2]' : ''}`}>
-                            <img src="/photos/mithila-painting.png" alt="Mithila Painting" className="w-full h-64 object-cover" />
-                            <div className="p-8 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 className="text-2xl font-bold text-[var(--color-dark)] mb-3">Mithila Painting</h3>
-                                    <p className="text-gray-600 mb-6">Learn the ancient art of Mithila with traditional techniques and natural colors.</p>
+                    <Reveal>
+                        <SectionHeading eyebrow="Learn a Craft" title="Our Courses" />
+                    </Reveal>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                        {[
+                            { key: 'mithilaPainting', img: '/photos/mithila-painting.png', title: 'Mithila Painting', text: 'Learn the ancient art of Mithila with traditional techniques and natural colors.' },
+                            { key: 'cuttingStitching', img: '/photos/stiching.png', title: 'Cutting & Stitching', text: 'Master cutting and stitching to create beautiful garments and textiles.' },
+                        ].map((course, idx) => (
+                            <Reveal
+                                key={course.key}
+                                delay={idx * 150}
+                                className={`bg-white shadow-lg overflow-hidden flex flex-col relative hover:-translate-y-1 transition-transform duration-300 ${courseStatus[course.key].status === 'closed' ? 'opacity-70 grayscale-[0.25]' : ''}`}
+                            >
+                                <div className="relative">
+                                    <img src={course.img} alt={course.title} className="w-full h-64 object-cover" />
+                                    <span
+                                        className={`absolute top-4 right-4 px-3 py-1 text-xs font-bold uppercase tracking-wide border-2 border-dashed ${courseStatus[course.key].status === 'open' ? 'text-green-800 border-green-700 bg-white/90' : 'text-red-700 border-red-600 bg-white/90'}`}
+                                        style={{ transform: 'rotate(-6deg)' }}
+                                    >
+                                        {courseStatus[course.key].label}
+                                    </span>
                                 </div>
-                                <div className="flex justify-between items-center">
-                                    <span className={`${courseStatus.mithilaPainting.status === 'open' ? 'text-green-600 bg-green-50' : 'text-red-500 bg-red-50'} font-medium px-3 py-1 rounded-full text-sm`}>{courseStatus.mithilaPainting.label}</span>
-                                    <Link to="/courses" className="text-[var(--color-maroon)] font-bold hover:underline">View Details →</Link>
+                                <div className="p-8 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-3">
+                                            <FishMotif className="w-8 h-4 text-[var(--color-terracotta)]" />
+                                            <h3 className="text-2xl font-semibold text-[var(--color-ink)]" style={{ fontFamily: 'var(--font-display)' }}>{course.title}</h3>
+                                        </div>
+                                        <p className="text-[var(--color-ink)]/70 mb-6">{course.text}</p>
+                                    </div>
+                                    <Link to="/courses" className="text-[var(--color-maroon)] font-bold hover:underline self-start">View Details &rarr;</Link>
                                 </div>
-                            </div>
-                        </div>
-                        <div className={`bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300 ${courseStatus.cuttingStitching.status === 'closed' ? 'opacity-60 grayscale-[0.2]' : ''}`}>
-                            <img src="/photos/stiching.png" alt="Cutting & Stitching" className="w-full h-64 object-cover" />
-                            <div className="p-8 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 className="text-2xl font-bold text-[var(--color-dark)] mb-3">Cutting & Stitching</h3>
-                                    <p className="text-gray-600 mb-6">Master cutting and stitching to create beautiful garments and textiles.</p>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <span className={`${courseStatus.cuttingStitching.status === 'open' ? 'text-green-600 bg-green-50' : 'text-red-500 bg-red-50'} font-medium px-3 py-1 rounded-full text-sm`}>{courseStatus.cuttingStitching.label}</span>
-                                    <Link to="/courses" className="text-[var(--color-maroon)] font-bold hover:underline">View Details →</Link>
-                                </div>
-                            </div>
-                        </div>
+                            </Reveal>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -136,40 +197,41 @@ const Home = () => {
             <PressSection />
 
             {/* Get Involved Section */}
-            <section className="py-20 bg-white border-t border-gray-100">
+            <section className="py-24 bg-[var(--color-ink)] text-[var(--color-cream)]">
                 <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-maroon)] font-bold">Get Involved</h2>
-                        <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4 mb-6"></div>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">Join us in our mission to preserve traditional art and empower women. Your support can change lives.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-[var(--color-cream)] p-8 rounded-xl text-center shadow-sm h-full flex flex-col">
-                            <h3 className="text-xl font-bold text-[var(--color-dark)] mb-4">Make a Donation</h3>
-                            <p className="text-gray-600 mb-8 flex-grow">Your donations help us provide free training, art supplies, and materials to women and girls in Madhubani.</p>
-                            <Link to="/donate" className="inline-block border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] py-2 px-6 text-base rounded font-bold transition-colors w-full">
+                    <Reveal className="text-center mb-16">
+                        <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[var(--color-gold)] mb-3">Join the Mission</p>
+                        <h2 className="text-3xl md:text-5xl font-semibold" style={{ fontFamily: 'var(--font-display)' }}>Get Involved</h2>
+                        <KachniDivider className="w-40 h-3 mx-auto mt-5 mb-6" color="var(--color-gold)" />
+                        <p className="text-lg text-[var(--color-cream)]/70 max-w-2xl mx-auto">Join us in our mission to preserve traditional art and empower women. Your support can change lives.</p>
+                    </Reveal>
+                    <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[var(--color-gold)]/20">
+                        <Reveal className="text-center flex flex-col items-center px-6 py-8 md:py-0">
+                            <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>Make a Donation</h3>
+                            <p className="text-[var(--color-cream)]/70 mb-8 flex-grow">Your donations help us provide free training, art supplies, and materials to women and girls in Madhubani.</p>
+                            <Link to="/donate" className="inline-block border-2 border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] py-2 px-6 text-base rounded-sm font-semibold transition-colors w-full">
                                 Donate
                             </Link>
-                        </div>
-                        <div className="bg-[var(--color-cream)] p-8 rounded-xl text-center shadow-sm h-full flex flex-col">
-                            <h3 className="text-xl font-bold text-[var(--color-dark)] mb-4">Volunteer</h3>
-                            <p className="text-gray-600 mb-8 flex-grow">We are always looking for passionate individuals to help with teaching, workshops, and digital marketing.</p>
-                            <Link to="/join" className="inline-block border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] py-2 px-6 text-base rounded font-bold transition-colors w-full">
+                        </Reveal>
+                        <Reveal delay={120} className="text-center flex flex-col items-center px-6 py-8 md:py-0">
+                            <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>Volunteer</h3>
+                            <p className="text-[var(--color-cream)]/70 mb-8 flex-grow">We are always looking for passionate individuals to help with teaching, workshops, and digital marketing.</p>
+                            <Link to="/join" className="inline-block border-2 border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] py-2 px-6 text-base rounded-sm font-semibold transition-colors w-full">
                                 Become a Volunteer
                             </Link>
-                        </div>
-                        <div className="bg-[var(--color-cream)] p-8 rounded-xl text-center shadow-sm h-full flex flex-col">
-                            <h3 className="text-xl font-bold text-[var(--color-dark)] mb-4">Share our Story</h3>
-                            <p className="text-gray-600 mb-8 flex-grow">Help us reach more people by sharing our mission. Follow us on social media and spread the word.</p>
-                            <div className="flex justify-center gap-4 text-[var(--color-maroon)] mt-auto">
-                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-maroon)] flex items-center justify-center hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] transition-colors" aria-label="Facebook"><Facebook size={20} /></a>
-                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-maroon)] flex items-center justify-center hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] transition-colors" aria-label="Instagram"><Instagram size={20} /></a>
-                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-maroon)] flex items-center justify-center hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] transition-colors" aria-label="Twitter">
+                        </Reveal>
+                        <Reveal delay={240} className="text-center flex flex-col items-center px-6 py-8 md:py-0">
+                            <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>Share our Story</h3>
+                            <p className="text-[var(--color-cream)]/70 mb-8 flex-grow">Help us reach more people by sharing our mission. Follow us on social media and spread the word.</p>
+                            <div className="flex justify-center gap-4 text-[var(--color-gold)] mt-auto">
+                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-gold)] flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors" aria-label="Facebook"><Facebook size={20} /></a>
+                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-gold)] flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors" aria-label="Instagram"><Instagram size={20} /></a>
+                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-gold)] flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors" aria-label="Twitter">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
                                 </a>
-                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-maroon)] flex items-center justify-center hover:bg-[var(--color-maroon)] hover:text-[var(--color-cream)] transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                                <a href="#" className="w-10 h-10 rounded-full border border-[var(--color-gold)] flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
                             </div>
-                        </div>
+                        </Reveal>
                     </div>
                 </div>
             </section>

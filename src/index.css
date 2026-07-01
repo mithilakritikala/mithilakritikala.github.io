@@ -9,6 +9,16 @@
   --font-sans: "DM Sans", sans-serif;
   --animate-marquee: marquee 20s linear infinite;
 
+  /* Home-page design system — an "editorial folk-craft" language built
+     from the Mithila painting palette (madder red, turmeric, ink) rather
+     than a generic template palette. Scoped to Home/Hero components so
+     the rest of the site is untouched until this direction is approved. */
+  --color-paper: #F3E6C9;
+  --color-ink: #2A1810;
+  --color-terracotta: #B5551A;
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+
   @keyframes marquee {
     0% {
       transform: translateX(100%);
@@ -33,4 +43,85 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
+}
+
+/* --- Shared Home-page animation vocabulary --- */
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Elements using this class must also carry the SVG attribute pathLength="1"
+   so stroke-dasharray:1 maps to "one full lap" regardless of actual path length.
+   Only reliable for uniformly-scaled shapes (e.g. a circle in a square
+   viewBox) — see FrameDraw in MithilaMotif.jsx for why rectangular frames
+   use plain CSS bars instead. */
+.motif-draw path,
+.motif-draw rect,
+.motif-draw circle {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-line 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Used by FrameDraw: a bar scales in from 0 along one axis, from a fixed
+   edge (set per-bar via inline transform-origin), reading as ink being
+   drawn along that edge. */
+@keyframes frame-draw-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes frame-draw-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.frame-draw-x {
+  transform: scaleX(0);
+  animation: frame-draw-x 0.5s ease-out forwards;
+}
+
+.frame-draw-y {
+  transform: scaleY(0);
+  animation: frame-draw-y 0.5s ease-out forwards;
+}
+
+@keyframes paper-drift {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-1%, -1%, 0);
+  }
+}
+
+.animate-paper-drift {
+  animation: paper-drift 14s ease-in-out infinite alternate;
+}
+
+.bg-paper-grain {
+  background-image: radial-gradient(rgba(42, 24, 16, 0.09) 0.6px, transparent 0.6px);
+  background-size: 4px 4px;
 }

@@ -108,6 +108,26 @@ h6 {
   animation: frame-draw-y 0.5s ease-out forwards;
 }
 
+/* --- Maithili chat avatar --- */
+
+@keyframes maithili-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.maithili-avatar-bob {
+  animation: maithili-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes maithili-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.1); }
+}
+
+.maithili-avatar-blink {
+  animation: maithili-blink 4.5s ease-in-out infinite;
+}
+
 @keyframes paper-drift {
   from {
     transform: scale(1.02) translate3d(0, 0, 0);

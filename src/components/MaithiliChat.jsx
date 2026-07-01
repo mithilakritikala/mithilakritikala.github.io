@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import knowledgeBase from '../data/maithili-knowledge.json';
+import MaithiliAvatar from './MaithiliAvatar';
 
 // Scores each FAQ entry by how many of its keywords appear in the user's
 // message, and returns the best match (or null if nothing scores > 0).
@@ -64,12 +65,15 @@ const MaithiliChat = () => {
         <div className="fixed bottom-6 right-6 z-50">
             {isOpen && (
                 <div className="mb-4 w-[90vw] max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden" style={{ height: '480px' }}>
-                    <div className="bg-[var(--color-maroon)] text-[var(--color-cream)] px-5 py-4 flex items-center justify-between">
-                        <div>
+                    <div className="bg-[var(--color-maroon)] text-[var(--color-cream)] px-5 py-4 flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-full bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <MaithiliAvatar size={38} />
+                        </div>
+                        <div className="flex-grow">
                             <p className="font-serif font-bold text-lg leading-tight">Maithili</p>
                             <p className="text-xs text-[var(--color-cream)]/80">Mithila KritiKala Assistant</p>
                         </div>
-                        <button onClick={() => setIsOpen(false)} aria-label="Close chat" className="text-[var(--color-cream)]/80 hover:text-white">
+                        <button onClick={() => setIsOpen(false)} aria-label="Close chat" className="text-[var(--color-cream)]/80 hover:text-white flex-shrink-0">
                             <X size={22} />
                         </button>
                     </div>
@@ -116,9 +120,9 @@ const MaithiliChat = () => {
             <button
                 onClick={() => setIsOpen((prev) => !prev)}
                 aria-label={isOpen ? 'Close Maithili chat' : 'Open Maithili chat'}
-                className="w-14 h-14 rounded-full bg-[var(--color-maroon)] text-white shadow-xl flex items-center justify-center hover:bg-[#6b1414] transition-colors ml-auto"
+                className="w-16 h-16 rounded-full bg-[var(--color-cream)] border-2 border-[var(--color-maroon)] text-[var(--color-maroon)] shadow-xl flex items-center justify-center hover:scale-105 transition-transform ml-auto overflow-hidden"
             >
-                {isOpen ? <X size={26} /> : <MessageCircle size={26} />}
+                {isOpen ? <X size={26} /> : <MaithiliAvatar size={56} />}
             </button>
         </div>
     );

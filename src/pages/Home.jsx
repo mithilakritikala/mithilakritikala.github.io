@@ -6,7 +6,7 @@ import ImpactCounter from '../components/ImpactCounter';
 import Testimonials from '../components/Testimonials';
 import PressSection from '../components/PressSection';
 import Reveal from '../components/Reveal';
-import { FishMotif, SunburstMotif, KachniDivider } from '../components/MithilaMotif';
+import { FishMotif, KachniDivider } from '../components/MithilaMotif';
 
 const courseStatus = {
     mithilaPainting: { status: "open", label: "Admissions Open" },
@@ -92,33 +92,6 @@ const Home = () => {
                                 </div>
                             </Reveal>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* About the Founder Strip */}
-            <section className="py-24 bg-[var(--color-paper)] relative overflow-hidden">
-                <SunburstMotif className="w-[420px] h-[420px] text-[var(--color-terracotta)]/10 absolute -right-24 -top-24 pointer-events-none" />
-                <div className="container mx-auto px-4 max-w-5xl relative">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <Reveal className="flex justify-center md:justify-end">
-                            <div className="relative w-64 h-64">
-                                <svg className="motif-draw absolute -inset-3 w-[calc(100%+1.5rem)] h-[calc(100%+1.5rem)]" viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="48" fill="none" stroke="var(--color-gold)" strokeWidth="1.4" pathLength="1" />
-                                </svg>
-                                <img src="/photos/founder.jpg" alt="Vishal Kumar Thakur" className="w-64 h-64 object-cover rounded-full shadow-lg relative" />
-                            </div>
-                        </Reveal>
-                        <Reveal delay={150} className="text-center md:text-left">
-                            <h2 className="text-3xl text-[var(--color-ink)] font-semibold mb-2" style={{ fontFamily: 'var(--font-display)' }}>Vishal Kumar Thakur</h2>
-                            <p className="text-[var(--color-maroon)] font-medium mb-6">Founder &amp; Managing Trustee</p>
-                            <p
-                                className="text-[var(--color-ink)]/80 leading-relaxed italic border-l-4 border-[var(--color-gold)] pl-4 md:pl-6 text-lg"
-                                style={{ fontFamily: 'var(--font-display)' }}
-                            >
-                                &quot;Our vision is to preserve the ancestral art form of our region while simultaneously creating sustainable livelihood opportunities for local women. The dedication of our community has transformed the lives of dozens of families across Madhubani.&quot;
-                            </p>
-                        </Reveal>
                     </div>
                 </div>
             </section>

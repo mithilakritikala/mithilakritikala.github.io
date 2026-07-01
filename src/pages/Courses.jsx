@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Info } from 'lucide-react';
 
+// NOTE: batch dates/headcounts below are not yet mapped to the org's internal
+// reference codes (MKK-SB1 / MKK-MP / MKK-SB2). Confirm exact dates and
+// trainee counts per batch before treating this copy as final.
 const Courses = () => {
     return (
         <div className="pt-24 min-h-screen bg-gray-50 pb-20">
@@ -41,6 +44,7 @@ const Courses = () => {
                                     <li className="flex gap-2"><span>👩‍🏫</span> <strong>Instructor:</strong> Babita Devi</li>
                                     <li className="flex gap-2"><span>💰</span> <strong>Admission Fee:</strong> ₹500 (one-time registration)</li>
                                     <li className="flex gap-2 ml-6 text-xs text-gray-400 italic"><span></span>A nominal fee to ensure commitment to the course</li>
+                                    {/* likely MKK-MP — confirm code + headcount */}
                                     <li className="flex gap-2"><span>✅</span> <strong>1st Batch:</strong> Nov 2025 – Feb 2026 ✓ Completed</li>
                                     <li className="flex gap-2"><span>✅</span> <strong>2nd Batch:</strong> Feb – Apr 2026 ✓ Completed</li>
                                     <li className="flex gap-2"><span>📅</span> <strong>3rd Batch:</strong> Starting May 4, 2026 → Admissions Open</li>
@@ -70,6 +74,7 @@ const Courses = () => {
                                     <li className="flex gap-2"><span>👩‍🏫</span> <strong>Instructor:</strong> Experienced Tailors</li>
                                     <li className="flex gap-2"><span>💰</span> <strong>Admission Fee:</strong> ₹500 (one-time registration)</li>
                                     <li className="flex gap-2 ml-6 text-xs text-gray-400 italic"><span></span>A nominal fee to ensure commitment to the course</li>
+                                    {/* likely MKK-SB1 / MKK-SB2 — confirm which code maps to which batch + headcount */}
                                     <li className="flex gap-2"><span>✅</span> <strong>1st Batch:</strong> Sep – Dec 2025 ✓ Completed</li>
                                     <li className="flex gap-2"><span>🔄</span> <strong>2nd Batch:</strong> Feb – May 2026 → In Progress</li>
                                     <li className="flex gap-2"><span>📅</span> <strong>3rd Batch:</strong> Dates will be announced soon</li>

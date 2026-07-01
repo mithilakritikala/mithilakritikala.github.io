@@ -3,10 +3,10 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 import Footer from './components/Footer';
+import MaithiliChat from './components/MaithiliChat';
 
 // Pages
 import Home from './pages/Home';
-import HomeRedesign from './pages/HomeRedesign';
 import TransparencyPage from './pages/TransparencyPage';
 import DonatePage from './pages/DonatePage';
 import ContactPage from './pages/ContactPage';
@@ -35,7 +35,6 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/preview" element={<HomeRedesign />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/gallery" element={<Gallery />} />
@@ -50,6 +49,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <MaithiliChat />
     </div>
   );
 }

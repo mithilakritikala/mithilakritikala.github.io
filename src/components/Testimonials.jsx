@@ -1,25 +1,24 @@
 // src/components/Testimonials.jsx
+//
+// Real trainee testimonials go here once collected (with confirmed consent —
+// see project notes). Left empty rather than filled with placeholder/demo
+// content, since the org was only founded in July 2025.
+const testimonials = [];
+
 const Testimonials = () => {
-    const testimonials = [
-        {
-            quote: "This training gave me the confidence and skill to earn on my own.",
-            name: "Sunita Devi",
-            year: "2023",
-            course: "Student",
-        },
-        {
-            quote: "I never thought I could paint professionally. Mithila KritiKala changed that.",
-            name: "Rekha Kumari",
-            year: "2022",
-            course: "Student",
-        },
-        {
-            quote: "The Cutting & Stitching course helped me start my own small tailoring business.",
-            name: "Poonam Devi",
-            year: "2023",
-            course: "Student",
-        }
-    ];
+    if (testimonials.length === 0) {
+        return (
+            <section className="py-20 bg-[var(--color-cream)]">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-maroon)] font-bold">Voices of Empowerment</h2>
+                    <div className="w-20 h-1 bg-[var(--color-gold)] mx-auto mt-4 mb-8"></div>
+                    <p className="text-gray-600 max-w-xl mx-auto">
+                        We&apos;re gathering stories from our trainees — real voices from Mithila KritiKala will appear here soon.
+                    </p>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="py-20 bg-[var(--color-cream)]">

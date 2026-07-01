@@ -4,6 +4,7 @@ import AnnouncementBanner from '../components/AnnouncementBanner';
 import HeroCarousel from '../components/HeroCarousel';
 import ImpactCounter from '../components/ImpactCounter';
 import Testimonials from '../components/Testimonials';
+import PressSection from '../components/PressSection';
 
 const courseStatus = {
     mithilaPainting: { status: "open", label: "Admissions Open" },
@@ -131,6 +132,8 @@ const Home = () => {
             </section>
 
             <Testimonials />
+
+            <PressSection />
 
             {/* Get Involved Section */}
             <section className="py-20 bg-white border-t border-gray-100">

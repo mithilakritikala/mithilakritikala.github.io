@@ -1,0 +1,51 @@
+{
+  "_comment": "Editable FAQ knowledge base for the Maithili chat widget. Each entry needs 'keywords' (words/phrases that should trigger it) and 'answer' (the exact text shown — keep it factual, don't let this drift from what's actually true about the NGO). Add new entries freely; no code changes needed.",
+  "entries": [
+    {
+      "id": "courses",
+      "keywords": ["course", "courses", "class", "classes", "training", "learn", "teach", "mithila painting", "stitching", "tailoring", "sewing", "what do you offer"],
+      "answer": "We currently offer two courses: Mithila Painting (4 months, traditional techniques and natural colors) and Cutting & Stitching (4 months per batch, practical tailoring skills). See the Courses page for current batch status and admissions."
+    },
+    {
+      "id": "admission",
+      "keywords": ["admission", "admit", "enroll", "enrol", "apply", "join a course", "how to join", "registration", "register", "sign up", "batch", "when does the next batch start"],
+      "answer": "To join a course, visit our center in Benipatti, Madhubani to collect the physical admission form. Bring 2 passport-size photos and a copy of your Aadhaar card. Check the Admission page for which batches are currently open."
+    },
+    {
+      "id": "fees",
+      "keywords": ["fee", "fees", "cost", "price", "how much", "payment", "charge", "free", "deposit"],
+      "answer": "Our courses are free to attend. There is a one-time ₹500 admission fee collected at enrollment, meant as a commitment deposit rather than tuition. If you have questions about refund eligibility, please ask us directly via the Contact page — we want to give you an accurate answer rather than guess."
+    },
+    {
+      "id": "registration-status",
+      "keywords": ["12a", "80g", "registered", "registration", "ngo darpan", "pan", "legit", "verified", "tax exemption", "is this real", "trust"],
+      "answer": "Mithila KritiKala is a registered public charitable trust with 12A and 80G registration from the Income Tax Department, and is listed on the NGO Darpan portal (NITI Aayog). Full registration numbers and certificates are on our Transparency page."
+    },
+    {
+      "id": "donate",
+      "keywords": ["donate", "donation", "contribute", "give money", "support financially", "80g tax", "csr"],
+      "answer": "You can donate securely via Razorpay from our Donate page. Donations qualify for an 80G tax deduction under Indian tax law. CSR-1 registration is currently in progress."
+    },
+    {
+      "id": "contact",
+      "keywords": ["contact", "phone", "email", "address", "location", "where are you", "reach you", "call", "whatsapp"],
+      "answer": "You can reach us at contact@mithilakritikala.com or +91 7903120432. We're located on Kataiya Road, Benipatti, Madhubani, Bihar. Use the Contact page for a message form and map."
+    },
+    {
+      "id": "volunteer",
+      "keywords": ["volunteer", "volunteering", "help out", "get involved", "teach for you", "join the team", "work with you"],
+      "answer": "We welcome volunteers as Art Teachers, Stitching Trainers, Digital Marketing help, Photographers/Videographers, and for Fundraising & Outreach. Apply through the Join Us page."
+    },
+    {
+      "id": "about",
+      "keywords": ["about", "who are you", "history", "founded", "founder", "story", "mission", "when did you start"],
+      "answer": "Mithila KritiKala was founded on July 18, 2025 in Madhubani, Bihar by Vishal Kumar Thakur, to preserve the art of Mithila painting while giving rural women a path to financial independence. Read the full story on the About Us page."
+    },
+    {
+      "id": "impact",
+      "keywords": ["impact", "how many women", "results", "reach", "trained", "districts"],
+      "answer": "So far we've trained 20+ women across our two courses, reaching 1 district (Madhubani) since our founding in July 2025."
+    }
+  ],
+  "fallback": "I don't have a confident answer for that. For anything specific, please reach out through our Contact page and we'll get back to you directly."
+}

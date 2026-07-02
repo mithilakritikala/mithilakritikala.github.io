@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Info } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
-import { FishMotif } from '../components/MithilaMotif';
 
 // NOTE: batch dates/headcounts below are not yet mapped to the org's internal
 // reference codes (MKK-SB1 / MKK-MP / MKK-SB2). Confirm exact dates and
@@ -29,14 +28,11 @@ const Courses = () => {
 
                     {/* Mithila Painting Card */}
                     <Reveal className="bg-white shadow-lg overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
-                        <img src="/photos/mithila-painting.png" alt="Mithila Painting" className="w-full h-64 object-cover" />
+                        <img src="/photos/course-mithila-painting.jpg" alt="Mithila Painting" className="w-full h-64 object-cover" />
                         <div className="p-8 flex-grow flex flex-col justify-between">
                             <div>
                                 <div className="flex justify-between items-start mb-4 gap-3">
-                                    <div className="flex items-center gap-2">
-                                        <FishMotif className="w-8 h-4 text-[var(--color-terracotta)]" />
-                                        <h3 className="text-2xl font-semibold text-[var(--color-ink)]">Mithila Painting</h3>
-                                    </div>
+                                    <h3 className="text-2xl font-semibold text-[var(--color-ink)]">Mithila Painting</h3>
                                     <span className="text-green-700 bg-green-50 border border-green-200 font-medium px-3 py-1 rounded-full text-sm flex-shrink-0">
                                         ✦ Admissions Open
                                     </span>
@@ -62,14 +58,11 @@ const Courses = () => {
 
                     {/* Cutting & Stitching Card */}
                     <Reveal delay={150} className="bg-white shadow-lg overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
-                        <img src="/photos/stiching.png" alt="Cutting & Stitching" className="w-full h-64 object-cover" />
+                        <img src="/photos/course-stitching.jpg" alt="Cutting & Stitching" className="w-full h-64 object-cover" />
                         <div className="p-8 flex-grow flex flex-col justify-between">
                             <div>
                                 <div className="flex justify-between items-start mb-4 gap-3">
-                                    <div className="flex items-center gap-2">
-                                        <FishMotif className="w-8 h-4 text-[var(--color-terracotta)]" />
-                                        <h3 className="text-2xl font-semibold text-[var(--color-ink)]">Cutting &amp; Stitching</h3>
-                                    </div>
+                                    <h3 className="text-2xl font-semibold text-[var(--color-ink)]">Cutting &amp; Stitching</h3>
                                     <span className="text-amber-700 bg-amber-50 border border-amber-200 font-medium px-3 py-1 rounded-full text-sm flex-shrink-0">
                                         ⚡ Batch In Progress
                                     </span>

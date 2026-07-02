@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { KachniDivider, SunburstMotif } from './MithilaMotif';
+import { KachniDivider } from './MithilaMotif';
 
 // eslint-disable-next-line react/prop-types
 const Counter = ({ end, duration, suffix = "", prefix = "", label, icon }) => {
@@ -71,8 +71,6 @@ const ImpactCounter = () => {
             className="relative overflow-hidden py-16 md:py-20"
             style={{ background: 'linear-gradient(135deg, var(--color-maroon) 0%, #5C1010 100%)' }}
         >
-            <SunburstMotif className="animate-spin-slower pointer-events-none absolute -bottom-32 -left-32 w-[420px] h-[420px] text-[var(--color-gold)]/10" />
-
             <div className="container mx-auto px-6 sm:px-8 lg:px-10 relative">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     {/* Heading column */}

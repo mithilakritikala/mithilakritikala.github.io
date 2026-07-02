@@ -1,6 +1,5 @@
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
-import { FishMotif } from '../components/MithilaMotif';
 
 const AboutUs = () => {
     const timeline = [
@@ -31,10 +30,7 @@ const AboutUs = () => {
                         <img src="/photos/Off.jpg" alt="Women creating Mithila art together" className="w-full rounded-sm shadow-lg" />
                     </Reveal>
                     <Reveal delay={120}>
-                        <div className="flex items-center gap-2 mb-4">
-                            <FishMotif className="w-9 h-4 text-[var(--color-terracotta)]" />
-                            <h2 className="text-2xl font-semibold text-[var(--color-ink)]">Preserving Art, Empowering Lives</h2>
-                        </div>
+                        <h2 className="text-2xl font-semibold text-[var(--color-ink)] mb-4">Preserving Art, Empowering Lives</h2>
                         <p className="text-[var(--color-ink)]/70 mb-4 leading-relaxed">
                             Vishal Kumar Thakur, a young social entrepreneur from Madhubani, Bihar, founded Mithila KritiKala on July 18, 2025 with a deeply personal mission.
                         </p>

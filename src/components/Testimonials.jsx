@@ -3,7 +3,7 @@
 // Real trainee testimonials go here once collected (with confirmed consent —
 // see project notes). Left empty rather than filled with placeholder/demo
 // content, since the org was only founded in July 2025.
-import { KachniDivider, FishMotif } from './MithilaMotif';
+import { KachniDivider } from './MithilaMotif';
 import Reveal from './Reveal';
 
 const testimonials = [];
@@ -14,7 +14,6 @@ const Testimonials = () => {
             <section className="py-24 bg-[var(--color-paper)]" style={{ fontFamily: 'var(--font-body)' }}>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <Reveal>
-                        <FishMotif className="w-14 h-7 text-[var(--color-terracotta)] mx-auto mb-4" />
                         <h2 className="text-3xl md:text-4xl text-[var(--color-maroon)] font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
                             Voices of Empowerment
                         </h2>

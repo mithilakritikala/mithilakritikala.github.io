@@ -99,29 +99,29 @@ const Hero = () => {
 
                     {/* Collage column */}
                     <div className="lg:col-span-6 order-1 lg:order-2">
-                        <div className="relative max-w-md mx-auto lg:ml-auto lg:mr-6 mb-8 lg:mb-0">
+                        <div className="relative max-w-[280px] sm:max-w-md mx-auto lg:ml-auto lg:mr-6 mb-20 sm:mb-24 lg:mb-0">
                             {/* Ink echo outline, offset behind the arch */}
-                            <div className="arch-mask absolute inset-0 translate-x-4 translate-y-4 border-[1.5px] border-[var(--color-ink)]/35" aria-hidden="true" />
+                            <div className="arch-mask absolute inset-0 translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4 border-[1.5px] border-[var(--color-ink)]/35" aria-hidden="true" />
 
                             {/* Main photo in a Mithila window-arch */}
                             <div className="arch-mask relative overflow-hidden aspect-[4/5] shadow-xl reveal is-visible" style={{ animationDelay: '150ms' }}>
                                 <div
                                     className="w-full h-full bg-cover bg-center animate-paper-drift"
-                                    style={{ backgroundImage: "url('/photos/Work In action.jpg')" }}
+                                    style={{ backgroundImage: "url('/photos/hero-women-with-paintings.jpg')" }}
                                 />
                                 {/* Gold arch rim */}
                                 <div className="arch-mask absolute inset-0 border-4 border-[var(--color-gold)]/60 pointer-events-none" />
                             </div>
 
                             {/* Overlapping paper-bordered snapshot */}
-                            <div className="animate-float-soft absolute -bottom-10 -left-6 md:-left-12 w-40 md:w-52 bg-[var(--color-cream)] p-2 pb-3 shadow-2xl rounded-sm border border-[var(--color-ink)]/10">
+                            <div className="animate-float-soft absolute -bottom-10 left-2 sm:-left-6 md:-left-12 w-32 sm:w-40 md:w-52 bg-[var(--color-cream)] p-2 pb-3 shadow-2xl rounded-sm border border-[var(--color-ink)]/10">
                                 <img
-                                    src="/photos/gallery3.jpg"
-                                    alt="Students at an art class"
-                                    className="w-full h-28 md:h-36 object-cover rounded-sm"
+                                    src="/photos/hero-teaching-detail.jpg"
+                                    alt="A trainee learning Mithila painting technique"
+                                    className="w-full h-24 sm:h-28 md:h-36 object-cover rounded-sm"
                                 />
                                 <p
-                                    className="italic text-center text-[var(--color-maroon)] text-sm md:text-base mt-2 leading-none"
+                                    className="italic text-center text-[var(--color-maroon)] text-xs sm:text-sm md:text-base mt-2 leading-none"
                                     style={{ fontFamily: 'var(--font-display)' }}
                                 >
                                     Est. July 2025

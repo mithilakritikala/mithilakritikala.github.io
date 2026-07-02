@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 // Shared by every Home-page section instead of each one re-implementing
 // its own IntersectionObserver.
 // eslint-disable-next-line react/prop-types
-const Reveal = ({ children, delay = 0, className = '', as: Tag = 'div' }) => {
+const Reveal = ({ children, delay = 0, className = '', as: Tag = 'div', ...rest }) => {
     const ref = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -29,6 +29,7 @@ const Reveal = ({ children, delay = 0, className = '', as: Tag = 'div' }) => {
             ref={ref}
             className={`reveal ${isVisible ? 'is-visible' : ''} ${className}`}
             style={{ animationDelay: isVisible ? `${delay}ms` : undefined }}
+            {...rest}
         >
             {children}
         </Tag>

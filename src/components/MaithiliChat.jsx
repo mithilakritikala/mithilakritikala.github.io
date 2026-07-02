@@ -6,9 +6,10 @@ import MaithiliAvatar from './MaithiliAvatar';
 
 // Scores each FAQ entry by how many of its keywords appear in the user's
 // message, and returns the best match (or null if nothing scores > 0).
-// This is intentionally a plain keyword matcher, not an LLM call — it can
-// only ever return text that's already written in maithili-knowledge.json,
-// so it can't fabricate facts about the NGO.
+// This is the offline fallback — it can only ever return text that's
+// already written in maithili-knowledge.json, so it can't fabricate facts.
+// Used whenever /api/maithili (the Gemini-backed route) isn't reachable —
+// e.g. during plain `npm run dev`, which doesn't run Vercel functions.
 function findBestMatch(message) {
     const normalized = message.toLowerCase();
     let best = null;
@@ -28,6 +29,23 @@ function findBestMatch(message) {
     return bestScore > 0 ? best : null;
 }
 
+async function askGemini(message, priorMessages) {
+    const history = priorMessages
+        .filter((m) => m.role === 'user' || m.role === 'bot')
+        .map((m) => ({ role: m.role === 'user' ? 'user' : 'model', text: m.text }));
+
+    const response = await fetch('/api/maithili', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, history }),
+    });
+
+    if (!response.ok) throw new Error(`API responded ${response.status}`);
+    const data = await response.json();
+    if (!data.reply) throw new Error('Empty reply');
+    return data.reply;
+}
+
 const WELCOME_MESSAGE = {
     role: 'bot',
     text: "Namaste! I'm Maithili 🎨 Ask me about our courses, admission, fees, donations, or how to get in touch.",
@@ -37,28 +55,37 @@ const MaithiliChat = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([WELCOME_MESSAGE]);
+    const [isThinking, setIsThinking] = useState(false);
     const scrollRef = useRef(null);
 
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
-    }, [messages, isOpen]);
+    }, [messages, isOpen, isThinking]);
 
-    const handleSend = (e) => {
+    const handleSend = async (e) => {
         e.preventDefault();
         const trimmed = input.trim();
-        if (!trimmed) return;
+        if (!trimmed || isThinking) return;
 
-        const match = findBestMatch(trimmed);
-        const replyText = match ? match.answer : knowledgeBase.fallback;
-
-        setMessages((prev) => [
-            ...prev,
-            { role: 'user', text: trimmed },
-            { role: 'bot', text: replyText, showContactLink: !match },
-        ]);
+        const priorMessages = messages;
+        setMessages((prev) => [...prev, { role: 'user', text: trimmed }]);
         setInput('');
+        setIsThinking(true);
+
+        try {
+            const reply = await askGemini(trimmed, priorMessages);
+            setMessages((prev) => [...prev, { role: 'bot', text: reply }]);
+        } catch {
+            // Offline / API not deployed yet / Gemini error — fall back to the
+            // local keyword matcher so the widget still answers something useful.
+            const match = findBestMatch(trimmed);
+            const replyText = match ? match.answer : knowledgeBase.fallback;
+            setMessages((prev) => [...prev, { role: 'bot', text: replyText, showContactLink: !match }]);
+        } finally {
+            setIsThinking(false);
+        }
     };
 
     return (
@@ -96,6 +123,15 @@ const MaithiliChat = () => {
                                 </div>
                             </div>
                         ))}
+                        {isThinking && (
+                            <div className="flex justify-start">
+                                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1 items-center">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-maroon)]/50 animate-bounce" style={{ animationDelay: '0ms' }} />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-maroon)]/50 animate-bounce" style={{ animationDelay: '150ms' }} />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-maroon)]/50 animate-bounce" style={{ animationDelay: '300ms' }} />
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     <form onSubmit={handleSend} className="border-t border-gray-100 p-3 flex items-center gap-2 bg-white">
@@ -108,8 +144,9 @@ const MaithiliChat = () => {
                         />
                         <button
                             type="submit"
+                            disabled={isThinking}
                             aria-label="Send message"
-                            className="w-10 h-10 flex-shrink-0 rounded-full bg-[var(--color-maroon)] text-white flex items-center justify-center hover:bg-[#6b1414] transition-colors"
+                            className="w-10 h-10 flex-shrink-0 rounded-full bg-[var(--color-maroon)] text-white flex items-center justify-center hover:bg-[#6b1414] transition-colors disabled:opacity-50"
                         >
                             <Send size={18} />
                         </button>

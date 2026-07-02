@@ -1,91 +1,65 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
-import { KachniDivider, FishMotif } from './MithilaMotif';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+// Deliberately does NOT repeat the Donate CTA or social icons — those
+// already live in the "Get Involved" section right above this. Footer's
+// job here is just: who we are, how to reach us, where else to go, and
+// the legal/registration line. Maroon background (not ink) so it reads as
+// a distinct band instead of merging into the dark section above it.
+const quickLinks = [
+    { label: 'About Us', to: '/about' },
+    { label: 'Courses', to: '/courses' },
+    { label: 'Gallery', to: '/gallery' },
+    { label: 'Admission', to: '/admission' },
+    { label: 'Transparency', to: '/transparency' },
+];
 
 const Footer = () => {
-    const socialLinks = [
-        { href: "https://www.facebook.com/profile.php?id=61578616140715", icon: <Facebook size={20} />, label: "Facebook" },
-        { href: "https://www.instagram.com/mithilakritikala/", icon: <Instagram size={20} />, label: "Instagram" },
-        {
-            href: "https://x.com/m_kritikala",
-            icon: (
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-            ),
-            label: "X (Twitter)"
-        },
-        { href: "https://www.linkedin.com/company/mithila-kritikala/", icon: <Linkedin size={20} />, label: "LinkedIn" },
-    ];
-
     return (
-        <footer className="bg-[var(--color-ink)] text-[var(--color-cream)] pt-16 pb-6 mt-16" style={{ fontFamily: 'var(--font-body, var(--font-sans))' }}>
+        <footer className="bg-[var(--color-maroon)] text-[var(--color-cream)] pt-14 pb-6" style={{ fontFamily: 'var(--font-body, var(--font-sans))' }}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                    {/* Column 1: Contact Info */}
+                <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 mb-10">
+                    {/* Brand + contact */}
                     <div>
-                        <div className="flex items-center gap-2 mb-4">
-                            <FishMotif className="w-9 h-4 text-[var(--color-gold)]" />
-                            <h3 className="text-2xl font-semibold text-[var(--color-gold)]" style={{ fontFamily: 'var(--font-display, var(--font-serif))' }}>Mithila KritiKala</h3>
-                        </div>
-                        <p className="mb-6 opacity-80 leading-relaxed">
-                            Empowering women through the art of Mithila painting and vocational training, preserving cultural heritage.
+                        <h3 className="text-2xl font-semibold text-[var(--color-gold)] mb-3" style={{ fontFamily: 'var(--font-display, var(--font-serif))' }}>
+                            Mithila KritiKala
+                        </h3>
+                        <p className="mb-5 opacity-80 leading-relaxed max-w-md">
+                            Empowering rural women through the art of Mithila painting and vocational training, preserving cultural heritage since July 2025.
                         </p>
-                        <div className="space-y-3 opacity-90">
-                            <h4 className="text-lg font-semibold mt-4 mb-2" style={{ fontFamily: 'var(--font-display, var(--font-serif))' }}>Contact Us</h4>
+                        <div className="space-y-2.5 opacity-90 text-sm">
                             <p className="flex items-center gap-3">
-                                <Mail size={18} className="text-[var(--color-gold)]" />
+                                <Mail size={16} className="text-[var(--color-gold)] shrink-0" />
                                 <a href="mailto:contact@mithilakritikala.com" className="hover:text-[var(--color-gold)] transition-colors">contact@mithilakritikala.com</a>
                             </p>
                             <p className="flex items-center gap-3">
-                                <Phone size={18} className="text-[var(--color-gold)]" />
+                                <Phone size={16} className="text-[var(--color-gold)] shrink-0" />
                                 <a href="tel:+917903120432" className="hover:text-[var(--color-gold)] transition-colors">+91 7903120432</a>
                             </p>
                             <p className="flex items-start gap-3">
-                                <MapPin size={18} className="mt-1 text-[var(--color-gold)] flex-shrink-0" />
+                                <MapPin size={16} className="mt-0.5 text-[var(--color-gold)] shrink-0" />
                                 <span>Kataiya Road Benipatti, Madhubani, Bihar</span>
                             </p>
                         </div>
                     </div>
 
-                    {/* Column 2: Donate */}
-                    <div className="md:pl-8">
-                        <h4 className="text-xl font-semibold mb-4 text-[var(--color-gold)]" style={{ fontFamily: 'var(--font-display, var(--font-serif))' }}>Make a Difference</h4>
-                        <p className="mb-6 opacity-80 leading-relaxed">
-                            Your small contribution will make a big difference in the lives of rural women. Support our mission to empower them.
-                        </p>
-                        <Link to="/donate" className="inline-block bg-[var(--color-gold)] text-[var(--color-ink)] font-bold py-3 px-8 rounded-sm hover:bg-[#b07d20] transition-colors">
-                            Donate Now
-                        </Link>
-                    </div>
-
-                    {/* Column 3: Social */}
-                    <div className="md:pl-8">
-                        <h4 className="text-xl font-semibold mb-4 text-[var(--color-gold)]" style={{ fontFamily: 'var(--font-display, var(--font-serif))' }}>Connect with us</h4>
-                        <p className="mb-6 opacity-80">Follow us on social media for updates and inspiring stories of our artists!</p>
-                        <div className="flex gap-4 flex-wrap">
-                            {socialLinks.map(({ href, icon, label }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-full border border-[var(--color-gold)]/30 flex items-center justify-center hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] transition-colors"
-                                    aria-label={label}
-                                >
-                                    {icon}
-                                </a>
+                    {/* Quick links */}
+                    <div>
+                        <h4 className="text-sm font-semibold uppercase tracking-[0.15em] mb-4 text-[var(--color-gold)]">Quick Links</h4>
+                        <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
+                            {quickLinks.map((link) => (
+                                <li key={link.to}>
+                                    <Link to={link.to} onClick={() => window.scrollTo(0, 0)} className="opacity-80 hover:opacity-100 hover:text-[var(--color-gold)] transition-colors">
+                                        {link.label}
+                                    </Link>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
-                </div>
-
-                <div className="flex justify-center mb-8 opacity-60">
-                    <KachniDivider className="w-48 h-3" color="var(--color-gold)" />
                 </div>
 
                 {/* Legal Registration Line */}
-                <div className="pt-2 pb-4 text-center">
+                <div className="pt-6 border-t border-[var(--color-gold)]/20 text-center">
                     <p className="text-xs text-[var(--color-cream)]/70 mb-2">
                         Registered NGO | 12A: AAKTM3093ME20251 | 80G: AAKTM3093MF20251 | NGO Darpan: BR/2025/0781443 | PAN: AAKTM3093M
                         {' '}-{' '}
@@ -94,7 +68,7 @@ const Footer = () => {
                         </Link>
                     </p>
 
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--color-cream)]/50 mt-4">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-[var(--color-cream)]/50 mt-4">
                         <p>&copy; {new Date().getFullYear()} Mithila KritiKala. All rights reserved.</p>
                         <div className="flex gap-4">
                             <Link to="/policies/privacy-policy" className="hover:text-[var(--color-cream)] transition-colors">Privacy Policy</Link>

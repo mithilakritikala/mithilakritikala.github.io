@@ -6,7 +6,7 @@ import ImpactCounter from '../components/ImpactCounter';
 import Testimonials from '../components/Testimonials';
 import PressSection from '../components/PressSection';
 import Reveal from '../components/Reveal';
-import { FishMotif, KachniDivider } from '../components/MithilaMotif';
+import { KachniDivider } from '../components/MithilaMotif';
 
 const trustBadges = [
     { icon: ShieldCheck, label: '12A Registered' },
@@ -18,7 +18,7 @@ const trustBadges = [
 const courses = [
     {
         index: '01',
-        img: '/photos/mithila-painting.png',
+        img: '/photos/course-mithila-painting.jpg',
         title: 'Mithila Painting',
         text: 'Learn the ancient art of Mithila with traditional techniques and natural colors — from first sketches to commercial-grade artwork.',
         meta: [
@@ -29,7 +29,7 @@ const courses = [
     },
     {
         index: '02',
-        img: '/photos/stiching.png',
+        img: '/photos/course-stitching.jpg',
         title: 'Cutting & Stitching',
         text: 'Master cutting and stitching to create beautiful garments — practical skills for a tailoring business or textile work.',
         meta: [
@@ -40,10 +40,10 @@ const courses = [
 ];
 
 const galleryPreview = [
-    { src: '/photos/Work In action.jpg', label: 'Students Learning', size: 'lg:col-span-7 h-[280px] md:h-[420px]' },
-    { src: '/photos/gallery3.jpg', label: 'Art Class', size: 'lg:col-span-5 h-[280px] md:h-[420px]' },
-    { src: '/photos/gallery2.jpg', label: 'Community', size: 'lg:col-span-5 h-[220px] md:h-[260px]' },
-    { src: '/photos/gallery7.jpg', label: 'Exhibition', size: 'lg:col-span-7 h-[220px] md:h-[260px]' },
+    { src: '/photos/gallery-group-with-art.jpg', label: 'Proud Artists', size: 'lg:col-span-7 h-[280px] md:h-[420px]' },
+    { src: '/photos/gallery-panchmukhi-hanuman.jpg', label: 'Student Artwork', size: 'lg:col-span-5 h-[280px] md:h-[420px]' },
+    { src: '/photos/course-stitching.jpg', label: 'Cutting & Stitching', size: 'lg:col-span-5 h-[220px] md:h-[260px]' },
+    { src: '/photos/gallery-showcase-3.jpg', label: 'Finished Work', size: 'lg:col-span-7 h-[220px] md:h-[260px]' },
 ];
 
 const socialLinks = [
@@ -153,12 +153,9 @@ const Home = () => {
                                 </div>
 
                                 <div className="px-3 pt-7">
-                                    <div className="flex items-center gap-2 mb-3">
-                                        <FishMotif className="w-8 h-4 text-[var(--color-terracotta)]" />
-                                        <h3 className="text-2xl font-semibold text-[var(--color-ink)]" style={{ fontFamily: 'var(--font-display)' }}>
-                                            {course.title}
-                                        </h3>
-                                    </div>
+                                    <h3 className="text-2xl font-semibold text-[var(--color-ink)] mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+                                        {course.title}
+                                    </h3>
                                     <p className="text-[var(--color-ink)]/70 mb-5 leading-relaxed">{course.text}</p>
                                     <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6">
                                         {course.meta.map(({ icon: Icon, label }) => (
@@ -187,7 +184,6 @@ const Home = () => {
                 <div className="bg-paper-grain absolute inset-0 opacity-40" aria-hidden="true" />
                 <div className="container mx-auto px-6 relative">
                     <Reveal className="max-w-3xl mx-auto text-center">
-                        <FishMotif className="w-14 h-7 text-[var(--color-cream)]/80 mx-auto mb-6" />
                         <p
                             className="text-2xl md:text-4xl italic text-[var(--color-cream)] leading-snug"
                             style={{ fontFamily: 'var(--font-display)' }}

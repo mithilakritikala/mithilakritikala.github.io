@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { KachniDivider } from './MithilaMotif';
+import { KachniDivider, SunburstMotif } from './MithilaMotif';
 
 // eslint-disable-next-line react/prop-types
 const Counter = ({ end, duration, suffix = "", prefix = "", label, icon }) => {
@@ -29,47 +29,77 @@ const Counter = ({ end, duration, suffix = "", prefix = "", label, icon }) => {
     }, [end, duration, isVisible]);
 
     return (
-        <div ref={ref} className="flex flex-col items-center justify-center px-4 py-2 text-center">
-            <div className="w-14 h-14 rounded-full bg-white/10 border border-[var(--color-gold)]/40 flex items-center justify-center text-2xl mb-4">
+        <div ref={ref} className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-white/10 border border-[var(--color-gold)]/40 flex items-center justify-center text-xl shrink-0 mt-1">
                 {icon}
             </div>
-            <div
-                className="text-4xl md:text-5xl font-bold text-[var(--color-gold)] mb-2"
-                style={{ fontFamily: 'var(--font-display)' }}
-            >
-                {prefix}{count}{suffix}
+            <div>
+                <div
+                    className="text-4xl md:text-5xl font-bold text-[var(--color-gold)] leading-none mb-2"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                >
+                    {prefix}{count}{suffix}
+                </div>
+                <div className="text-xs md:text-sm uppercase tracking-[0.15em] text-[var(--color-cream)]/80 font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+                    {label}
+                </div>
             </div>
-            <div className="text-sm md:text-base uppercase tracking-wide text-[var(--color-cream)]/90 font-medium" style={{ fontFamily: 'var(--font-body)' }}>{label}</div>
         </div>
     );
 };
 
 // eslint-disable-next-line react/prop-types
 const StaticStat = ({ icon, value, label }) => (
-    <div className="flex flex-col items-center justify-center px-4 py-2 text-center">
-        <div className="w-14 h-14 rounded-full bg-white/10 border border-[var(--color-gold)]/40 flex items-center justify-center text-2xl mb-4">
+    <div className="flex items-start gap-4">
+        <div className="w-12 h-12 rounded-full bg-white/10 border border-[var(--color-gold)]/40 flex items-center justify-center text-xl shrink-0 mt-1">
             {icon}
         </div>
-        <div className="text-2xl md:text-3xl font-bold text-[var(--color-gold)] mb-2 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>{value}</div>
-        <div className="text-sm md:text-base uppercase tracking-wide text-[var(--color-cream)]/90 font-medium" style={{ fontFamily: 'var(--font-body)' }}>{label}</div>
+        <div>
+            <div className="text-2xl md:text-3xl font-bold text-[var(--color-gold)] leading-tight mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                {value}
+            </div>
+            <div className="text-xs md:text-sm uppercase tracking-[0.15em] text-[var(--color-cream)]/80 font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+                {label}
+            </div>
+        </div>
     </div>
 );
 
 const ImpactCounter = () => {
     return (
         <section
-            className="pt-10 pb-16 border-t-2 border-[var(--color-gold)]"
-            style={{ background: 'linear-gradient(180deg, var(--color-maroon) 0%, #5C1010 100%)' }}
+            className="relative overflow-hidden py-16 md:py-20"
+            style={{ background: 'linear-gradient(135deg, var(--color-maroon) 0%, #5C1010 100%)' }}
         >
-            <div className="flex justify-center mb-6">
-                <KachniDivider className="w-48 h-3" color="rgba(201,146,42,0.5)" />
-            </div>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:divide-x md:divide-[var(--color-gold)]/20">
-                    <Counter end={20} suffix="+" label="Women Trained" icon="🎨" duration={1500} />
-                    <Counter end={2} label="Courses Offered" icon="🖌️" duration={1000} />
-                    <Counter end={1} label="District Reached" icon="📍" duration={1000} />
-                    <StaticStat icon="📅" value="Est. July 2025" label="Year Founded" />
+            <SunburstMotif className="animate-spin-slower pointer-events-none absolute -bottom-32 -left-32 w-[420px] h-[420px] text-[var(--color-gold)]/10" />
+
+            <div className="container mx-auto px-6 sm:px-8 lg:px-10 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    {/* Heading column */}
+                    <div className="lg:col-span-4">
+                        <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[var(--color-gold)] mb-3" style={{ fontFamily: 'var(--font-body)' }}>
+                            Our Impact
+                        </p>
+                        <h2
+                            className="text-3xl md:text-4xl text-[var(--color-cream)] font-semibold leading-tight"
+                            style={{ fontFamily: 'var(--font-display)' }}
+                        >
+                            The story,
+                            <br />
+                            <span className="italic text-[var(--color-gold)]" style={{ fontWeight: 500 }}>in numbers.</span>
+                        </h2>
+                        <KachniDivider className="w-32 h-3 mt-5" color="rgba(201,146,42,0.55)" />
+                    </div>
+
+                    {/* Stats grid */}
+                    <div className="lg:col-span-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10">
+                            <Counter end={20} suffix="+" label="Women Trained" icon="🎨" duration={1500} />
+                            <Counter end={2} label="Courses Offered" icon="🖌️" duration={1000} />
+                            <Counter end={1} label="District Reached" icon="📍" duration={1000} />
+                            <StaticStat icon="📅" value="Est. July 2025" label="Year Founded" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

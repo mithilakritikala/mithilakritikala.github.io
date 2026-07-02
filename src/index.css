@@ -149,3 +149,77 @@ h6 {
   background-image: radial-gradient(rgba(42, 24, 16, 0.09) 0.6px, transparent 0.6px);
   background-size: 4px 4px;
 }
+
+/* --- Homepage v2 animation vocabulary --- */
+
+/* Headline words rise in one-by-one (delay set inline per word). */
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Seamless ticker: content is rendered twice, track slides half its width. */
+@keyframes marquee-loop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee-loop {
+  animation: marquee-loop 30s linear infinite;
+}
+
+/* Gentle bob for the overlapping polaroid card in the hero collage. */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-6px) rotate(-4deg); }
+}
+
+.animate-float-soft {
+  animation: float-soft 5.5s ease-in-out infinite;
+}
+
+/* Barely-perceptible rotation for large background sunburst watermarks. */
+@keyframes spin-slower {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slower {
+  animation: spin-slower 120s linear infinite;
+}
+
+/* Mithila window-arch photo mask. */
+.arch-mask {
+  border-radius: 999px 999px 8px 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .reveal.is-visible,
+  .motif-draw path,
+  .motif-draw rect,
+  .motif-draw circle,
+  .frame-draw-x,
+  .frame-draw-y {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+  .animate-marquee-loop,
+  .animate-float-soft,
+  .animate-spin-slower,
+  .animate-paper-drift,
+  .maithili-avatar-bob {
+    animation: none !important;
+  }
+}

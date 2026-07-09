@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const allImages = [
     { src: "/photos/Work In action.jpg", category: "events", objectPosition: "center top" },
@@ -34,6 +35,11 @@ const Gallery = () => {
 
     return (
         <div className="pt-24 min-h-screen bg-[var(--color-cream)] pb-20">
+            <SEO
+                title="Gallery — Student Artwork &amp; Training Photos"
+                description="Real Mithila (Madhubani) painting artwork and training photos from our students in Benipatti, Madhubani, Bihar."
+                path="/gallery"
+            />
             <div className="container mx-auto px-4 max-w-6xl">
                 <PageHeader
                     eyebrow="From the Studio"

@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const Admission = () => {
     return (
         <div className="pt-24 min-h-[70vh] bg-white pb-20 flex flex-col items-center">
+            <SEO
+                title="Admission — Join Our Mithila Painting or Stitching Course"
+                description="How to apply for the Mithila Painting or Cutting & Stitching course at Mithila KritiKala in Benipatti, Madhubani, Bihar."
+                path="/admission"
+            />
             <div className="container mx-auto px-4 max-w-5xl text-center">
                 <PageHeader
                     title="Admission"

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, ShieldCheck, Landmark, FileCheck2, Clock3, UserRound } from 'lucide-react';
 import AnnouncementBanner from '../components/AnnouncementBanner';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import ImpactCounter from '../components/ImpactCounter';
 import Testimonials from '../components/Testimonials';
@@ -87,6 +88,11 @@ const SectionHeading = ({ eyebrow, title, subtitle, light = false }) => (
 const Home = () => {
     return (
         <div className="pt-20" style={{ fontFamily: 'var(--font-body)' }}>
+            <SEO
+                title="Mithila Painting &amp; Tailoring Training NGO in Madhubani, Bihar"
+                description="Mithila KritiKala trains rural women in Madhubani, Bihar in Mithila (Madhubani) painting and tailoring, free of cost. A 12A/80G registered NGO — see our courses, impact, and how to donate or volunteer."
+                path="/"
+            />
             <AnnouncementBanner />
 
             <Hero />

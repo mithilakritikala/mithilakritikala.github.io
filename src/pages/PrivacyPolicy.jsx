@@ -1,8 +1,13 @@
-
+import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => {
     return (
         <div className="pt-24 min-h-screen bg-[var(--color-paper)] pb-20">
+            <SEO
+                title="Privacy Policy"
+                description="How Mithila KritiKala collects, uses, and protects your information."
+                path="/policies/privacy-policy"
+            />
             <div className="container mx-auto px-4 max-w-4xl">
                 <div className="bg-white rounded-sm shadow-lg p-8 md:p-12 border border-[var(--color-ink)]/10">
                     <h1 className="text-3xl md:text-4xl font-semibold text-[var(--color-maroon)] mb-2">Privacy Policy</h1>

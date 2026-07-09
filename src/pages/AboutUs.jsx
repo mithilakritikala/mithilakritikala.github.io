@@ -1,5 +1,6 @@
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const AboutUs = () => {
     const timeline = [
@@ -21,6 +22,11 @@ const AboutUs = () => {
 
     return (
         <div className="pt-24 min-h-screen bg-white pb-20">
+            <SEO
+                title="About Us — Our Story &amp; Mission"
+                description="Founded July 18, 2025 in Benipatti, Madhubani, Mithila KritiKala preserves the ancient art of Mithila painting while empowering rural women with vocational skills. Meet our founder and trustees."
+                path="/about"
+            />
             <div className="container mx-auto px-4 max-w-6xl">
                 <PageHeader eyebrow="Our Journey" title="Our Story" />
 

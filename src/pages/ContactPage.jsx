@@ -2,6 +2,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -24,6 +25,11 @@ const ContactPage = () => {
 
     return (
         <div className="pt-24 min-h-screen bg-white pb-20">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Mithila KritiKala — Kataiya Road, Benipatti, Madhubani, Bihar. Call, email, or visit us to learn more about our Mithila painting and tailoring courses."
+                path="/contact"
+            />
             <div className="container mx-auto px-4 max-w-6xl">
                 <PageHeader
                     title="Contact Us"

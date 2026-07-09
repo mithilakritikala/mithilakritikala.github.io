@@ -6,10 +6,20 @@ import { KachniDivider } from './MithilaMotif';
 // stays truthful (a real photo, no invented outlet name) rather than empty.
 const pressItems = [
     {
-        outlet: null, // TODO: channel name
-        date: null,   // TODO: coverage date
-        title: 'A local news channel visited our training center to cover our work.',
-        link: null,   // TODO: article/video link, once available
+        outlet: 'Next Gen Bharat · YouTube',
+        date: null, // TODO: confirm upload date
+        title: 'Madhubani Art is Changing Youth’s Life and Identity (मधुबनी कला से बदल रही है युवाओं की जिंदगी और पहचान)',
+        link: 'https://www.youtube.com/watch?v=Fa4ADs9F_4Q',
+        image: 'https://img.youtube.com/vi/Fa4ADs9F_4Q/hqdefault.jpg',
+    },
+    {
+        // Facebook doesn't expose reliable public metadata without login, so
+        // the exact outlet couldn't be confirmed automatically — verify this
+        // label before treating it as final.
+        outlet: 'Video Coverage · Facebook', // TODO: confirm exact channel/page name
+        date: null, // TODO: confirm date
+        title: 'Centuries-old Mithila painting is gaining new recognition through youth efforts (सदियों पुरानी मिथिला पेंटिंग)',
+        link: 'https://www.facebook.com/watch/?v=1327928429392128',
         image: '/photos/press-news-visit.jpg',
     },
 ];
@@ -31,7 +41,7 @@ const PressSection = () => {
                     <KachniDivider className="w-40 h-3 mx-auto mt-5" />
                 </Reveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                     {pressItems.map((item, idx) => {
                         const Wrapper = item.link ? 'a' : 'div';
                         const linkProps = item.link

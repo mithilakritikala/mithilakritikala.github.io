@@ -1,10 +1,16 @@
 import { ShieldCheck, Landmark, Clock } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import { KachniDivider } from '../components/MithilaMotif';
+import SEO from '../components/SEO';
 
 const DonatePage = () => {
     return (
         <div className="pt-24 min-h-[80vh] flex flex-col items-center justify-center bg-[var(--color-paper)] pb-20">
+            <SEO
+                title="Donate — Support Rural Women's Livelihoods"
+                description="Donate to Mithila KritiKala, a 12A/80G registered NGO training rural women in Mithila painting and tailoring in Madhubani, Bihar. Your donation is tax-deductible."
+                path="/donate"
+            />
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <Reveal>
                     <h1 className="text-4xl md:text-5xl font-semibold text-[var(--color-maroon)] mb-4">Support Our Cause</h1>

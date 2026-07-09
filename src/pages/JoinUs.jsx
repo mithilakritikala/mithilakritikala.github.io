@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Palette, Scissors, Share2, Camera, HeartHandshake } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const JoinUs = () => {
     const [formData, setFormData] = useState({
@@ -28,6 +29,11 @@ const JoinUs = () => {
 
     return (
         <div className="pt-24 min-h-[70vh] bg-[var(--color-paper)] pb-20 flex flex-col items-center">
+            <SEO
+                title="Volunteer With Us"
+                description="Volunteer as an art teacher, stitching trainer, photographer, or in digital marketing/fundraising with Mithila KritiKala, an NGO in Madhubani, Bihar."
+                path="/join"
+            />
             <div className="container mx-auto px-4 max-w-5xl">
                 <PageHeader
                     title="Join Us / Volunteer"

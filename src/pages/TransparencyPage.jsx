@@ -1,10 +1,16 @@
 import { ShieldCheck, FileText, Download, Clock, Landmark, Users } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 const TransparencyPage = () => {
     return (
         <div className="pt-24 min-h-screen bg-[var(--color-paper)] pb-20">
+            <SEO
+                title="Transparency &amp; Registration Certificates"
+                description="View Mithila KritiKala's 12A, 80G, NGO Darpan, and PAN registration details, our trustees, and how donations are used."
+                path="/transparency"
+            />
             <div className="container mx-auto px-4 max-w-6xl">
 
                 <PageHeader

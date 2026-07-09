@@ -2,13 +2,41 @@ import { Link } from 'react-router-dom';
 import { Info } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 
 // NOTE: batch dates/headcounts below are not yet mapped to the org's internal
 // reference codes (MKK-SB1 / MKK-MP / MKK-SB2). Confirm exact dates and
 // trainee counts per batch before treating this copy as final.
+const coursesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [
+        {
+            '@type': 'Course',
+            position: 1,
+            name: 'Mithila Painting',
+            description: 'Learn the ancient art of Mithila with traditional techniques and natural colors.',
+            provider: { '@type': 'NGO', name: 'Mithila KritiKala', sameAs: 'https://mithilakritikala.com/' },
+        },
+        {
+            '@type': 'Course',
+            position: 2,
+            name: 'Cutting & Stitching',
+            description: 'Master cutting and stitching to create beautiful garments and textiles.',
+            provider: { '@type': 'NGO', name: 'Mithila KritiKala', sameAs: 'https://mithilakritikala.com/' },
+        },
+    ],
+};
+
 const Courses = () => {
     return (
         <div className="pt-24 min-h-screen bg-[var(--color-paper)] pb-20">
+            <SEO
+                title="Mithila Painting &amp; Tailoring Courses"
+                description="Learn traditional Mithila (Madhubani) painting or cutting & stitching at Mithila KritiKala in Benipatti, Madhubani, Bihar. Free training with a one-time ₹500 admission fee. Admissions open."
+                path="/courses"
+                jsonLd={coursesJsonLd}
+            />
             <div className="container mx-auto px-4 max-w-6xl">
                 <PageHeader
                     eyebrow="What We Do"
